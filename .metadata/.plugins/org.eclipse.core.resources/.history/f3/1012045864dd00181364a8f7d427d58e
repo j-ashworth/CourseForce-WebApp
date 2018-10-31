@@ -27,8 +27,6 @@ public class User {
 
 	public void setValid(boolean newValid) { valid = newValid; }
 	
-	public void tryingItOut() {};
-	
 	@Override
 	public String toString() {
 		return "User [Username: "+ username + ", First Name: " + firstName + ", Last Name: " + lastName +"]";
