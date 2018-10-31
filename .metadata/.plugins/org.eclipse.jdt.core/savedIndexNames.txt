@@ -1,3 +1,21 @@
+<<<<<<< HEAD
+INDEX VERSION 1.131+/Users/danielbedrossian/Documents/2018-2019/Fall/MIE350/GitHub/CourseForce-WebApp/.metadata/.plugins/org.eclipse.jdt.core
+116482320.index
+3113235799.index
+2838369765.index
+1241945963.index
+1479307877.index
+1716204154.index
+11171121.index
+2189508996.index
+1124887105.index
+2970552803.index
+363152344.index
+950241290.index
+1271342938.index
+2404520484.index
+3764954997.index
+=======
 INDEX VERSION 1.127+/Users/JulianAshworth/Documents/GitHub/CourseForce-WebApp/.metadata/.plugins/org.eclipse.jdt.core
 3704559938.index
 1271342938.index
@@ -15,6 +33,7 @@ INDEX VERSION 1.127+/Users/JulianAshworth/Documents/GitHub/CourseForce-WebApp/.m
 1479307877.index
 799891582.index
 2748810592.index
+>>>>>>> e70956c5e3bdb36d1921429debe33780793973e1
 642877926.index
 2189508996.index
 3403342233.index
@@ -24,6 +43,12 @@ INDEX VERSION 1.127+/Users/JulianAshworth/Documents/GitHub/CourseForce-WebApp/.m
 283417035.index
 org.eclipse.jdt.core
 2755646733.index
+<<<<<<< HEAD
+2225827089.index
+3657721178.index
+2720140819.index
+2670414054.index
+=======
 1716204154.index
 <<<<<<< HEAD
 2970552803.index
@@ -42,3 +67,4 @@ org.eclipse.jdt.core
 11171121.index
 2016700085.index
 950241290.index
+>>>>>>> e70956c5e3bdb36d1921429debe33780793973e1

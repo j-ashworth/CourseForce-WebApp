@@ -1861,6 +1861,21 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86 -product org.eclipse.epp
 =======
 >>>>>>> 073724ae8557403d0ab0fad7ac76c2c022e1d39e
 >>>>>>> b7a00009d7ab16eebc3d636c90d2e8075047a0e9
+<<<<<<< HEAD
+
+!ENTRY org.eclipse.core.jobs 4 2 2018-10-31 19:13:09.992
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 2, new: 1). Location: /Users/danielbedrossian/Documents/2018-2019/Fall/MIE350/GitHub/CourseForce-WebApp/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:66)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1596)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1268)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1260)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1237)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1148)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:55)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+=======
 !SESSION 2018-10-31 19:04:01.501 -----------------------------------------------
 eclipse.buildId=4.4.0.I20140606-1215
 java.version=1.6.0_65
@@ -1965,3 +1980,4 @@ Java Model Exception: Java Model Status [Unknown javadoc format for String {key=
 	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
 !SUBENTRY 1 org.eclipse.jdt.core 4 1009 2018-10-31 19:05:02.873
 !MESSAGE Unknown javadoc format for String {key=Ljava/lang/String;} [in String.class [in java.lang [in /Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar]]]
+>>>>>>> e70956c5e3bdb36d1921429debe33780793973e1
