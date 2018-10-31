@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+/Users/danielbedrossian/Documents/2018-2019/Fall/MIE350/GitHub/CourseForce-WebApp/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/156858952.index
+/mie350webapp/src
