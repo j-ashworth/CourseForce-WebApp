@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INDEX VERSION 1.127+/Users/JulianAshworth/Documents/GitHub/CourseForce-WebApp/.metadata/.plugins/org.eclipse.jdt.core
 283417035.index
 1124887105.index
@@ -15,16 +16,28 @@ INDEX VERSION 1.127+/Users/JulianAshworth/Documents/GitHub/CourseForce-WebApp/.m
 11171121.index
 1271342938.index
 3283534585.index
+=======
+INDEX VERSION 1.131+/Users/danielbedrossian/Documents/2018-2019/Fall/MIE350/GitHub/CourseForce-WebApp/.metadata/.plugins/org.eclipse.jdt.core
+2720140819.index
+>>>>>>> aa835e201edeb9685253bb3eddc33763415c554f
 3657721178.index
-2748810592.index
-2838369765.index
 97863960.index
+<<<<<<< HEAD
 1694864748.index
 1649123758.index
 950241290.index
 2189508996.index
 799891582.index
 2755646733.index
+=======
+950241290.index
+1124887105.index
+1271342938.index
+2670414054.index
+>>>>>>> aa835e201edeb9685253bb3eddc33763415c554f
 2499292115.index
-3764954997.index
 460198409.index
+11171121.index
+363152344.index
+2225827089.index
+2748810592.index
