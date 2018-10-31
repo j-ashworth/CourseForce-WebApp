@@ -1845,3 +1845,22 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 =======
 >>>>>>> aa835e201edeb9685253bb3eddc33763415c554f
 >>>>>>> 073724ae8557403d0ab0fad7ac76c2c022e1d39e
+!SESSION 2018-10-31 19:18:24.135 -----------------------------------------------
+eclipse.buildId=4.9.0.I20180906-0745
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_CA
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/danielbedrossian/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/danielbedrossian/.eclipse_keyring
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-10-31 19:18:38.960
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.net 1 0 2018-10-31 19:18:40.222
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2018-10-31 19:18:46.224
+!MESSAGE 
+
+!ENTRY org.eclipse.jst.jsp.core 4 4 2018-10-31 19:18:47.526
+!MESSAGE A workspace crash was detected. The previous session did not exit normally. Not using saved taglib indexes.
