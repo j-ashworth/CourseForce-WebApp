@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INDEX VERSION 1.131+/Users/danielbedrossian/Documents/2018-2019/Fall/MIE350/GitHub/CourseForce-WebApp/.metadata/.plugins/org.eclipse.jdt.core
 116482320.index
 3113235799.index
@@ -14,15 +15,56 @@ INDEX VERSION 1.131+/Users/danielbedrossian/Documents/2018-2019/Fall/MIE350/GitH
 1271342938.index
 2404520484.index
 3764954997.index
-642877926.index
-2499292115.index
+=======
+INDEX VERSION 1.127+/Users/JulianAshworth/Documents/GitHub/CourseForce-WebApp/.metadata/.plugins/org.eclipse.jdt.core
+3704559938.index
+1271342938.index
 1694864748.index
-2016700085.index
-97863960.index
+2094941365.index
+>>>>>>> 073724ae8557403d0ab0fad7ac76c2c022e1d39e
+2225827089.index
+2720140819.index
+116482320.index
+363152344.index
+>>>>>>> aa835e201edeb9685253bb3eddc33763415c554f
+2670414054.index
+3657721178.index
+3283534585.index
+1479307877.index
+799891582.index
+2748810592.index
+>>>>>>> e70956c5e3bdb36d1921429debe33780793973e1
+642877926.index
+2189508996.index
 3403342233.index
+2499292115.index
 1127572996.index
+2838369765.index
+283417035.index
+org.eclipse.jdt.core
 2755646733.index
+<<<<<<< HEAD
 2225827089.index
 3657721178.index
 2720140819.index
 2670414054.index
+=======
+1716204154.index
+<<<<<<< HEAD
+2970552803.index
+1649123758.index
+460198409.index
+302569583.index
+>>>>>>> b7a00009d7ab16eebc3d636c90d2e8075047a0e9
+97863960.index
+2819824909.index
+1124887105.index
+2404520484.index
+3764954997.index
+3113235799.index
+=======
+1241945963.index
+11171121.index
+2016700085.index
+950241290.index
+>>>>>>> e70956c5e3bdb36d1921429debe33780793973e1

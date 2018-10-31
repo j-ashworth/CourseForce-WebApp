@@ -23,9 +23,9 @@ public class User {
 
 	public void setLastName(String newLastName) { this.lastName = newLastName; }
 	
-	public boolean isValid() { return valid; }
-	
-	public void setValid(boolean newValid) { valid = newValid; }
+	public void setValid(boolean newValid) {
+		valid = newValid;
+	}
 	
 	@Override
 	public String toString() {
