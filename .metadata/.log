@@ -1823,3 +1823,16 @@ org.eclipse.jface.resource.DeviceResourceException: Unable to create resource UR
 !ENTRY org.eclipse.jst.jsp.core 4 4 2018-10-31 16:05:11.844
 !MESSAGE A workspace crash was detected. The previous session did not exit normally. Not using saved taglib indexes.
 >>>>>>> aa835e201edeb9685253bb3eddc33763415c554f
+!SESSION 2018-10-31 18:51:25.614 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/JulianAshworth/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -product org.eclipse.epp.package.jee.product -keyring /Users/JulianAshworth/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-10-31 18:51:57.709
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.net 1 0 2018-10-31 18:51:59.815
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

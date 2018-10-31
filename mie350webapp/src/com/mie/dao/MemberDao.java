@@ -38,8 +38,8 @@ public class MemberDao {
 		 * Prepare a query that searches the members table in the database
 		 * with the given username and password.
 		 */
-		String searchQuery = "select * from members where username='"
-				+ username + "' AND password='" + password + "'";
+		String searchQuery = "select * from Users where username='"
+				+ username + "' AND pswd='" + password + "'";
 
 		try {
 			// connect to DB

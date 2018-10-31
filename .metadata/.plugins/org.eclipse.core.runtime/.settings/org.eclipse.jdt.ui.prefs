@@ -1,17 +1,13 @@
-<<<<<<< HEAD
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=aa835e201edeb9685253bb3eddc33763415c554f
 content_assist_number_of_computers=21
-=======
-content_assist_number_of_computers=24
->>>>>>> aa835e201edeb9685253bb3eddc33763415c554f
 content_assist_proposals_background=255,255,255
 content_assist_proposals_foreground=0,0,0
 eclipse.preferences.version=1
 fontPropagated=true
 org.eclipse.jdt.internal.ui.navigator.layout=2
-<<<<<<< HEAD
-=======
 org.eclipse.jdt.internal.ui.navigator.librariesnode=true
->>>>>>> aa835e201edeb9685253bb3eddc33763415c554f
 org.eclipse.jdt.ui.editor.tab.width=
 org.eclipse.jdt.ui.formatterprofiles.version=14
 org.eclipse.jdt.ui.javadoclocations.migrated=true
