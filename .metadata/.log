@@ -1861,3 +1861,16 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86 -product org.eclipse.epp
 =======
 >>>>>>> 073724ae8557403d0ab0fad7ac76c2c022e1d39e
 >>>>>>> b7a00009d7ab16eebc3d636c90d2e8075047a0e9
+
+!ENTRY org.eclipse.core.jobs 4 2 2018-10-31 19:13:09.992
+!MESSAGE An internal error occurred during: "Periodic workspace save.".
+!STACK 0
+java.lang.IllegalArgumentException: Cannot set lower sequence number for root (previous: 2, new: 1). Location: /Users/danielbedrossian/Documents/2018-2019/Fall/MIE350/GitHub/CourseForce-WebApp/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:66)
+	at org.eclipse.core.internal.resources.SaveManager.validateMasterTableBeforeSave(SaveManager.java:1596)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1268)
+	at org.eclipse.core.internal.resources.SaveManager.saveMasterTable(SaveManager.java:1260)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1237)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1148)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:55)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
