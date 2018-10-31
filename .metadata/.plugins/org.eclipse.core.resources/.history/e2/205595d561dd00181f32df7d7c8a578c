@@ -5,7 +5,6 @@ public class User {
 	private String pswd;
 	private String firstName;
 	private String lastName;
-	private boolean valid;
 	
 	public String getUsername() { return username; }
 	
@@ -22,10 +21,6 @@ public class User {
 	public void setFirstName(String newFirstName) { this.firstName = newFirstName; }
 
 	public void setLastName(String newLastName) { this.lastName = newLastName; }
-	
-	public boolean isValid() { return valid; }
-
-	public void setValid(boolean newValid) { valid = newValid; }
 	
 	@Override
 	public String toString() {
