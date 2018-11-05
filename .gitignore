@@ -1,3 +1,5 @@
 
 *.dat
 *.index
+.metadata/
+.recommenders/
