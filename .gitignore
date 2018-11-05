@@ -4,4 +4,5 @@
 .metadata/
 .recommenders/
 RemoteSystemsTempFiles/
-
+*.class
+mie350webapp/build/
