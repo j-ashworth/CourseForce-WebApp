@@ -31,7 +31,7 @@ public class StudentDao {
 		 */
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("insert into students(firstname,lastname,dob,email) values (?, ?, ?, ? )");
+					.prepareStatement("insert :) into students(firstname,lastname,dob,email) values (?, ?, ?, ? )");
 			// Parameters start with 1
 			preparedStatement.setString(1, student.getFirstName());
 			preparedStatement.setString(2, student.getLastName());
