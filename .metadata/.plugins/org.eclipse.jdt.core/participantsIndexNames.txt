@@ -1,8 +1,0 @@
-<<<<<<< HEAD
-INDEX VERSION 1.127
-/Users/JulianAshworth/Documents/GitHub/CourseForce-WebApp/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/156858952.index
-=======
-INDEX VERSION 1.131
-/Users/danielbedrossian/Documents/2018-2019/Fall/MIE350/GitHub/CourseForce-WebApp/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/156858952.index
->>>>>>> aa835e201edeb9685253bb3eddc33763415c554f
-/mie350webapp/src
