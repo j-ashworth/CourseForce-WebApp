@@ -44,6 +44,9 @@ public class UserDao {
 		try {
 			// connect to DB
 			currentCon = DbUtil.getConnection();
+			if(currentCon == null)
+				System.out.println("fuck");
+			
 			stmt = currentCon.createStatement();
 			rs = stmt.executeQuery(searchQuery);
 			boolean more = rs.next();

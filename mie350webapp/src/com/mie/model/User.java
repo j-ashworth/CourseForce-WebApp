@@ -29,6 +29,6 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return "User :):) [Username: "+ username + ", First Name: " + firstName + ", Last Name: " + lastName +"]";
+		return "User [Username: "+ username + ", First Name: " + firstName + ", Last Name: " + lastName +"]";
 	}
 }

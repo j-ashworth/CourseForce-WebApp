@@ -8,15 +8,11 @@
 <body>
         <h1> Login </h1>
         <p> Please enter your username and password</p>
-        <form>
+        <form action="LoginController">
           Username:<br>
           <input type="text" name="username"><br>
           Password:<br>
-          <input type="password" name="password">
+          <input type="password" name="password"/> <input type="submit" class="btn btn-info" value = "Submit" >
         </form>
-        <a href="after_login.html">
-          <button class="Enter" type="button"> Enter </button>
-        </a>
-
 </body></html>
 
