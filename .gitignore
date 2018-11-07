@@ -6,3 +6,5 @@
 RemoteSystemsTempFiles/
 *.class
 mie350webapp/build/
+*.classpath
+Servers/
