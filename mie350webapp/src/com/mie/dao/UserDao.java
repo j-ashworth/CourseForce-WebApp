@@ -64,8 +64,8 @@ public class UserDao {
 			 * the Member object.
 			 */
 			else if (more) {
-				String firstName = rs.getString("FirstName");
-				String lastName = rs.getString("LastName");
+				String firstName = rs.getString("firstName");
+				String lastName = rs.getString("lastName");
 
 				user.setFirstName(firstName);
 				user.setLastName(lastName);
