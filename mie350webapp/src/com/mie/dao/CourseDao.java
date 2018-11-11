@@ -23,7 +23,7 @@ public class CourseDao {
 	
 	public List<Course> getCourseByKeyWord(String keyword) {
 		
-		List<Course> courses = new ArrayList<Courses>()
+		List<Course> courses = new ArrayList<Courses>();
 		try {
 			PreparedStatement preparedStatement = connection
 					.prepareStatement("select * from course where "
@@ -37,7 +37,7 @@ public class CourseDao {
 				Course course = new Course();
 				course.setCourseCode(rs.getString("courseCode"));
 				course.setCourseLevel(rs.getInt("courseLevel"));
-				course.setCs((rs.getInt("cs"));
+				course.setCs((rs.getInt("cs")));
 				course.setDept(rs.getString("dept"));
 				course.setDescription(rs.getString("description"));
 				course.setHss(rs.getInt("hss"));
