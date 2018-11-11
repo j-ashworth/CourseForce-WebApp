@@ -23,7 +23,7 @@ public class CourseDao {
 	
 	public List<Course> getCourseByKeyWord(String keyword) {
 		
-		List<Course> courses = new ArrayList<Courses>();
+		List<Course> courses = new ArrayList<Course>();
 		try {
 			PreparedStatement preparedStatement = connection
 					.prepareStatement("select * from course where "
