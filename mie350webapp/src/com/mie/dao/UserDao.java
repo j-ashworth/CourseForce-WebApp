@@ -1,5 +1,8 @@
 package com.mie.dao;
 
+import com.mie.util.HashText;
+
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,6 +10,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
 
 import com.mie.util.DbUtil;
 import com.mie.model.*;
@@ -33,20 +37,20 @@ public class UserDao {
 
 		String username = user.getUsername();
 		String password = user.getPassword();
-
-		/**
-		 * Prepare a query that searches the members table in the database
-		 * with the given username and password.
-		 */
+		String hashPassword = "";
+		
+		try {
+			hashPassword = HashText.sha256(password);
+		} catch (NoSuchAlgorithmException e) {
+			System.out.println("Error in password hashing!");
+		}
+		
 		String searchQuery = "select * from Users where username='"
-				+ username + "' AND pswd='" + password + "'";
-
+				+ username + "' AND pswd='" + hashPassword + "'";
+	
 		try {
 			// connect to DB
 			currentCon = DbUtil.getConnection();
-			if(currentCon == null)
-				System.out.println("fuck");
-			
 			stmt = currentCon.createStatement();
 			rs = stmt.executeQuery(searchQuery);
 			boolean more = rs.next();
@@ -84,6 +88,39 @@ public class UserDao {
 		 * Return the Member object.
 		 */
 		return user;
+
+	}
+	
+	public static boolean createUser(String un, String pw, String fn, String ln) {
+
+		Statement stmt = null;
+		String hashPassword  = "";
+		boolean query = false;
+
+		
+		try {
+			hashPassword = HashText.sha256(pw);
+		} catch (NoSuchAlgorithmException e) {
+			System.out.println("Error in password hashing!");
+		}
+		
+		String insertQuery = "insert into Users (username, pswd, firstName, lastName) values ("
+				+ un + ", " + hashPassword + ", " + fn + ", " + ln + ");" ;
+
+		try {
+			// connect to DB
+			currentCon = DbUtil.getConnection();
+			stmt = currentCon.createStatement();
+			query = stmt.execute(insertQuery);	
+		}
+
+		catch (Exception ex) {
+			ex.printStackTrace();
+			System.out.println("User creation failed: An Exception has occurred! "
+					+ ex);
+		}
+		
+		return query;
 
 	}
 }
