@@ -49,7 +49,7 @@ public class SearchController extends HttpServlet {
 		/**
 		 * Redirect to the search results page after the list of students
 		 * matching the keywords has been retrieved.
-		 */
+		 */ 
 
 		view.forward(request, response);
 	}
