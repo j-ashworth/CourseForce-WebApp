@@ -11,7 +11,7 @@
 <body>
         <h1> Create Account </h1>
         <p> Please enter your username and password</p>
-        <form method="POST" action="CreateAccountController">
+        <form method="GET" action="CreateAccountController">
           First Name:<br>
           <input type="text" name="fn"><br>
           Last Name:<br>
@@ -19,7 +19,7 @@
           Username:<br>
           <input type="text" name="un"><br>
           Password:<br>
-          <input type="password" name="password"/> <input type="submit" class="btn btn-info" value = "Create Account" >
+          <input type="password" name="pw"/> <input type="submit" class="btn btn-info" value = "Create Account" >
         </form>
 </body></html>
 
