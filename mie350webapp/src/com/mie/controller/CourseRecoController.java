@@ -24,9 +24,10 @@ public class CourseRecoController extends HttpServlet {
 		dao = new CourseDao();
 	}
 	
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, java.io.IOException {
 	
+		
 		HashMap<Course, Integer> reco = new HashMap<Course, Integer>();
 		
 		//retrieve responses to question 1
@@ -51,12 +52,17 @@ public class CourseRecoController extends HttpServlet {
 		}
 		
 		
+		
 		//send responses to recommendation file, return list of courses
 		RequestDispatcher view = request.getRequestDispatcher(RECOMMENDATIONS);
 		request.setAttribute("recommendations", reco);
 		view.forward(request, response);
 		//send list of courses to courseRecoOutput.jsp
-	
+
+		
+		
+		
+		
 	
 	}
 }

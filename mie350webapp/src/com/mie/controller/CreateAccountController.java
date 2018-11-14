@@ -28,31 +28,28 @@ public class CreateAccountController extends HttpServlet {
 		String username = request.getParameter("un");
 		String password = request.getParameter("pw");
 		String firstName = request.getParameter("fn");
-		String lastname = request.getParameter("ln");
+		String lastName = request.getParameter("ln");
 		
-		User user = new User();
+		boolean createdUser;
 
 		try {
 			/**
-			 * Try to see if the member can log in.
+			 * Try to see if the member can create an account.
 			 */
-			user = UserDao.login(user);
+			
+			createdUser = UserDao.createUser(username, password, firstName, lastName);
 
 			/**
 			 * If the isValid value is true, assign session attributes to the
 			 * current member.
 			 */
-			if (user.isValid()) {
+			if (createdUser) {
 
 				HttpSession session = request.getSession(true);
-				session.setAttribute("currentSessionmember", user);
-				session.setAttribute("username", user.getUsername());
-				session.setAttribute("firstname", user.getFirstName());
-				session.setAttribute("lastname", user.getLastName());
 				/**
-				 * Redirect to the members-only home page.
+				 * Redirect to the login page.
 				 */
-				response.sendRedirect("homepage.jsp");
+				response.sendRedirect("login.jsp");
 
 				/**
 				 * Set a timeout variable of 900 seconds (15 minutes) for this
