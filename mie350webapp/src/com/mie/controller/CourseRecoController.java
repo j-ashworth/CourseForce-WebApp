@@ -15,6 +15,7 @@ import com.mie.dao.*;
 
 public class CourseRecoController extends HttpServlet {
 
+	private static final long serialVersionUID = 1L;
 	private static String RECOMMENDATIONS = "/courseRecoOutput.jsp";
 	private CourseDao dao;
 	
@@ -23,7 +24,7 @@ public class CourseRecoController extends HttpServlet {
 		dao = new CourseDao();
 	}
 	
-	public void doPost(HttpServletRequest request, HttpServletResponse response)
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, java.io.IOException {
 	
 		HashMap<Course, Integer> reco = new HashMap<Course, Integer>();
@@ -48,7 +49,6 @@ public class CourseRecoController extends HttpServlet {
 				if(c.getDept().equals("APS") && c.getDept().equals("CIV") && c.getDept().equals("CHE"))
 					reco.remove(c.getCourseCode());
 		}
-		
 		
 		
 		//send responses to recommendation file, return list of courses
