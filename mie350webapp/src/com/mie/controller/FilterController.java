@@ -31,7 +31,7 @@ public class FilterController extends HttpServlet {
 		//get filter requests
 		//dep
 		String dep = request.getParameter("dep");
-		Integer ns = Integer.parseInt(request.getParameter("ns"));
+	/*	Integer ns = Integer.parseInt(request.getParameter("ns"));
 		Integer cs = Integer.parseInt(request.getParameter("cs"));
 		Integer level = Integer.parseInt(request.getParameter("level"));
 		Integer lecHours = Integer.parseInt(request.getParameter("lecHours"));
@@ -47,7 +47,8 @@ public class FilterController extends HttpServlet {
 					filteredList.add(c);
 		}
 		
-		
+		*/
+		for(Course C: dao.get)
 		//send responses to recommendation file, return list of courses
 		RequestDispatcher view = request.getRequestDispatcher(FILTERED);
 		request.setAttribute("filtered", filteredList);

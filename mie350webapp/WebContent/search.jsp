@@ -17,6 +17,7 @@
 							value="<c:out value="${course.searchword}"/>">
 							<input type="submit" value="Submit" />
 					</form>
+					
 				</center>
 </body>
 </html>
