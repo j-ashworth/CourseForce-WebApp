@@ -32,7 +32,7 @@ public class SearchController extends HttpServlet {
 	 */
 	public SearchController() {
 		super();
-		dao = new courseDao();
+		dao = new CourseDao();
 	}
 
 	protected void doPost(HttpServletRequest request,
