@@ -10,9 +10,9 @@
         <p> Please enter your username and password</p>
         <form action="LoginController">
           Username:<br>
-          <input type="text" name="username"><br>
+          <input type="text" name="un"><br>
           Password:<br>
-          <input type="password" name="password"/> <input type="submit" class="btn btn-info" value = "Submit" >
+          <input type="password" name="pw"/> <input type="submit" class="btn btn-info" value = "Submit" >
         </form>
 </body></html>
 
