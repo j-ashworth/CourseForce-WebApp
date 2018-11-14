@@ -13,7 +13,7 @@ public class Member {
 	private String username;
 	private String password;
 	private String email;
-	private boolean valid;
+	private boolean valid; //hello thank you next
 
 	public int getMemberid() {
 		return memberid;
