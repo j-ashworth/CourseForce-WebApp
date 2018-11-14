@@ -17,6 +17,7 @@
 							value="<c:out value="${keyword}" />"><input
 							type="submit" class="btn btn-info" value="Submit" />
 					</form>
+					
 				</center>
 </body>
 </html>

@@ -51,6 +51,39 @@
 							</c:forEach>
 						</tbody>
 					</table>
+					<form method="GET" action='FilterController' name="frmAddUser">
+						<select name="dep">
+  							<option value="ASP" name = "dep">ASP</option>
+  							<option value="MIE" name = "dep">MIE</option>
+  							<option value="AST" name = "dep">AST</option>
+ 							<option value="CSC" name = "dep">CSC</option>
+						</select>
+						<input type="submit" class="btn btn-info" value = "Submit" >
+					</form>
+					<table border=1 class="sortable">
+						<thead>
+							<tr>
+								<th>Course Code</th>
+								<th>Name</th>
+								<th>Department</th>
+								<th>Score</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${recommendations}" var="course">
+								<tr>
+									<td align="center"><c:out
+											value="${course.key.getCourseCode()}" /></td>
+									<td align="center"><c:out
+											value="${course.key.getName()}" /></td>
+									<td align="center"><c:out 
+											value="${course.key.getDept()}" /></td>
+									<td align="center"><c:out 
+											value="${course.value}" /></td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
 				</center>
 </body>
 </html>
