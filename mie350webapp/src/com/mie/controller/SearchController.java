@@ -45,7 +45,7 @@ public class SearchController extends HttpServlet {
 
 		RequestDispatcher view = request.getRequestDispatcher(SEARCH_USER);
 		request.setAttribute("keyword", keyword);
-		request.setAttribute("courses", dao.getCourseByKeyword(keyword));
+		request.setAttribute("courses", dao.getCourseByKeyWord(keyword));
 		/**
 		 * Redirect to the search results page after the list of courses
 		 * matching the keywords has been retrieved.
