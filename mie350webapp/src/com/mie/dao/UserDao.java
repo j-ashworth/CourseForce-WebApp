@@ -104,9 +104,6 @@ public class UserDao {
 			System.out.println("Error in password hashing!");
 		}
 		
-		String insertQuery = "insert into Users (username, pswd, firstName, lastName) values ("
-				+ un + ", " + hashPassword + ", " + fn + ", " + ln + ");" ;
-
 		try {
 			// connect to DB
 			currentCon = DbUtil.getConnection();

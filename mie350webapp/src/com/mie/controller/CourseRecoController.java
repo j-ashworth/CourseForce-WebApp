@@ -31,28 +31,34 @@ public class CourseRecoController extends HttpServlet {
 		
 		HashMap<Course, Integer> reco = new HashMap<Course, Integer>();
 		
+		/*
 		//retrieve responses to question 1
 		//add courses to reco matching each selected elective type
 		String [] courseType = request.getParameterValues("elective");
 		for(String s : courseType){
-			for(Course c : dao.getCourseByType(s))
+			for(Course c : dao.getCourseByType(s.toLowerCase()))
 				reco.put(c, 0);
 		}
-		
+		*/
 		//retrieve responses to question 2
 		String q2 = request.getParameter("classmate preference");
+		String [] courseType = request.getParameterValues("elective");
+		System.out.println(courseType);
+		System.out.println(q2);
+		
 		if(q2.equals("Engineering")){	
-			for(Course c : reco.keySet())
+			for(Course c : dao.getAllCourses())
 				if(!c.getDept().equals("APS") && !c.getDept().equals("CIV") && !c.getDept().equals("CHE"))
 					reco.remove(c.getCourseCode());
 		}
+		
 		else if(q2.equals("Non Engineering")){
 			for(Course c : reco.keySet())
 				if(c.getDept().equals("APS") && c.getDept().equals("CIV") && c.getDept().equals("CHE"))
 					reco.remove(c.getCourseCode());
 		}
 		
-		
+		//System.out.print(dao.getAllCourses());
 		
 		//send responses to recommendation file, return list of courses
 		RequestDispatcher view = request.getRequestDispatcher(RECOMMENDATIONS);
