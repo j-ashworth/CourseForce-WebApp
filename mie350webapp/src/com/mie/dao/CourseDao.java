@@ -1,6 +1,7 @@
 package com.mie.dao;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,7 +11,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.mie.model.Course;
-import com.mie.model.Student;
 import com.mie.util.DbUtil;
 
 

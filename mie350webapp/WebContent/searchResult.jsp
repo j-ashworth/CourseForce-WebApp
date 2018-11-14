@@ -4,6 +4,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="en">
+<h1>Search A Course - Results</h1>
+				The following course match your search keyword "<b><font
+					color=red><%=request.getAttribute("keyword")%></font></b>":<br> <br>
 				<center>
 					<table border=1 class="sortable">
 						<thead>

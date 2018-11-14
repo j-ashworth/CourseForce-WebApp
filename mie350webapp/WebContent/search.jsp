@@ -7,9 +7,14 @@
   <title>  CourseForce.ca   </title>
 </head>
 <body>
-<center>
+<h1>Search A Course</h1>
+
+				Type in any keyword to search for a course <Br />
+				<Br />
+				<center>
 					<form method="POST" action='SearchController' name="frmAddUser">
-						Keyword: <input type="text" name="keyword"><input
+						Keyword: <input type="text" name="keyword"
+							value="<c:out value="${keyword}" />"><input
 							type="submit" class="btn btn-info" value="Submit" />
 					</form>
 				</center>

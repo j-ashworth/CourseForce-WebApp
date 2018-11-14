@@ -24,7 +24,7 @@
 									<td align="center"><c:out 
 											value="${course.key.getDept()}" /></td>
 									<td align="center"><c:out 
-											value="${course.value()}" /></td>
+											value="${course.value}" /></td>
 								</tr>
 							</c:forEach>
 						</tbody>
