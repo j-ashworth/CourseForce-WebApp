@@ -1,9 +1,9 @@
 package com.mie.controller;
 
 import java.io.IOException;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -47,9 +47,9 @@ public class SearchController extends HttpServlet {
 		request.setAttribute("keyword", keyword);
 		request.setAttribute("courses", dao.getCourseByKeyword(keyword));
 		/**
-		 * Redirect to the search results page after the list of students
+		 * Redirect to the search results page after the list of courses
 		 * matching the keywords has been retrieved.
-		 */
+		 */ 
 
 		view.forward(request, response);
 	}

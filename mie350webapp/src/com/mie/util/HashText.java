@@ -12,11 +12,11 @@ public class HashText {
      * @throws NoSuchAlgorithmException 
      */
     public static void main(String[] args) throws NoSuchAlgorithmException {
-        System.out.println(sha256("test string to sha256"));
+        System.out.println(sha256("sample"));
     }
      
     public static String sha256(String input) throws NoSuchAlgorithmException {
-        MessageDigest mDigest = MessageDigest.getInstance("SHA-256");
+        MessageDigest mDigest = MessageDigest.getInstance("SHA-1");
         byte[] result = mDigest.digest(input.getBytes());
         StringBuffer sb = new StringBuffer();
         for (int i = 0; i < result.length; i++) {

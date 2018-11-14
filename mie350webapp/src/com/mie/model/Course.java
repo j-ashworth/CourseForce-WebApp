@@ -106,7 +106,7 @@ public class Course {
 		return "Course: [Course Code: " + courseCode + ",Name: " + name + ",Department: " + dept +
 				",Description: " + description + ",HSS: " + hss + ",CS: " + cs + ",NS: " + ns  +
 				",Course Level: " + courseLevel + ",Lecture Hours: " + lecHours + ",Practical Hours: " +
-				praHours + ",Tutorial Hours: " + tutHours "]";
+				praHours + ",Tutorial Hours: " + tutHours + "]";
 	}
 	
 }
