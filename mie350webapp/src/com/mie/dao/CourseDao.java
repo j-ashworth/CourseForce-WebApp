@@ -126,7 +126,7 @@ public class CourseDao {
 
 	}
 	
-	//returns a list of course by elective type
+	//returns a list of courses by elective type
 	
 	public List<Course> getCourseByType(String type) {
 		
