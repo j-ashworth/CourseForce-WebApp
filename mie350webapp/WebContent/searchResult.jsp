@@ -5,7 +5,7 @@
 
 <html lang="en">
 <h1>Search A Course - Results</h1>
-				"The following course match your search keyword"<b><font
+				"The following courses match your search keyword"<b><font
 					color=red><%=request.getAttribute("keyword")%></font></b>":<br> <br>
 				<center>
 					<table border=1 class="sortable">
@@ -28,63 +28,31 @@
 							<c:forEach items="${courses}" var="course">
 								<tr>
 									<td align="center"><c:out
-											value="${course.getCourseCode}" /></td>
+											value="${course.getCourseCode()}" /></td>
 									<td align="center"><c:out
-											value="${course.getName}" /></td>
+											value="${course.getName()}" /></td>
 									<td align="center"><c:out
-											value="${course.getDepartment}" /></td>
+											value="${course.getDept()}" /></td>
 									<td align="center"><c:out
-											value="${course.getHss}" /></td>
+											value="${course.getHss()}" /></td>
 									<td align="center"><c:out
-											value="${course.getCs}" /></td>	
+											value="${course.getCs()}" /></td>	
 									<td align="center"><c:out
-											value="${course.getNs}" /></td>	
+											value="${course.getNs()}" /></td>	
 									<td align="center"><c:out
-											value="${course.getCourseLevel}" /></td>
+											value="${course.getCourseLevel()}" /></td>
 									<td align="center"><c:out
-											value="${course.getLecHours}" /></td>
+											value="${course.getLecHours()}" /></td>
 									<td align="center"><c:out
-											value="${course.getPraHours}" /></td>
+											value="${course.getPraHours()}" /></td>
 									<td align="center"><c:out
-											value="${course.getTutHours}" /></td>
-								</tr>
-							</c:forEach>
-						</tbody>
-					</table>
-					<form method="GET" action='FilterController' name="frmAddUser">
-						<select name="dep">
-  							<option value="ASP" name = "dep">ASP</option>
-  							<option value="MIE" name = "dep">MIE</option>
-  							<option value="AST" name = "dep">AST</option>
- 							<option value="CSC" name = "dep">CSC</option>
-						</select>
-						<input type="submit" class="btn btn-info" value = "Submit" >
-					</form>
-					<table border=1 class="sortable">
-						<thead>
-							<tr>
-								<th>Course Code</th>
-								<th>Name</th>
-								<th>Department</th>
-								<th>Score</th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach items="${recommendations}" var="course">
-								<tr>
-									<td align="center"><c:out
-											value="${course.key.getCourseCode()}" /></td>
-									<td align="center"><c:out
-											value="${course.key.getName()}" /></td>
-									<td align="center"><c:out 
-											value="${course.key.getDept()}" /></td>
-									<td align="center"><c:out 
-											value="${course.value}" /></td>
+											value="${course.getTutHours()}" /></td>
 								</tr>
 							</c:forEach>
 						</tbody>
 					</table>
 				</center>
+
 </body>
 </html>
 
