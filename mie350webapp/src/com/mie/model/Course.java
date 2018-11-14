@@ -101,6 +101,22 @@ public class Course {
 		tutHours = th;
 	}
 	
+	public String getBreadthReq() {
+		String br = "";
+		if (hss == 1) {
+			br = br + "HSS ";
+		}
+		else if (cs == 1) {
+			br = br + "CS ";
+		}
+		else if (ns == 1) {
+			br = br + "NS ";
+		}
+		else {
+			br = "N/A";
+		}
+	}
+	
 	@Override
 	public String toString() {
 		return "Course: [Course Code: " + courseCode + ",Name: " + name + ",Department: " + dept +
