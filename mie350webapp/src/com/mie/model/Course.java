@@ -115,6 +115,7 @@ public class Course {
 		else {
 			br = "N/A";
 		}
+		return br;
 	}
 	
 	@Override
