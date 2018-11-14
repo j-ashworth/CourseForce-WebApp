@@ -110,8 +110,15 @@ public class UserDao {
 		try {
 			// connect to DB
 			currentCon = DbUtil.getConnection();
-			stmt = currentCon.createStatement();
-			query = stmt.execute(insertQuery);	
+			
+			PreparedStatement preparedStatement = currentCon
+					.prepareStatement("insert into Users (username, pswd, firstName, lastName) values (?, ?, ?, ? )");
+			// Parameters start with 1
+			preparedStatement.setString(1, un);
+			preparedStatement.setString(2, hashPassword);
+			preparedStatement.setString(3, fn);
+			preparedStatement.setString(4, ln);
+			preparedStatement.executeUpdate();
 		}
 
 		catch (Exception ex) {

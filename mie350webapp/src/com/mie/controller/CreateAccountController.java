@@ -1,12 +1,8 @@
 package com.mie.controller;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 import com.mie.model.*;
 import com.mie.dao.*;
 
@@ -16,6 +12,7 @@ import com.mie.dao.*;
  * This class handles the login servlet and assigns session attributes for users
  * who succesfully log into the system.
  */
+
 public class CreateAccountController extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -30,7 +27,7 @@ public class CreateAccountController extends HttpServlet {
 		String firstName = request.getParameter("fn");
 		String lastName = request.getParameter("ln");
 		
-		boolean createdUser;
+		boolean createdUser = false;
 
 		try {
 			/**

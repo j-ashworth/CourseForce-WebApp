@@ -48,13 +48,21 @@
     <session-timeout>15</session-timeout>
   </session-config>
   <servlet>
-    <description></description>
-    <display-name>RecoController</display-name>
+    <description></description><display-name>RecoController</display-name>
     <servlet-name>RecoController</servlet-name>
     <servlet-class>com.mie.controller.RecoController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>RecoController</servlet-name>
     <url-pattern>/RecoController</url-pattern>
+=======
+    <display-name>CreateAccountController</display-name>
+    <servlet-name>CreateAccountController</servlet-name>
+    <servlet-class>com.mie.controller.CreateAccountController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateAccountController</servlet-name>
+    <url-pattern>/CreateAccountController</url-pattern>
+>>>>>>> dcffcb0cf8d749efa7aebf9267edbda768cfc19d
   </servlet-mapping>
 </web-app>
