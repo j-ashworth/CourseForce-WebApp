@@ -32,6 +32,8 @@
 									<td align="center"><c:out
 											value="${course.getDept()}" /></td>
 									<td align="center"><c:out
+											value="${course.getDescription()}" /></td>
+									<td align="center"><c:out
 											value="${course.getBreadthReq()}" /></td>
 									<td align="center"><c:out
 											value="${course.getCourseLevel()}" /></td>

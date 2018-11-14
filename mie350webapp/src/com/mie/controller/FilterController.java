@@ -26,7 +26,7 @@ public class FilterController extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, java.io.IOException {
 	
-		ArrayList<Course> filteredList = new ArrayList<Course>();
+		ArrayList<Course> filtered = new ArrayList<Course>();
 		
 		//get filter requests
 		//dep
@@ -48,7 +48,9 @@ public class FilterController extends HttpServlet {
 		}
 		
 		*/
-		for(Course C: dao.get)
+		for(Course c: dao.getCourseByDept(dep))
+			filtered.add(c);
+			
 		//send responses to recommendation file, return list of courses
 		RequestDispatcher view = request.getRequestDispatcher(FILTERED);
 		request.setAttribute("filtered", filteredList);
