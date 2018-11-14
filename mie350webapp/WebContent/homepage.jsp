@@ -12,7 +12,7 @@
         <p> Get access to course descriptions, reviews, recommendations and MORE!</p>
 
 <button class="signup" type="button"> Create Account </button>
-<a href="Login.html">
+<a href="search.jsp">
   <button class="login" type="button"> Login </button>
 </a>
 <p> Learn about our team: </p>
