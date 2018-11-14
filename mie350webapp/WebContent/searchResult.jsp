@@ -15,9 +15,7 @@
 								<th>Name</th>
 								<th>Department</th>
 								<th>Description</th>
-								<th>HSS</th>
-								<th>CS</th>
-								<th>NS</th>
+								<th>Breadth Requirement</th>
 								<th>Course Level</th>
 								<th>Lecture Hours</th>
 								<th>Tutorial Hours</th>
@@ -34,11 +32,9 @@
 									<td align="center"><c:out
 											value="${course.getDept()}" /></td>
 									<td align="center"><c:out
-											value="${course.getHss()}" /></td>
+											value="${course.getDescription()}" /></td>
 									<td align="center"><c:out
-											value="${course.getCs()}" /></td>	
-									<td align="center"><c:out
-											value="${course.getNs()}" /></td>	
+											value="${course.getBreadthReq()}" /></td>
 									<td align="center"><c:out
 											value="${course.getCourseLevel()}" /></td>
 									<td align="center"><c:out

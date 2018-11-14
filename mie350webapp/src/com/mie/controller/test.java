@@ -14,13 +14,13 @@ import javax.servlet.http.HttpServletResponse;
 import com.mie.dao.CourseDao;
 import com.mie.model.Course;
 
-public class CourseRecoController extends HttpServlet {
+public class test extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static String RECOMMENDATIONS = "/courseRecoOutput.jsp";
 	private CourseDao dao;
 	
-	public CourseRecoController() {
+	public test() {
 		super();
 		dao = new CourseDao();
 	}
