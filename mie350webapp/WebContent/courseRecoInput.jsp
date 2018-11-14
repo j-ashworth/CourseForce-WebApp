@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1> Login </h1>
-<form method="POST" action='RecoController' name="frmAddUser">
+<form method="POST" action='CourseRecoController' name="frmAddUser">
 	Q1. What type of elective do you need?:<br>
 	<input type="checkbox" name="elective" value = "cs"> Complementary Studies (CS) <br>
 	<input type="checkbox" name="elective" value = "hss"> Humanities and Social Science (HSS) <br>
