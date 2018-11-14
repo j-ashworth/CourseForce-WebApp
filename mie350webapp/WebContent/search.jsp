@@ -14,8 +14,8 @@
 				<center>
 					<form method="POST" action='SearchController' name="frmAddUser">
 						Keyword: <input type="text" name="keyword"
-							value="<c:out value="${keyword}" />"><input
-							type="submit" class="btn btn-info" value="Submit" />
+							value="<c:out value="${course.searchword}"/>">
+							<input type="submit" value="Submit" />
 					</form>
 				</center>
 </body>
