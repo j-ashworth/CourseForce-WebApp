@@ -18,22 +18,13 @@ import com.mie.controller.*;
 
 import com.mie.util.*;
 
-public class UserDao {
+public class UserDao {	
+	
+	public static User login(User user){
 
-	/**
-	 * This class handles the Member objects and the login component of the web
-	 * app.
-	 */
-	static Connection currentCon = null;
-	static ResultSet rs = null;
-
-	public static User login(User user) {
-
-		/**
-		 * This method attempts to find the member that is trying to log in by
-		 * first retrieving the username and password entered by the user.
-		 */
+		Connection connection;
 		Statement stmt = null;
+		connection = DbUtil.getConnection();
 
 		String username = user.getUsername();
 		String password = user.getPassword();
@@ -49,27 +40,15 @@ public class UserDao {
 				+ username + "' AND pswd='" + hashPassword + "'";
 	
 		try {
-			// connect to DB
-			currentCon = DbUtil.getConnection();
-			stmt = currentCon.createStatement();
-			rs = stmt.executeQuery(searchQuery);
+			stmt = connection.createStatement();
+			ResultSet rs = stmt.executeQuery(searchQuery);
 			boolean more = rs.next();
 
-			/**
-			 * If there are no results from the query, set the member to false.
-			 * The person attempting to log in will be redirected to the home
-			 * page when isValid is false.
-			 */
 			
 			if (!more) {
 				user.setValid(false);
 			}
 
-			/**
-			 * If the query results in an database entry that matches the
-			 * username and password, assign the appropriate information to
-			 * the Member object.
-			 */
 			else if (more) {
 				String firstName = rs.getString("firstName");
 				String lastName = rs.getString("lastName");
@@ -83,19 +62,17 @@ public class UserDao {
 		catch (Exception ex) {
 			System.out.println("Log In failed: An Exception has occurred! "
 					+ ex);
-		}
-		/**
-		 * Return the Member object.
-		 */
+		} 
 		return user;
 
 	}
 	
 	public static boolean createUser(String un, String pw, String fn, String ln) {
 
-		Statement stmt = null;
+		Connection connection;
+		connection = DbUtil.getConnection();
 		String hashPassword  = "";
-		boolean query = false;
+		boolean result = false;
 
 		
 		try {
@@ -104,11 +81,8 @@ public class UserDao {
 			System.out.println("Error in password hashing!");
 		}
 		
-		try {
-			// connect to DB
-			currentCon = DbUtil.getConnection();
-			
-			PreparedStatement preparedStatement = currentCon
+		try {			
+			PreparedStatement preparedStatement = connection
 					.prepareStatement("insert into Users (username, pswd, firstName, lastName) values (?, ?, ?, ? )");
 			// Parameters start with 1
 			preparedStatement.setString(1, un);
@@ -116,15 +90,53 @@ public class UserDao {
 			preparedStatement.setString(3, fn);
 			preparedStatement.setString(4, ln);
 			preparedStatement.executeUpdate();
+			result = true;
 		}
 
 		catch (Exception ex) {
+			result = false;
 			ex.printStackTrace();
 			System.out.println("User creation failed: An Exception has occurred! "
 					+ ex);
 		}
 		
-		return query;
+		return result;
 
 	}
+	
+	public static List<User> getAllUsers(){		
+		
+		Connection connection;
+		connection = DbUtil.getConnection();
+		List<User> users = new ArrayList<User>();
+		try {
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery("SELECT * from Users");
+			while (rs.next()){
+				User user = new User();
+				user.setFirstName(rs.getString("firstName"));
+				user.setLastName(rs.getString("lastName"));
+				user.setUsername(rs.getString("username"));
+				user.setPassword(rs.getString("pswd"));
+				users.add(user);
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return users;
+	}
+	
+	public static void main(String[] args) {
+		User user = new User();
+		user.setFirstName("John");
+		user.setLastName("Doe");
+		user.setPassword("sample");
+		user.setUsername("sample");
+		System.out.println(user);
+		
+		User user1 = login(user);
+		
+	}
+	
 }

@@ -1,6 +1,9 @@
 package com.mie.controller;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import com.mie.model.*;
@@ -14,13 +17,11 @@ import com.mie.dao.*;
  */
 
 public class CreateAccountController extends HttpServlet {
-
+	
+	
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, java.io.IOException {
 
-		/**
-		 * Retrieve the entered username and password from the login.jsp form.
-		 */
 		
 		String username = request.getParameter("un");
 		String password = request.getParameter("pw");
@@ -28,46 +29,29 @@ public class CreateAccountController extends HttpServlet {
 		String lastName = request.getParameter("ln");
 		
 		boolean createdUser = false;
-
+		
 		try {
-			/**
-			 * Try to see if the member can create an account.
-			 */
+//			check to see if user is already created
+			List<User> users = new ArrayList<User>();
+			users = UserDao.getAllUsers();
+
+			
+			for(User u : users) {
+				if (u.getUsername().equals(username)){
+					throw new Exception("User has already been created. Please log in.");
+				}
+			}
 			
 			createdUser = UserDao.createUser(username, password, firstName, lastName);
-
-			/**
-			 * If the isValid value is true, assign session attributes to the
-			 * current member.
-			 */
+			
 			if (createdUser) {
-
 				HttpSession session = request.getSession(true);
-				/**
-				 * Redirect to the login page.
-				 */
 				response.sendRedirect("login.jsp");
-
-				/**
-				 * Set a timeout variable of 900 seconds (15 minutes) for this
-				 * member who has logged into the system.
-				 */
 				session.setMaxInactiveInterval(900);
-			}
-
-			else {
-				/**
-				 * Otherwise, redirect the user to the invalid login page and
-				 * ask them to log in again with the proper credentials.
-				 */
+			} else {
 				response.sendRedirect("invalid_login.jsp");
 			}
-		}
-
-		catch (Throwable theException) {
-			/**
-			 * Print out any errors.
-			 */
+		}catch (Throwable theException) {
 			System.out.println(theException);
 		}
 	}
