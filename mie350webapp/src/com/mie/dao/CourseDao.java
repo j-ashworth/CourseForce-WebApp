@@ -131,11 +131,21 @@ public class CourseDao {
 	public List<Course> getCourseByType(String type) {
 		
 		List<Course> courses = new ArrayList<Course>();
+		String qry = "";
+		
+		if(type.equals("hss")){
+			qry = "select * from Course where hss=-1";
+		}
+		else if(type.equals("cs")){
+			qry = "select * from Course where cs=-1";
+		}
+		else{
+			qry = "select * from Course where ns=-1";
+		}
+		
 		try{
-			PreparedStatement preparedStatement = connection
-					.prepareStatement("select * from Course where ?=1");
-			preparedStatement.setString(1, type);
-			ResultSet rs = preparedStatement.executeQuery();
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery(qry);
 
 			if (rs.next()) {
 				Course course = new Course();
