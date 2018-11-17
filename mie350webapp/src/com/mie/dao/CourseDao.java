@@ -102,7 +102,7 @@ public class CourseDao {
 			preparedStatement.setString(1, dept);
 			ResultSet rs = preparedStatement.executeQuery();
 
-			if (rs.next()) {
+			while (rs.next()) {
 				Course course = new Course();
 				course.setCourseCode(rs.getString("courseCode"));
 				course.setCourseLevel(rs.getInt("courseLevel"));
@@ -134,7 +134,7 @@ public class CourseDao {
 		String qry = "";
 		
 		if(type.equals("hss")){
-			qry = "select * from Course where hss=-1";
+			qry = "select * from Course where hss=-1"; //bit type column, true = -1 false = 0
 		}
 		else if(type.equals("cs")){
 			qry = "select * from Course where cs=-1";
@@ -147,7 +147,7 @@ public class CourseDao {
 			Statement statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery(qry);
 
-			if (rs.next()) {
+			while (rs.next()) {
 				Course course = new Course();
 				course.setCourseCode(rs.getString("courseCode"));
 				course.setCourseLevel(rs.getInt("courseLevel"));

@@ -21,6 +21,16 @@
 	<input type="radio" name="classmate preference" value = "Engineering"> Engineering<br>
 	<input type="radio" name="classmate preference" value = "Non Engineering"> Non Engineering<br>
 	<input type="radio" name="classmate preference" value = "No Preference"> No Preference<br>
+	Q3. How much written work would you like in your course?:<br>
+	<input type="radio" name="written preference" value = "none"> I want as little writing as possible<br>
+	<input type="radio" name="written preference" value = "some"> Neutral, don't want a ton but wouldn't mind if some was involved<br>
+	<input type="radio" name="written preference" value = "alot"> I want a course with writing<br>
+	Q4. How many hours/week are you willing to put into your course? (in class + out of class):<br>
+	<input type="radio" name="hours" value = "lowest"> 0-3<br>
+	<input type="radio" name="hours" value = "low"> 3-6<br>
+	<input type="radio" name="hours" value = "middle"> 6-9<br>
+	<input type="radio" name="hours" value = "high"> 9-12<br>
+	<input type="radio" name="hours" value = "highest"> 12-15<br>
 	<input type="submit" value = "Submit" >
 </form>
 </body></html>

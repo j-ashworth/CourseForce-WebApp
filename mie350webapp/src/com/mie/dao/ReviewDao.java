@@ -1,6 +1,7 @@
 package com.mie.dao;
 
 import com.mie.util.DbUtil;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,6 +13,8 @@ import java.util.List;
 
 import com.mie.model.Course;
 import com.mie.model.Review;
+import com.mie.model.Student;
+import com.mie.model.User;
 
 public class ReviewDao {
 
@@ -46,5 +49,113 @@ public class ReviewDao {
 		}
 		return reviews;
 	}
+	
+	public int getRid() {
+		int rid = 0;
+		try {
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery("select count(*) from Rating");
+			rid = rs.getInt("rid");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rid;
+	}
+	
+	/*
+	public void addReview(Course course, User user, int overallRating, int tbUsefullness, int difficulty, 
+			int writingWorkload, String academicSession, String review) {
+		try {
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("insert into Rating(rId, courseCode, username, overallRating, tbUsefullness,"
+							+ "difficulty, writingWorkload, academicSession, review) values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			
+			preparedStatement.setInt(1, );
+			preparedStatement.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	*/
+	 
+	//added by Julian
+	//get writing review average
+	public float getWrritenAvg(String courseCode) {
+		float avg = 0; 
+		
+		try {
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("select AVG(writingWorkload) as avg from Rating where courseCode=?");
+			preparedStatement.setString(1, courseCode);
+			ResultSet rs = preparedStatement.executeQuery();
+			if(rs.next()){
+				avg = rs.getFloat("avg");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+			
+		return avg;
+	}
+	
+	//get average difficulty rating
+	public Double getDifficultyAvg(String courseCode) {
+		Double avg = 0.0; 
+		
+		try {
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("select AVG(difficulty) as avg from Rating where courseCode=?");
+			preparedStatement.setString(1, courseCode);
+			ResultSet rs = preparedStatement.executeQuery();
+			if(rs.next()){
+				avg = rs.getDouble("avg");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+		System.out.print("Difficulty of " + courseCode + " " + avg);
+		return avg;
+	}
+	
+	
+	//by Julian, for course recommender
+	//returns that number of reviews for a course that said it was hard
+	public int getNumHardReviews(Course course){
+		/**
+		 * This method retrieves a list of students that matches the keyword
+		 * entered by the user.
+		 */
+		int count = 0;
+		try {
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("select * from Rating "
+							+ "where review LIKE ? OR review LIKE ? OR review LIKE ? OR review LIKE ?"
+							+ "AND courseCode = ?");
+
+			preparedStatement.setString(1, "%" + "hard" + "%");
+			preparedStatement.setString(2, "%" + "difficult" + "%");
+			preparedStatement.setString(3, "%" + "challenging" + "%");
+			preparedStatement.setString(4, "%" + "demanding" + "%");
+			preparedStatement.setString(5, course.getCourseCode());
+
+			ResultSet rs = preparedStatement.executeQuery();
+			while (rs.next()) {
+				count++;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.print("rDao count test: " + count);
+		return count;
+	}
+	
+	
+	
 	
 }
