@@ -5,6 +5,7 @@ public class User {
 	private String pswd;
 	private String firstName;
 	private String lastName;
+	private String email;
 	private boolean valid;
 	
 	public String getUsername() { return username; }
@@ -15,6 +16,8 @@ public class User {
 	
 	public String getLastName() { return firstName; }
 	
+	public String getEmail() { return email; }
+
 	public void setUsername(String newUsername) { this.username = newUsername; }
 
 	public void setPassword(String newPassword) { this.pswd = newPassword; }
@@ -22,6 +25,8 @@ public class User {
 	public void setFirstName(String newFirstName) { this.firstName = newFirstName; }
 
 	public void setLastName(String newLastName) { this.lastName = newLastName; }
+
+	public void setEmail(String newEmail) { this.email = newEmail; }
 	
 	public boolean isValid() { return valid; }
 	
@@ -29,6 +34,6 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return "User [Username: "+ username + ", First Name: " + firstName + ", Last Name: " + lastName +"]";
+		return "User [Username: "+ username + ", First Name: " + firstName + ", Last Name: " + lastName + ", Email: " + email +"]";
 	}
 }

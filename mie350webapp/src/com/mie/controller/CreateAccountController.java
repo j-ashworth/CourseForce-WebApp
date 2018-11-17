@@ -27,22 +27,34 @@ public class CreateAccountController extends HttpServlet {
 		String password = request.getParameter("pw");
 		String firstName = request.getParameter("fn");
 		String lastName = request.getParameter("ln");
+		String email = request.getParameter("e");
 		
 		boolean createdUser = false;
 		
 		try {
-//			check to see if user is already created
+			
+			//check to see if user's email has a mail.utoronto.ca domain
+			if(!email.contains("@")) {
+				throw new Exception("You must enter a valid email address.");
+			}
+			
+			String domain = email.split("@")[1];
+			
+			if (!domain.equals("mail.utoronto.ca")) {
+				throw new Exception("You must be registered as a University of Toronto student in order to user CourseForce.");
+			}
+			
+			//check to see if user is already created
 			List<User> users = new ArrayList<User>();
 			users = UserDao.getAllUsers();
 
-			
 			for(User u : users) {
 				if (u.getUsername().equals(username)){
 					throw new Exception("User has already been created. Please log in.");
 				}
 			}
 			
-			createdUser = UserDao.createUser(username, password, firstName, lastName);
+			createdUser = UserDao.createUser(username, password, firstName, lastName, email);
 			
 			if (createdUser) {
 				HttpSession session = request.getSession(true);

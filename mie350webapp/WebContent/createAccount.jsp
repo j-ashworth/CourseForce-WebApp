@@ -16,6 +16,8 @@
           <input type="text" name="fn"><br>
           Last Name:<br>
           <input type="text" name="ln"><br>
+          Email:<br>
+          <input type="text" name="e"><br>
           Username:<br>
           <input type="text" name="un"><br>
           Password:<br>
