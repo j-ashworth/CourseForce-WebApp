@@ -52,9 +52,11 @@ public class UserDao {
 			else if (more) {
 				String firstName = rs.getString("firstName");
 				String lastName = rs.getString("lastName");
+				String email = rs.getString("email");
 
 				user.setFirstName(firstName);
 				user.setLastName(lastName);
+				user.setEmail(email);
 				user.setValid(true);
 			}
 		}
@@ -67,7 +69,7 @@ public class UserDao {
 
 	}
 	
-	public static boolean createUser(String un, String pw, String fn, String ln) {
+	public static boolean createUser(String un, String pw, String fn, String ln, String email) {
 
 		Connection connection;
 		connection = DbUtil.getConnection();
@@ -83,12 +85,13 @@ public class UserDao {
 		
 		try {			
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("insert into Users (username, pswd, firstName, lastName) values (?, ?, ?, ? )");
+					.prepareStatement("insert into Users (username, pswd, firstName, lastName, email) values (?, ?, ?, ?, ?)");
 			// Parameters start with 1
 			preparedStatement.setString(1, un);
 			preparedStatement.setString(2, hashPassword);
 			preparedStatement.setString(3, fn);
 			preparedStatement.setString(4, ln);
+			preparedStatement.setString(5, email);
 			preparedStatement.executeUpdate();
 			result = true;
 		}
@@ -127,16 +130,15 @@ public class UserDao {
 		return users;
 	}
 	
-	public static void main(String[] args) {
-		User user = new User();
-		user.setFirstName("John");
-		user.setLastName("Doe");
-		user.setPassword("sample");
-		user.setUsername("sample");
-		System.out.println(user);
-		
-		User user1 = login(user);
-		
+	public static void main(String[] args) throws Exception{
+		String email = "daniel.bedrossian@mail.utoronto.ca";
+		String domain = email.split("@")[1];
+		if (!domain.equals("mail.utoronto.ca")) {
+			throw new Exception("You must be registered as a University of Toronto student in order to user CourseForce.");
+		}else {
+			System.out.println("Happy");
+		}
+		System.out.println(email.contains("@"));
 	}
 	
 }
