@@ -7,10 +7,13 @@
 
 <html lang="en">
 <head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>  Course Recommendation   </title>
 </head>
 <body>
+
+
 <h1> Login </h1>
 <form method="POST" action='CourseRecoController' name="frmAddUser">
 	Q1. What type of elective do you need?:<br>

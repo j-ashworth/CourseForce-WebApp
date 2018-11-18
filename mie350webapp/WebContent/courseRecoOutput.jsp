@@ -10,8 +10,6 @@
 						<thead>
 							<tr>
 								<th>Course Code</th>
-								<th>Name</th>
-								<th>Department</th>
 								<th>Score</th>
 							</tr>
 						</thead>
@@ -19,11 +17,7 @@
 							<c:forEach items="${recommendations}" var="course">
 								<tr>
 									<td align="center"><c:out
-											value="${course.key.getCourseCode()}" /></td>
-									<td align="center"><c:out
-											value="${course.key.getName()}" /></td>
-									<td align="center"><c:out 
-											value="${course.key.getDept()}" /></td>
+											value="${course.key}" /></td>
 									<td align="center"><c:out 
 											value="${course.value}" /></td>
 								</tr>

@@ -30,33 +30,14 @@ public class FilterController extends HttpServlet {
 		
 		//get filter requests
 		//dep
-		String dep = request.getParameter("dep");
-	/*	Integer ns = Integer.parseInt(request.getParameter("ns"));
-		Integer cs = Integer.parseInt(request.getParameter("cs"));
-		Integer level = Integer.parseInt(request.getParameter("level"));
-		Integer lecHours = Integer.parseInt(request.getParameter("lecHours"));
-		Integer praHours = Integer.parseInt(request.getParameter("praHours"));
-		Integer tutHours = Integer.parseInt(request.getParameter("tutHours"));
+		String[] breadthReq = request.getParameterValues("Breadth Requirement");
+		String[] faculty = request.getParameterValues("Breadth Requirement");
+		String[] department = request.getParameterValues("Department");
+		String[] courseLevel = request.getParameterValues("Rating");
+		String[] rating = request.getParameterValues("Rating");
+		String[] hours = request.getParameterValues("Cours Hours Per Week");
 		
-		//get list of courses from recommendations 
-		//TODO: how to get listfrom courseRecoController
 		
-		for(Course c : dao.getCourseByType(s))
-				if(c.getDept().equals(dep) && c.getNs().equals(ns) && c.getCS().equals(cs) && c.getCourseLevel().equals(level) )
-					&& c.getLecHours().equals(lecHours) && c.getTutHours.equals(tutHours) && c.praHours.equals(praHours))
-					filteredList.add(c);
-		}
 		
-		*/
-		for(Course c: dao.getCourseByDept(dep))
-			filtered.add(c);
-			
-		//send responses to recommendation file, return list of courses
-		RequestDispatcher view = request.getRequestDispatcher(FILTERED);
-		request.setAttribute("filtered", filteredList);
-		view.forward(request, response);
-		//send list of filtered courses to courseRecoOutput.jsp
-	
-	
 	}
 }

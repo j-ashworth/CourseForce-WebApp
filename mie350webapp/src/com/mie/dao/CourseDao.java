@@ -1,7 +1,6 @@
 package com.mie.dao;
 
 import java.sql.Connection;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,9 +26,9 @@ public class CourseDao {
 	 * This method returns the list of all course in the form of a List
 	 * object.
 	 */
-	public List<Course> getAllCourses() {
+	public ArrayList<Course> getAllCourses() {
 		
-		List<Course> courses = new ArrayList<Course>();
+		ArrayList<Course> courses = new ArrayList<Course>();
 		try {
 			Statement statement = connection.createStatement();
 			// System.out.println("getting students from table");
@@ -59,8 +58,8 @@ public class CourseDao {
 	
 	//this method returns a list of courses matching the user's search query
 	
-	public List<Course> getCourseByKeyWord(String keyword) {
-		List<Course> courses = new ArrayList<Course>();
+	public ArrayList<Course> getCourseByKeyWord(String keyword) {
+		ArrayList<Course> courses = new ArrayList<Course>();
 		try {
 			PreparedStatement preparedStatement = connection
 					.prepareStatement("select * from course where "
@@ -91,14 +90,84 @@ public class CourseDao {
 
 		return courses;
 	}
-	
-	//returns a list of courses in a given department
-	
-	public List<Course> getCourseByDept(String dept) {
-		List<Course> courses = new ArrayList<Course>();
+
+	public ArrayList<Course> getCourseByLevel(String level, ArrayList<Course> courses) {
+		
 		try{
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("select * from Course where dept=?");
+					.prepareStatement("select * from Course where courseLevel=?");  
+			preparedStatement.setString(1, level);
+			ResultSet rs = preparedStatement.executeQuery();
+
+			while (rs.next()) {
+				Course course = new Course();
+				course.setCourseCode(rs.getString("courseCode"));
+				course.setCourseLevel(rs.getInt("courseLevel"));
+				course.setCs((rs.getInt("cs")));
+				course.setDept(rs.getString("dept"));
+				course.setDescription(rs.getString("description"));
+				course.setHss(rs.getInt("hss"));
+				course.setLecHours(rs.getInt("lecHours"));
+				course.setName(rs.getString("name"));
+				course.setNs(rs.getInt("ns"));
+				course.setPraHours(rs.getInt("praHours"));
+				course.setTutHours(rs.getInt("tutHours"));
+				if(!courses.contains(course))
+					courses.remove(course);
+			}
+		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return courses;
+
+	}
+	
+	public ArrayList<Course> getCourseByDept(String faculty, ArrayList<Course> courses) {
+		
+		try{
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("select * from Course where dept=?");  
+			preparedStatement.setString(1, faculty);
+			ResultSet rs = preparedStatement.executeQuery();
+
+			while (rs.next()) {
+				Course course = new Course();
+				course.setCourseCode(rs.getString("courseCode"));
+				course.setCourseLevel(rs.getInt("courseLevel"));
+				course.setCs((rs.getInt("cs")));
+				course.setDept(rs.getString("dept"));
+				course.setDescription(rs.getString("description"));
+				course.setHss(rs.getInt("hss"));
+				course.setLecHours(rs.getInt("lecHours"));
+				course.setName(rs.getString("name"));
+				course.setNs(rs.getInt("ns"));
+				course.setPraHours(rs.getInt("praHours"));
+				course.setTutHours(rs.getInt("tutHours"));
+				if(!courses.contains(course))
+					courses.remove(course);
+			}
+		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return courses;
+
+	}
+	
+	//returns a list of courses in a given faculty
+	
+	//returns a list of courses in a given department
+	/*****************TODO*******************/
+	//fix sql to be an inner join between course and department
+	
+	public List<Course> getCourseByFaculty(String dept, ArrayList<Course> courses) {
+		
+		try{
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("select * from Course where faculty=?"); //fix
 			preparedStatement.setString(1, dept);
 			ResultSet rs = preparedStatement.executeQuery();
 
@@ -115,7 +184,8 @@ public class CourseDao {
 				course.setNs(rs.getInt("ns"));
 				course.setPraHours(rs.getInt("praHours"));
 				course.setTutHours(rs.getInt("tutHours"));
-				courses.add(course);
+				if(!courses.contains(course))
+					courses.remove(course);
 			}
 		
 		} catch (SQLException e) {
@@ -128,9 +198,9 @@ public class CourseDao {
 	
 	//returns a list of courses by elective type
 	
-	public List<Course> getCourseByType(String type) {
+	public List<Course> getCourseByType(String type, ArrayList<Course> courses) {
 		
-		List<Course> courses = new ArrayList<Course>();
+		
 		String qry = "";
 		
 		if(type.equals("hss")){
@@ -160,7 +230,8 @@ public class CourseDao {
 				course.setNs(rs.getInt("ns"));
 				course.setPraHours(rs.getInt("praHours"));
 				course.setTutHours(rs.getInt("tutHours"));
-				courses.add(course);
+				if(!courses.contains(course))
+					courses.remove(course);
 			}
 		
 		} catch (SQLException e) {
@@ -192,6 +263,12 @@ public class CourseDao {
 				ratings.put(c.getCourseCode(), null);
 		}
 		return ratings;
+	}
+	
+	//get class hours
+	public Double getClassHours(Course course){
+		Double totalHours = (double) (course.getLecHours() + course.getTutHours() + course.getPraHours());	
+		return totalHours;
 	}
 	
 	

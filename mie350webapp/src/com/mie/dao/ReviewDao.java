@@ -123,6 +123,28 @@ public class ReviewDao {
 		return avg;
 	}
 	
+	//get average course rating
+	public Double getOverallRatingAvg(String courseCode) {
+		Double avg = 0.0; 
+		
+		try {
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("select AVG(overallRating) as avg from Rating where courseCode=?");
+			preparedStatement.setString(1, courseCode);
+			ResultSet rs = preparedStatement.executeQuery();
+			if(rs.next()){
+				avg = rs.getDouble("avg");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+		System.out.print("Difficulty of " + courseCode + " " + avg);
+		return avg;
+	}
+	
 	
 	//by Julian, for course recommender
 	//returns that number of reviews for a course that said it was hard

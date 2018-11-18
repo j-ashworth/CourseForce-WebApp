@@ -11,16 +11,45 @@
 </head>
 <body>
 
-					<form method="GET" action='FilterController' name="frmAddUser">
-						<select name="dep">
-  							<option value="ASP" name = "dep">ASP</option>
-  							<option value="MIE" name = "dep">MIE</option>
-  							<option value="AST" name = "dep">AST</option>
- 							<option value="CSC" name = "dep">CSC</option>
-						</select>
-						<input type="submit" class="btn btn-info" value = "Submit" >
-					</form>
-									</center>
+<form method="GET" action='SearchController' name="frmAddUser">
+	Filter by: <br>
+	<br>
+	Breadth Requirement: <br>
+	<input type="checkbox" value="cs" name = "Breadth Requirement">Any<br>
+	<input type="checkbox" value="hss" name = "Breadth Requirement">ASP<br>
+	<input type="checkbox" value="ns" name = "Breadth Requirement">MIE<br>
+	 <br><br>
+	Faculty: <br>
+	<input type="checkbox" value="engineering" name = "Faculty">Engineering<br>
+	<input type="checkbox" value="AandS" name = "Faculty">Arts & Science<br>
+	 <br><br>
+	Department: <br>
+	<input type="checkbox" value="ASP" name = "Department">ASP<br>
+	<input type="checkbox" value="MIE" name = "Department">MIE<br>
+	<input type="checkbox" value="AST" name = "Department">AST<br>
+	<input type="checkbox" value="CSC" name = "Department">SOC<br>
+	 <br><br>
+	Course Level: <br>
+	<input type="checkbox" value="ASP" name = "Course Level">100<br>
+	<input type="checkbox" value="MIE" name = "Course Level">200<br>
+	<input type="checkbox" value="AST" name = "Course Level">300<br>
+	<input type="checkbox" value="CSC" name = "Course Level">400<br>
+	 <br><br>
+	Overall Rating: <br>
+	<input type="checkbox" value="1" name = "Rating">1<br>
+	<input type="checkbox" value="2" name = "Rating">2<br>
+	<input type="checkbox" value="3" name = "Rating">3<br>
+	<input type="checkbox" value="4" name = "Rating">4<br>
+	<input type="checkbox" value="5" name = "Rating">5<br>
+	 <br><br>
+	Course Hours per Week: <br>
+	<input type="checkbox" value="lowest" name = "Cours Hours Per Week">2<br>
+	<input type="checkbox" value="low" name = "Cours Hours Per Week">3<br>
+	<input type="checkbox" value="middle" name = "Cours Hours Per Week">4<br>
+	<input type="checkbox" value="high" name = "Cours Hours Per Week">5<br>
+	<input type="checkbox" value="highest" name = "Cours Hours Per Week">6<br>
+</form>
+								
 
 </body>
 </html>
