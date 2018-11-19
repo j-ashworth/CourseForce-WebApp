@@ -12,6 +12,7 @@ public class Course {
 	private int lecHours;
 	private int tutHours;
 	private int praHours;
+	private String faculty;
 	
 	public String getCourseCode() {
 		return courseCode;
@@ -116,6 +117,14 @@ public class Course {
 			br = "N/A";
 		}
 		return br;
+	}
+	
+	public String getFaculty() {
+		return faculty;
+	}
+	
+	public void setFaculty(String newFaculty) {
+		this.faculty = newFaculty;
 	}
 	
 	@Override

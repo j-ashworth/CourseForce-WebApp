@@ -271,5 +271,34 @@ public class CourseDao {
 		return totalHours;
 	}
 	
+	public Course getCoursebyCourseCode(String courseCode){
+		Course course = new Course();
+		course.setCourseCode(courseCode);
+		
+		String query = "select * from Course C, Department D where C.dept = D.dept AND courseCode = '" + courseCode + "'";
+		
+		try{
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery(query);
+			while(rs.next()) {
+				course.setCourseLevel(rs.getInt("C.courseLevel"));
+				course.setCs((rs.getInt("C.cs")));
+				course.setDept(rs.getString("D.fullName"));
+				course.setDescription(rs.getString("C.description"));
+				course.setHss(rs.getInt("C.hss"));
+				course.setLecHours(rs.getInt("C.lecHours"));
+				course.setName(rs.getString("C.name"));
+				course.setNs(rs.getInt("C.ns"));
+				course.setPraHours(rs.getInt("C.praHours"));
+				course.setTutHours(rs.getInt("C.tutHours"));
+				course.setFaculty(rs.getString("D.faculty"));
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return course;
+	}
+	
 	
 }

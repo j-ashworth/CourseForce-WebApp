@@ -67,4 +67,14 @@
     <servlet-name>CourseRecoController</servlet-name>
     <url-pattern>/CourseRecoController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CoursePageController</display-name>
+    <servlet-name>CoursePageController</servlet-name>
+    <servlet-class>com.mie.controller.CoursePageController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CoursePageController</servlet-name>
+    <url-pattern>/CoursePageController</url-pattern>
+  </servlet-mapping>
 </web-app>
