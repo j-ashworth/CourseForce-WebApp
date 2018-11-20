@@ -62,15 +62,23 @@ public class ReviewDao {
 		return rid;
 	}
 	
-	/*
-	public void addReview(Course course, User user, int overallRating, int tbUsefullness, int difficulty, 
+	
+	public void addReview(String courseCode, User user, int overallRating, int tbUsefullness, int difficulty, 
 			int writingWorkload, String academicSession, String review) {
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("insert into Rating(rId, courseCode, username, overallRating, tbUsefullness,"
+					.prepareStatement("insert into Rating (rId, courseCode, username, overallRating, tbUsefullness,"
 							+ "difficulty, writingWorkload, academicSession, review) values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			
-			preparedStatement.setInt(1, );
+			preparedStatement.setInt(1, getRid());
+			preparedStatement.setString(2, courseCode);
+			//preparedStatement.setInt(3, ); need to get the user session in the controller
+			preparedStatement.setInt(4, overallRating);
+			preparedStatement.setInt(5, tbUsefullness);
+			preparedStatement.setInt(6, difficulty);
+			preparedStatement.setInt(7, writingWorkload);
+			preparedStatement.setString(8, academicSession);
+			preparedStatement.setString(9, review);
 			preparedStatement.executeUpdate();
 
 		} catch (SQLException e) {
@@ -78,7 +86,6 @@ public class ReviewDao {
 		}
 		
 	}
-	*/
 	 
 	//added by Julian
 	//get writing review average
