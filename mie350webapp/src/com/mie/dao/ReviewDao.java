@@ -63,7 +63,7 @@ public class ReviewDao {
 	}
 	
 	
-	public void addReview(String courseCode, User user, int overallRating, int tbUsefullness, int difficulty, 
+	public void addReview(String courseCode, String user, int overallRating, int tbUsefullness, int difficulty, 
 			int writingWorkload, String academicSession, String review) {
 		try {
 			PreparedStatement preparedStatement = connection
@@ -72,7 +72,7 @@ public class ReviewDao {
 			
 			preparedStatement.setInt(1, getRid());
 			preparedStatement.setString(2, courseCode);
-			//preparedStatement.setInt(3, ); need to get the user session in the controller
+			preparedStatement.setString(3, user);
 			preparedStatement.setInt(4, overallRating);
 			preparedStatement.setInt(5, tbUsefullness);
 			preparedStatement.setInt(6, difficulty);

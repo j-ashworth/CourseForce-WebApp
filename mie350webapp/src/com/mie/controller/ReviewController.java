@@ -15,13 +15,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mie.dao.CourseDao;
 import com.mie.dao.ReviewDao;
+import com.mie.dao.UserDao;
 import com.mie.model.Course;
 import com.mie.model.Review;
 
 public class ReviewController extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
-	private static String COURSE_PAGE = "/coursePage.jsp";
+	private static String REVIEW_PAGE = "/reviewInput.jsp";
 	private CourseDao cDao;
 	private ReviewDao rDao;
 	
@@ -41,8 +42,8 @@ public class ReviewController extends HttpServlet{
 		String wr = request.getParameter("writtenReview");
 		String as = request.getParameter("academicSession");
 		String cc = request.getParameter("courseCode");
+		String username = request.getParameter("username");
 		
-		//need to somehow get the user
 		
 		boolean validReview = false;
 		
@@ -61,7 +62,7 @@ public class ReviewController extends HttpServlet{
 		}
 		//send back to make another review
 		else {
-		rDao.addReview(cc, user, ocr, tbu, cd, ww, as, wr);
+		rDao.addReview(cc, username, ocr, tbu, cd, ww, as, wr);
 		response.sendRedirect("reviewInput.jsp");
 		}
 		
