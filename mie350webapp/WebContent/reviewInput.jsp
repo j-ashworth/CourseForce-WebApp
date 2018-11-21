@@ -29,9 +29,9 @@
 
 
 <h1> Review </h1>
-<form method="POST" action=CourseReviewController name="review">
+<form method="POST" action=ReviewController name="review">
 	CourseCode <br>
-	<input type="text" name="courseCode"><Rebr>
+	<input type="text" name="courseCode"><br>
 	Overall Course Rating <br>
 	<input type="radio" name="overallCourseRating" value = "1"> 1 <br>
 	<input type="radio" name="overallCourseRating" value = "2"> 2 <br>
