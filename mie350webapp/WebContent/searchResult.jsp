@@ -6,7 +6,7 @@
 <html lang="en">
 <h1>Search A Course - Results</h1>
 				"The following courses match your search keyword"<b><font
-					color=red><%=request.getAttribute("keyword")%></font></b>":<br> <br>
+					color=blue><%=request.getAttribute("keyword")%></font></b>":<br> <br>
 				<center>
 					<table border=1 class="sortable">
 						<thead>
