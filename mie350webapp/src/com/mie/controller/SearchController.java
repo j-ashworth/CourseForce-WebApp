@@ -79,7 +79,6 @@ public class SearchController extends HttpServlet {
 		}
 		//user hasn't entered a search query
 		else{
-			System.out.println("TESTTTTTTTTTTTTTTTTTTTTT: ");
 			result.addAll(filter(dao.getAllCourses(), breadthReq, faculty, 
 					department, courseLevel, rating, hours));
 		}
@@ -98,76 +97,77 @@ public class SearchController extends HttpServlet {
 	public ArrayList<Course> filter(ArrayList<Course> result, ArrayList<String> breadthReq, ArrayList<String> faculty, ArrayList<String> department,
 			ArrayList<String> courseLevel, ArrayList<String> rating, ArrayList<String> hours){
 		
-		ListIterator<Course> iter = result.listIterator();
+		ListIterator<Course> iter1 = result.listIterator();
 		
 		if(!breadthReq.contains("any")){
 			for(String s : breadthReq){
 				List<Course> temp = dao.getCourseByType(s.toLowerCase(), result);
-				for(Course c : result){ 
-					if(!temp.contains(c)) 
-						result.remove(c);
+				while(iter1.hasNext()){ 
+					if(!temp.contains(iter1.next())) 
+						result.remove(iter1.next());
 				}
 			}
 		}
+		
+		ListIterator<Course> iter2 = result.listIterator();
 		
 		if(!faculty.contains("any")){
 			for(String s : faculty){
 				List<Course> temp = dao.getCourseByFaculty(s, result);
-				for(Course c : result){ 
-					if(!temp.contains(c)) 
-						result.remove(c);
+				while(iter2.hasNext()){ 
+					if(!temp.contains(iter2.next())) 
+						result.remove(iter2.next());
 				}
 			}
 		}
+		
+		ListIterator<Course> iter3 = result.listIterator();
+
 		
 		if(!department.contains("any")){
 			for(String s : faculty){
 				List<Course> temp = dao.getCourseByDept(s, result);
-				for(Course c : result){ 
-					if(!temp.contains(c)) 
-						result.remove(c);
+				while(iter3.hasNext()){ 
+					if(!temp.contains(iter3.next())) 
+						result.remove(iter3.next());
 				}
 			}
 		}
+		
+		ListIterator<Course> iter4 = result.listIterator();
+
 		
 		if(!courseLevel.contains("any")){
 			for(String s : courseLevel){
 				List<Course> temp = dao.getCourseByLevel(s.toLowerCase(), result);
-				for(Course c : result){ 
-					if(!temp.contains(c)) 
-						result.remove(c);
+				while(iter4.hasNext()){ 
+					if(!temp.contains(iter4.next())) 
+						result.remove(iter4.next());
 				}
 			}
 		}
+		
+		ListIterator<Course> iter5 = result.listIterator();
+
 		
 		if(!rating.contains("any")){
 			for(String s : rating){
-				while(iter.hasNext()){
-					Double temp = rDao.getOverallRatingAvg(iter.next().getCourseCode());
+				while(iter5.hasNext()){
+					Double temp = rDao.getOverallRatingAvg(iter5.next().getCourseCode());
 					if((int)Math.round(temp) != Integer.parseInt(s)) 
-						iter.remove();
+						iter5.remove();
 				}
 			}
 		}
-		
-		/*
-		if(!rating.contains("any")){
-			for(String s : rating){
-				for(Course c : result){ 
-					Double temp = rDao.getOverallRatingAvg(c.getCourseCode());
-					if((int)Math.round(temp) != Integer.parseInt(s)) 
-						result.remove(c);
-				}
-			}
-		}
-		*/
-		
+
+		ListIterator<Course> iter6 = result.listIterator();
+
 		if(!hours.contains("any")){
 			for(String s : hours){
-				for(Course c : result){ 
-					Double totalHours = dao.getClassHours(c);
+				while(iter6.hasNext()){ 
+					Double totalHours = dao.getClassHours(iter6.next());
 					if((int)Math.round(totalHours) != Integer.parseInt(s)) 
-						result.remove(c);
+						result.remove(iter6.next());
 				}
 			}
 		}
