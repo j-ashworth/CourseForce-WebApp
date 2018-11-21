@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ListIterator;
 import java.lang.Math;
 
 import javax.servlet.RequestDispatcher;
@@ -48,29 +49,44 @@ public class SearchController extends HttpServlet {
 		 * the user.
 		 */
 		String keyword = request.getParameter("keyword");
-		ArrayList<String> breadthReq = new ArrayList<String>(Arrays.asList(request.getParameterValues("Breadth Requirement")));
-		ArrayList<String> faculty = new ArrayList<String>(Arrays.asList(request.getParameterValues("Breadth Requirement")));
-		ArrayList<String> department = new ArrayList<String>(Arrays.asList(request.getParameterValues("Department")));
-		ArrayList<String> courseLevel = new ArrayList<String>(Arrays.asList(request.getParameterValues("Rating")));
-		ArrayList<String> rating = new ArrayList<String>(Arrays.asList(request.getParameterValues("Rating")));
-		ArrayList<String> hours = new ArrayList<String>(Arrays.asList(request.getParameterValues("Cours Hours Per Week")));
+		
+		String[] breadthReqTemp = request.getParameterValues("Breadth Requirement");
+		ArrayList<String> breadthReq = new ArrayList<String>(Arrays.asList(breadthReqTemp));
+		
+		String[] facultyTemp = request.getParameterValues("Breadth Requirement");
+		ArrayList<String> faculty = new ArrayList<String>(Arrays.asList(facultyTemp));
+
+		String[] departmentTemp = request.getParameterValues("Department");
+		ArrayList<String> department = new ArrayList<String>(Arrays.asList(departmentTemp));
+
+		String[] courseLevelTemp = request.getParameterValues("Rating");
+		ArrayList<String> courseLevel = new ArrayList<String>(Arrays.asList(courseLevelTemp));
+
+		String[] ratingTemp = request.getParameterValues("Rating");
+		ArrayList<String> rating = new ArrayList<String>(Arrays.asList(ratingTemp));
+
+		String[] hoursTemp = request.getParameterValues("Cours Hours Per Week");
+		ArrayList<String> hours = new ArrayList<String>(Arrays.asList(hoursTemp));
+
 		
 		ArrayList<Course> result = new ArrayList<Course>();
 		
+
 		//user has entered search query
-		if(keyword!=null && !keyword.isEmpty()){
+		if(keyword != ""){
 			result.addAll(filter(dao.getCourseByKeyWord(keyword), breadthReq, faculty, 
 					department, courseLevel, rating, hours));
 		}
 		//user hasn't entered a search query
 		else{
+			System.out.println("TESTTTTTTTTTTTTTTTTTTTTT: ");
 			result.addAll(filter(dao.getAllCourses(), breadthReq, faculty, 
 					department, courseLevel, rating, hours));
 		}
 
 		RequestDispatcher view = request.getRequestDispatcher(SEARCH_USER);
 		request.setAttribute("keyword", keyword);
-		request.setAttribute("courses", result);;
+		request.setAttribute("courses", result);
 		/**
 		 * Redirect to the search results page after the list of courses
 		 * matching the keywords has been retrieved.
@@ -82,7 +98,9 @@ public class SearchController extends HttpServlet {
 	public ArrayList<Course> filter(ArrayList<Course> result, ArrayList<String> breadthReq, ArrayList<String> faculty, ArrayList<String> department,
 			ArrayList<String> courseLevel, ArrayList<String> rating, ArrayList<String> hours){
 		
-		if(!breadthReq.contains("Any")){
+		ListIterator<Course> iter = result.listIterator();
+		
+		if(!breadthReq.contains("any")){
 			for(String s : breadthReq){
 				List<Course> temp = dao.getCourseByType(s.toLowerCase(), result);
 				for(Course c : result){ 
@@ -92,7 +110,7 @@ public class SearchController extends HttpServlet {
 			}
 		}
 		
-		if(!faculty.contains("Any")){
+		if(!faculty.contains("any")){
 			for(String s : faculty){
 				List<Course> temp = dao.getCourseByFaculty(s, result);
 				for(Course c : result){ 
@@ -102,9 +120,9 @@ public class SearchController extends HttpServlet {
 			}
 		}
 		
-		if(!department.contains("Any")){
+		if(!department.contains("any")){
 			for(String s : faculty){
-				List<Course> temp = dao.getCourseByDept(s.toLowerCase(), result);
+				List<Course> temp = dao.getCourseByDept(s, result);
 				for(Course c : result){ 
 					if(!temp.contains(c)) 
 						result.remove(c);
@@ -112,7 +130,7 @@ public class SearchController extends HttpServlet {
 			}
 		}
 		
-		if(!courseLevel.contains("Any")){
+		if(!courseLevel.contains("any")){
 			for(String s : courseLevel){
 				List<Course> temp = dao.getCourseByLevel(s.toLowerCase(), result);
 				for(Course c : result){ 
@@ -122,7 +140,18 @@ public class SearchController extends HttpServlet {
 			}
 		}
 		
-		if(!rating.contains("Any")){
+		if(!rating.contains("any")){
+			for(String s : rating){
+				while(iter.hasNext()){
+					Double temp = rDao.getOverallRatingAvg(iter.next().getCourseCode());
+					if((int)Math.round(temp) != Integer.parseInt(s)) 
+						iter.remove();
+				}
+			}
+		}
+		
+		/*
+		if(!rating.contains("any")){
 			for(String s : rating){
 				for(Course c : result){ 
 					Double temp = rDao.getOverallRatingAvg(c.getCourseCode());
@@ -131,8 +160,9 @@ public class SearchController extends HttpServlet {
 				}
 			}
 		}
+		*/
 		
-		if(!hours.contains("Any")){
+		if(!hours.contains("any")){
 			for(String s : hours){
 				for(Course c : result){ 
 					Double totalHours = dao.getClassHours(c);
