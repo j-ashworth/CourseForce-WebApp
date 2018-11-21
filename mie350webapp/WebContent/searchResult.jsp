@@ -26,7 +26,8 @@
 							<c:forEach items="${courses}" var="course">
 								<tr>
 									<td align="center"><c:out
-											value="${course.getCourseCode()}" /></td>
+											value="${course.getCourseCode()}"/></td> 
+											<a href="coursePage.jsp?value=courseCode"> CourseCode </a>
 									<td align="center"><c:out
 											value="${course.getName()}" /></td>
 									<td align="center"><c:out
