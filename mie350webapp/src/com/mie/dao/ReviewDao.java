@@ -53,9 +53,13 @@ public class ReviewDao {
 	public int getRid() {
 		int rid = 0;
 		try {
+			ArrayList<Integer> ratings = new ArrayList<Integer>();
 			Statement statement = connection.createStatement();
-			ResultSet rs = statement.executeQuery("select count(*) from Rating");
-			rid = rs.getInt("rid");
+			ResultSet rs = statement.executeQuery("select * from Rating");
+			while (rs.next()) {
+				ratings.add(rs.getInt("rid"));
+			}
+			rid = ratings.size();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -67,10 +71,10 @@ public class ReviewDao {
 			int writingWorkload, String academicSession, String review) {
 		try {
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("insert into Rating (rId, courseCode, username, overallRating, tbUsefullness,"
-							+ "difficulty, writingWorkload, academicSession, review) values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+					.prepareStatement("insert into Rating (rID, courseCode, username, overallRating, tbUsefulness,"
+							+ "difficulty, writingWorkload, ACADEMICSESSION, review) values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			
-			preparedStatement.setInt(1, getRid());
+			preparedStatement.setInt(1, getRid() + 1);
 			preparedStatement.setString(2, courseCode);
 			preparedStatement.setString(3, user);
 			preparedStatement.setInt(4, overallRating);

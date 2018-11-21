@@ -15,6 +15,9 @@
 <a href="search.jsp">
   <button class="login" type="button"> Login </button>
 </a>
+<a href="reviewInput.jsp"> 
+  <button class="review" type="button"> Review </button> 
+</a>
 <p> Learn about our team: </p>
 <table>
   <tbody><tr>
