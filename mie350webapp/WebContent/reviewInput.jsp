@@ -1,16 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR" import="com.mie.controller.*"%>
+	pageEncoding="EUC-KR" import="com.mie.controller.*" 
+	import="com.mie.model.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-<%
-	session = request.getSession();
-	System.out.println(session);
-	if (session.getAttribute("username") == null) {
-		response.sendRedirect("login.jsp");
-	}
-%>
 
 
 <html lang="en">
@@ -21,10 +14,18 @@
 </head>
 <body>
 
+<%@ include file="navbar_loggedin.jsp"%>
+
 <%
-		User user = (User) session.getAttribute("currentSessionUser");
-		String username = (String) session.getAttribute("username");
-	%>
+	session = request.getSession();
+	System.out.println(session);
+	if (session.getAttribute("username") == null) {
+		response.sendRedirect("login.jsp");
+	}
+	
+	User user = (User) session.getAttribute("currentSessionUser");
+	String username = (String) session.getAttribute("username");
+%>
 
 
 <h1> Review </h1>

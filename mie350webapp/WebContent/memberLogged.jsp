@@ -12,7 +12,6 @@
 		response.sendRedirect("login.jsp");
 	}
 %>
-
 <head>
 <title>MIE350 Sample Web App - Members-Only Home Page</title>
 <meta charset="utf-8">
