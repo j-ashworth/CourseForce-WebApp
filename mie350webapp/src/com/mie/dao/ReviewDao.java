@@ -43,6 +43,7 @@ public class ReviewDao {
 				review.setWritingWorklaod(rs.getInt("writingWorkload"));
 				review.setAcademicSession(rs.getString("academicSession"));
 				review.setWrittenReview(rs.getString("review"));
+				reviews.add(review);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

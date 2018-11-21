@@ -35,7 +35,7 @@
 							<c:forEach items="${reviews}" var="review">
 								<tr>
 									<td align="center"><c:out
-											value="${review.overallCourseRating()}" /></td>
+											value="${review.getOverallCourseRating()}" /></td>
 									<td align="center"><c:out
 											value="${review.getCourseDifficulty()}" /></td>
 									<td align="center"><c:out
@@ -45,7 +45,7 @@
 									<td align="center"><c:out
 											value="${review.getAcademicSession()}" /></td>
 									<td align="center"><c:out
-											value="${review.writtenReview()}" /></td>
+											value="${review.getWrittenReview()}" /></td>
 								</tr>
 							</c:forEach>
 						</tbody>

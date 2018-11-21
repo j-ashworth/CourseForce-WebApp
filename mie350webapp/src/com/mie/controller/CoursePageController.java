@@ -49,6 +49,7 @@ public class CoursePageController extends HttpServlet {
 		List<Review> reviews = rDao.getAllReviews(courseCode);
 		
 		System.out.println(course);
+		System.out.println(reviews.size());
 		for(Review r : reviews) {
 			System.out.println(r);
 		}
