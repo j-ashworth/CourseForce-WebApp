@@ -7,10 +7,10 @@
 <html lang="en">
 
 <head>
-<title>Search for Course Information and Reviews</title>
+<title>Course Information and Reviews</title>
 </head>
 <body>
-
+<h1> Course Information and Reviews </h1>
 	<div class="container-fluid text-center">
 		<div class="row content">
 			<div class="col-sm-2 sidenav">

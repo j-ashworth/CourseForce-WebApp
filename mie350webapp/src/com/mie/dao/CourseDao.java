@@ -301,5 +301,23 @@ public class CourseDao {
 		return course;
 	}
 	
+	public boolean isValidCourse(String courseCode) {
+		boolean valid = false;
+		
+		String query = "select * from Course where courseCode = '" + courseCode + "'";
+		
+		try{
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery(query);
+			if (rs.next()) {
+				valid = true;
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return valid;
+	}
+	
 	
 }
