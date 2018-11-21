@@ -44,7 +44,8 @@
 	<input type="radio" name="courseDifficulty" value = "3"> 3<br>
 	<input type="radio" name="courseDifficulty" value = "4"> 4<br>
 	<input type="radio" name="courseDifficulty" value = "5"> 5<br>
-	Textbook Usefulleness <br>
+	Textbook Usefuleness <br>
+	<input type="radio" name="tbUsefulness" value ="0"> No textbook for this course<br>
 	<input type="radio" name="tbUsefulness" value ="1"> 1<br>
 	<input type="radio" name="tbUsefulness" value ="2"> 2<br>
 	<input type="radio" name="tbUsefulness" value ="3"> 3<br>

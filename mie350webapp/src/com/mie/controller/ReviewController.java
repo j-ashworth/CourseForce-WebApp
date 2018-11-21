@@ -37,12 +37,33 @@ public class ReviewController extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, java.io.IOException {
 		
-		int ocr = Integer.parseInt(request.getParameter("overallCourseRating"));
-		int cd = Integer.parseInt(request.getParameter("courseDifficulty"));
-		int tbu = Integer.parseInt(request.getParameter("tbUsefulness"));
-		int ww = Integer.parseInt(request.getParameter("writingWorkload"));
+		Integer ocr = Integer.parseInt(request.getParameter("overallCourseRating"));
+		Integer cd = Integer.parseInt(request.getParameter("courseDifficulty"));
+		Integer tbu = Integer.parseInt(request.getParameter("tbUsefulness"));
+		Integer ww = Integer.parseInt(request.getParameter("writingWorkload"));
 		String wr = request.getParameter("writtenReview");
 		String as = request.getParameter("academicSesion");
+		
+		boolean validReview = false;
+		boolean validReviewLength = false;
+		boolean notNull = false;
+		
+		if (ocr == null || cd == null || tbu == null || ww == null || wr == null || as == null) {
+			notNull = false;
+		}
+		
+		else {
+			notNull = true;
+		}
+		
+		if (wr.length() > 255) {
+			validReviewLength = false;
+		}
+		
+		else {
+			validReviewLength = true;
+		}
+		
 		
 		if (as.equals("Fall")) {
 			as = "F";
@@ -61,9 +82,6 @@ public class ReviewController extends HttpServlet{
 		
 		String username = user.getUsername();
 		
-		
-		boolean validReview = false;
-		
 		ArrayList<Course> courses = new ArrayList<Course>();
 		courses = cDao.getAllCourses();
 		for (Course c : courses) {
@@ -74,7 +92,7 @@ public class ReviewController extends HttpServlet{
 		}
 		
 		//if they put a review for a course that doesn't exist let them try again
-		if (validReview) {
+		if (validReview && notNull && validReviewLength) {
 			rDao.addReview(cc, username, ocr, tbu, cd, ww, as, wr);
 			response.sendRedirect("reviewInput.jsp");
 		}
