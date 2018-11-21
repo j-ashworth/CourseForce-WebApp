@@ -163,7 +163,9 @@ public class CourseDao {
 	/*****************TODO*******************/
 	//fix sql to be an inner join between course and department
 	
-	public List<Course> getCourseByFaculty(String dept, ArrayList<Course> courses) {
+	public List<Course> getCourseByFaculty(String faculty, ArrayList<Course> courses) {
+		
+		String query = "select * from Course C, Department D where C.dept = D.dept AND faculty = '" + faculty + "'";
 		
 		try{
 			PreparedStatement preparedStatement = connection
