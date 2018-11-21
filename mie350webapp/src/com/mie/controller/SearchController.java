@@ -94,7 +94,7 @@ public class SearchController extends HttpServlet {
 		
 		if(!faculty.contains("Any")){
 			for(String s : faculty){
-				List<Course> temp = dao.getCourseByFaculty(s.toLowerCase(), result);
+				List<Course> temp = dao.getCourseByFaculty(s, result);
 				for(Course c : result){ 
 					if(!temp.contains(c)) 
 						result.remove(c);

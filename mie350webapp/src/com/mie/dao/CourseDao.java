@@ -167,7 +167,8 @@ public class CourseDao {
 		
 		try{
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("select * from Course where faculty=?"); //fix
+					.prepareStatement("SELECT * FROM Course JOIN Department ON "
+							+ "Course.dept = Department.dept WHERE dept = ?"); //fix
 			preparedStatement.setString(1, dept);
 			ResultSet rs = preparedStatement.executeQuery();
 
