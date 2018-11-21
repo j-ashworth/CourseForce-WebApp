@@ -25,7 +25,7 @@ import com.mie.model.Review;
 public class CoursePageController extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-	private static String COURSE_PAGE = "/coursePage.jsp";
+	private static String COURSE_PAGE = "/coursePageResult.jsp";
 	private CourseDao cDao;
 	private ReviewDao rDao;
     /**
@@ -42,15 +42,21 @@ public class CoursePageController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher view = request.getRequestDispatcher(COURSE_PAGE);
-		
-		String courseCode = "APS444";//request.getParameter("courseCode");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+				
+		String courseCode = request.getParameter("courseCode");
 		Course course = cDao.getCoursebyCourseCode(courseCode);
 		List<Review> reviews = rDao.getAllReviews(courseCode);
 		
+		System.out.println(course);
+		for(Review r : reviews) {
+			System.out.println(r);
+		}
+		
+		RequestDispatcher view = request.getRequestDispatcher(COURSE_PAGE);
 		request.setAttribute("course", course);
 		request.setAttribute("reviews", reviews);
+		view.forward(request, response);
 	}
 
 

@@ -129,10 +129,10 @@ public class Course {
 	
 	@Override
 	public String toString() {
-		return "Course: [Course Code: " + courseCode + ",Name: " + name + ",Department: " + dept +
-				",Description: " + description + ",HSS: " + hss + ",CS: " + cs + ",NS: " + ns  +
-				",Course Level: " + courseLevel + ",Lecture Hours: " + lecHours + ",Practical Hours: " +
-				praHours + ",Tutorial Hours: " + tutHours + "]";
+		return "Course: [Course Code: " + courseCode + ", Name: " + name + ", Department: " + dept +
+				", Faculty: " + faculty + ", Description: " + description + ", HSS: " + hss + ", CS: " + cs + ", NS: " + ns  +
+				", Course Level: " + courseLevel + ", Lecture Hours: " + lecHours + ", Practical Hours: " +
+				praHours + ", Tutorial Hours: " + tutHours + "]";
 	}
 	
 }

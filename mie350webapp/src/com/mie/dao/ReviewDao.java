@@ -38,7 +38,7 @@ public class ReviewDao {
 				review.setCourseCode(rs.getString("courseCode"));
 				review.setUsername(rs.getString("username"));
 				review.setOverallCourseRating(rs.getInt("overallRating"));
-				review.setTextbookUsefullness(rs.getInt("tbUsefullness"));
+				review.setTextbookUsefullness(rs.getInt("tbUsefulness"));
 				review.setCourseDifficulty(rs.getInt("difficulty"));
 				review.setWritingWorklaod(rs.getInt("writingWorkload"));
 				review.setAcademicSession(rs.getString("academicSession"));

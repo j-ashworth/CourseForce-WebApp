@@ -282,17 +282,17 @@ public class CourseDao {
 			Statement statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery(query);
 			while(rs.next()) {
-				course.setCourseLevel(rs.getInt("C.courseLevel"));
-				course.setCs((rs.getInt("C.cs")));
-				course.setDept(rs.getString("D.fullName"));
-				course.setDescription(rs.getString("C.description"));
-				course.setHss(rs.getInt("C.hss"));
-				course.setLecHours(rs.getInt("C.lecHours"));
-				course.setName(rs.getString("C.name"));
-				course.setNs(rs.getInt("C.ns"));
-				course.setPraHours(rs.getInt("C.praHours"));
-				course.setTutHours(rs.getInt("C.tutHours"));
-				course.setFaculty(rs.getString("D.faculty"));
+				course.setCourseLevel(rs.getInt("courseLevel"));
+				course.setCs((rs.getInt("cs")));
+				course.setDept(rs.getString("fullName"));
+				course.setDescription(rs.getString("description"));
+				course.setHss(rs.getInt("hss"));
+				course.setLecHours(rs.getInt("lecHours"));
+				course.setName(rs.getString("name"));
+				course.setNs(rs.getInt("ns"));
+				course.setPraHours(rs.getInt("praHours"));
+				course.setTutHours(rs.getInt("tutHours"));
+				course.setFaculty(rs.getString("faculty"));
 			}
 		}catch (SQLException e) {
 			e.printStackTrace();
