@@ -43,17 +43,14 @@ public class CoursePageController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String courseCode = request.getParameter("courseCode");
+		RequestDispatcher view = request.getRequestDispatcher(COURSE_PAGE);
+		
+		String courseCode = "APS444";//request.getParameter("courseCode");
 		Course course = cDao.getCoursebyCourseCode(courseCode);
 		List<Review> reviews = rDao.getAllReviews(courseCode);
 		
-		RequestDispatcher view = request.getRequestDispatcher(COURSE_PAGE);
-		request.setAttribute("courseCode", courseCode);
 		request.setAttribute("course", course);
 		request.setAttribute("reviews", reviews);
-		
-		
-		
 	}
 
 
