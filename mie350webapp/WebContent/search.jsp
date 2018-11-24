@@ -34,6 +34,15 @@
 	 <br><br>
 	Faculty: <br>
 	<input type="checkbox" value="any" name = "Faculty" checked>Any<br>
+	<input type="checkbox" value="engineering" name = "Faculty">Engineering<br>
+	<input type="checkbox" value="AandS" name = "Faculty">Arts & Science<br>
+	 <br><br>
+	Department: <br>
+	<input type="checkbox" value="any" name = "Department" checked>Any<br>
+	<input type="checkbox" value="APS" name = "Department">ASP<br>
+	<input type="checkbox" value="MIE" name = "Department">MIE<br>
+	<input type="checkbox" value="AST" name = "Department">AST<br>
+	<input type="checkbox" value="CSC" name = "Department">SOC<br>
 	<input type="checkbox" value="Applied Science and Engineering" name = "Faculty">Applied Science and Engineering<br>
 	<input type="checkbox" value="Arts and Science" name = "Faculty">Arts and Science<br>
 	 <br><br>
