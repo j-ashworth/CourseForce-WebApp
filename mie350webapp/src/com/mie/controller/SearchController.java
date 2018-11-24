@@ -53,10 +53,10 @@ public class SearchController extends HttpServlet {
 		String[] breadthReqTemp = request.getParameterValues("Breadth Requirement");
 		ArrayList<String> breadthReq = new ArrayList<String>(Arrays.asList(breadthReqTemp));
 		
-		String[] facultyTemp = request.getParameterValues("Breadth Requirement");
+		String[] facultyTemp = request.getParameterValues("Faculty");
 		ArrayList<String> faculty = new ArrayList<String>(Arrays.asList(facultyTemp));
 
-		String[] courseLevelTemp = request.getParameterValues("Rating");
+		String[] courseLevelTemp = request.getParameterValues("Course Level");
 		ArrayList<String> courseLevel = new ArrayList<String>(Arrays.asList(courseLevelTemp));
 
 		String[] ratingTemp = request.getParameterValues("Rating");
@@ -68,6 +68,7 @@ public class SearchController extends HttpServlet {
 		
 		ArrayList<Course> result = new ArrayList<Course>();
 		
+		System.out.println("TTTTTTTEEEEEEEESSSSSSSTTTTTTTT: " + faculty);
 
 		//user has entered search query
 		if(keyword != ""){

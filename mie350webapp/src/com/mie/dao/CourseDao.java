@@ -165,14 +165,11 @@ public class CourseDao {
 	
 	public List<Course> getCourseByFaculty(String faculty, ArrayList<Course> courses) {
 		
-		String query = "select * from Course C, Department D where C.dept = D.dept AND faculty = '" + faculty + "'";
+		String query = "select * from Course C, Department D where C.dept = D.dept AND D.faculty = '" + faculty + "'";
 		
 		try{
-			PreparedStatement preparedStatement = connection
-					.prepareStatement("SELECT * FROM Course JOIN Department ON "
-							+ "Course.dept = Department.dept WHERE dept = ?"); //fix
-			preparedStatement.setString(1, dept);
-			ResultSet rs = preparedStatement.executeQuery();
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery(query);
 
 			while (rs.next()) {
 				Course course = new Course();
@@ -187,6 +184,7 @@ public class CourseDao {
 				course.setNs(rs.getInt("ns"));
 				course.setPraHours(rs.getInt("praHours"));
 				course.setTutHours(rs.getInt("tutHours"));
+				course.setFaculty(rs.getString("faculty"));
 				if(!courses.contains(course))
 					courses.remove(course);
 			}
