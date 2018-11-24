@@ -23,10 +23,15 @@
         <h1> Login </h1>
         <p> Please enter your username and password</p>
         <form action="LoginController">
-          Username:<br>
-          <input type="text" name="un"><br>
-          Password:<br>
-          <input type="password" name="pw"/> <input type="submit" class="btn btn-info" value = "Submit" >
+            <div class="form-group">
+      <label for="exampleInputPassword1">Username: </label>
+      <input type="username" class="form-control" id="exampleInputPassword1" name="un" placeholder="user12345">
+    </div>
+        <div class="form-group">
+      <label for="exampleInputPassword1">Password: </label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="pw" placeholder="use safe passwords!">
+    </div>
+    <input type="submit" value="Login" class="btn btn-primary"></input>
         </form>
 </body></html>
 

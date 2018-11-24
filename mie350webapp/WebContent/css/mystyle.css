@@ -21,7 +21,6 @@ footer {
 	background-color: #555;
 	color: white;
 	padding: 15px;
-	position: relative;
 }
 
 /* On small screens, set height to 'auto' for sidenav and grid */
@@ -39,3 +38,4 @@ footer {
    margin:0 auto; /* this will center the page */
    width:960px; /*  use your width here */
 }
+

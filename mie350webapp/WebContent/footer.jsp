@@ -1,51 +1,61 @@
-<!-- Footer -->
-<footer class="page-footer font-small teal pt-4">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-    <!-- Footer Text -->
-    <div class="container-fluid text-center text-md-left">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  
+<!--
+    instagram: www.instagram.com/programmingtutorial
+    site: programlamadersleri.net
+-->
 
-      <!-- Grid row -->
-      <div class="row">
 
-        <!-- Grid column -->
-        <div class="col-md-6 mt-md-0 mt-3">
-
-          <!-- Content -->
-          <h5 class="text-uppercase font-weight-bold">CourseForce</h5>
-          <p>
-          This sample web app is for demonstration purposes only. <br>
-		MIE350 Sample Web Application &#169;
-		<%=new java.text.SimpleDateFormat("yyyy")
-					.format(new java.util.Date())%>
-		University of Toronto <br /> Bootstrap Theme &#169; <a
-			href="http://getbootstrap.com/">Bootstrap</a><br /> JavaScript for
-		Table Sorting &#169; <a
-			href="https://kryogenix.org/code/browser/sorttable/">Stuart
-			Langridge</a><br />
-			JavaScript for Date Picker &#169; <a href="https://jqueryui.com/datepicker/">https://jqueryui.com/datepicker/</a>
-          </p>
-
-        </div>
-
-        <div class="col-md-6 mb-md-0 mb-3">
-
-          <!-- Content -->
-          <h5 class="text-uppercase font-weight-bold">Footer text 2</h5>
-          
-        </div>
-        <!-- Grid column -->
-
-      </div>
-      <!-- Grid row -->
-
+<footer>
+ <div class="container">
+   <div class="row">
+   
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <span class="logo">LOGO</span>
+            </div>
+            
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <ul class="menu">
+                     <span>Menu</span>    
+                     <li>
+                        <a href="#">Home</a>
+                      </li>
+                           
+                      <li>
+                         <a href="#">About</a>
+                      </li>
+                           
+                      <li>
+                        <a href="#">Blog</a>
+                      </li>
+                           
+                      <li>
+                         <a href="#">Gallery </a>
+                      </li>
+                 </ul>
+            </div>
+       
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <ul class="address">
+                    <span>Contact</span>       
+                    <li>
+                       <i class="fa fa-phone" aria-hidden="true"></i> <a href="#">Phone</a>
+                    </li>
+                    <li>
+                       <i class="fa fa-map-marker" aria-hidden="true"></i> <a href="#">Adress</a>
+                    </li> 
+                    <li>
+                       <i class="fa fa-envelope" aria-hidden="true"></i> <a href="#">Email</a>
+                    </li> 
+               </ul>
+           </div>
+       
+       
+       </div> 
     </div>
-    <!-- Footer Text -->
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2018 Copyright:
-      <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-    </div>
-    <!-- Copyright -->
-
-  </footer>
-  <!-- Footer -->
+</footer>
