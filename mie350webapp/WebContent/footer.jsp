@@ -1,4 +1,4 @@
-<footer class="container-fluid text-center">
+<footer class="container-fluid text-left">
 	<p>
 		This sample web app is for demonstration purposes only. <br>
 		MIE350 Sample Web Application &#169;
