@@ -39,8 +39,8 @@
     </div>
           
 <div class="form-group has-danger">
-  <label class="form-control-label" for="inputDanger1">Invalid username</label>
-  <input type="text" value="Invalid username" name="un" class="form-control is-invalid" id="inputInvalid">
+  <label class="form-control-label" for="inputDanger1">Username</label>
+  <input type="text" placeholder="UofTEngGod" name="un" class="form-control is-invalid" id="inputInvalid">
   <div class="invalid-feedback">Sorry, that username's taken. Try another?</div>
 </div>
           <div class="form-group">
