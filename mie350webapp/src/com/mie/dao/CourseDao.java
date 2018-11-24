@@ -163,7 +163,9 @@ public class CourseDao {
 	/*****************TODO*******************/
 	//fix sql to be an inner join between course and department
 	
-	public List<Course> getCourseByFaculty(String dept, ArrayList<Course> courses) {
+	public List<Course> getCourseByFaculty(String faculty, ArrayList<Course> courses) {
+		
+		String query = "select * from Course C, Department D where C.dept = D.dept AND faculty = '" + faculty + "'";
 		
 		try{
 			PreparedStatement preparedStatement = connection
@@ -299,6 +301,24 @@ public class CourseDao {
 		}
 		
 		return course;
+	}
+	
+	public boolean isValidCourse(String courseCode) {
+		boolean valid = false;
+		
+		String query = "select * from Course where courseCode = '" + courseCode + "'";
+		
+		try{
+			Statement statement = connection.createStatement();
+			ResultSet rs = statement.executeQuery(query);
+			if (rs.next()) {
+				valid = true;
+			}
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return valid;
 	}
 	
 	

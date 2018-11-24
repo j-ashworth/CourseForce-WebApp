@@ -48,16 +48,22 @@ public class CoursePageController extends HttpServlet {
 		Course course = cDao.getCoursebyCourseCode(courseCode);
 		List<Review> reviews = rDao.getAllReviews(courseCode);
 		
-		System.out.println(course);
-		System.out.println(reviews.size());
-		for(Review r : reviews) {
-			System.out.println(r);
+		
+		
+//		System.out.println(course);
+//		System.out.println(reviews.size());
+//		for(Review r : reviews) {
+//			System.out.println(r);
+//		}
+		if (cDao.isValidCourse(courseCode)) {
+			RequestDispatcher view = request.getRequestDispatcher(COURSE_PAGE);
+			request.setAttribute("course", course);
+			request.setAttribute("reviews", reviews);
+			view.forward(request, response);
+		}else {
+			response.sendRedirect("invalid_course_code.jsp");
 		}
 		
-		RequestDispatcher view = request.getRequestDispatcher(COURSE_PAGE);
-		request.setAttribute("course", course);
-		request.setAttribute("reviews", reviews);
-		view.forward(request, response);
 	}
 
 

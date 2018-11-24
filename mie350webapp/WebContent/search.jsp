@@ -43,13 +43,15 @@
 	<input type="checkbox" value="MIE" name = "Department">MIE<br>
 	<input type="checkbox" value="AST" name = "Department">AST<br>
 	<input type="checkbox" value="CSC" name = "Department">SOC<br>
+	<input type="checkbox" value="Applied Science and Engineering" name = "Faculty">Applied Science and Engineering<br>
+	<input type="checkbox" value="Arts and Science" name = "Faculty">Arts and Science<br>
 	 <br><br>
 	Course Level: <br>
 	<input type="checkbox" value="any" name = "Course Level" checked>Any<br>
-	<input type="checkbox" value="ASP" name = "Course Level">100<br>
-	<input type="checkbox" value="MIE" name = "Course Level">200<br>
-	<input type="checkbox" value="AST" name = "Course Level">300<br>
-	<input type="checkbox" value="CSC" name = "Course Level">400<br>
+	<input type="checkbox" value="100" name = "Course Level">100<br>
+	<input type="checkbox" value="200" name = "Course Level">200<br>
+	<input type="checkbox" value="300" name = "Course Level">300<br>
+	<input type="checkbox" value="400" name = "Course Level">400<br>
 	 <br><br>
 	Overall Rating: <br>
 	<input type="checkbox" value="any" name = "Rating" checked>Any<br>

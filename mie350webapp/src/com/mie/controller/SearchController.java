@@ -56,9 +56,6 @@ public class SearchController extends HttpServlet {
 		String[] facultyTemp = request.getParameterValues("Breadth Requirement");
 		ArrayList<String> faculty = new ArrayList<String>(Arrays.asList(facultyTemp));
 
-		String[] departmentTemp = request.getParameterValues("Department");
-		ArrayList<String> department = new ArrayList<String>(Arrays.asList(departmentTemp));
-
 		String[] courseLevelTemp = request.getParameterValues("Rating");
 		ArrayList<String> courseLevel = new ArrayList<String>(Arrays.asList(courseLevelTemp));
 
@@ -75,12 +72,12 @@ public class SearchController extends HttpServlet {
 		//user has entered search query
 		if(keyword != ""){
 			result.addAll(filter(dao.getCourseByKeyWord(keyword), breadthReq, faculty, 
-					department, courseLevel, rating, hours));
+					courseLevel, rating, hours));
 		}
 		//user hasn't entered a search query
 		else{
 			result.addAll(filter(dao.getAllCourses(), breadthReq, faculty, 
-					department, courseLevel, rating, hours));
+					courseLevel, rating, hours));
 		}
 
 		RequestDispatcher view = request.getRequestDispatcher(SEARCH_USER);
@@ -94,7 +91,7 @@ public class SearchController extends HttpServlet {
 		view.forward(request, response);
 	}
 	
-	public ArrayList<Course> filter(ArrayList<Course> result, ArrayList<String> breadthReq, ArrayList<String> faculty, ArrayList<String> department,
+	public ArrayList<Course> filter(ArrayList<Course> result, ArrayList<String> breadthReq, ArrayList<String> faculty,
 			ArrayList<String> courseLevel, ArrayList<String> rating, ArrayList<String> hours){
 		
 		ListIterator<Course> iter1 = result.listIterator();
@@ -121,21 +118,7 @@ public class SearchController extends HttpServlet {
 			}
 		}
 		
-		ListIterator<Course> iter3 = result.listIterator();
-
-		
-		if(!department.contains("any")){
-			for(String s : faculty){
-				List<Course> temp = dao.getCourseByDept(s, result);
-				while(iter3.hasNext()){ 
-					if(!temp.contains(iter3.next())) 
-						result.remove(iter3.next());
-				}
-			}
-		}
-		
-		ListIterator<Course> iter4 = result.listIterator();
-
+		ListIterator<Course> iter4 = result.listIterator();		
 		
 		if(!courseLevel.contains("any")){
 			for(String s : courseLevel){
