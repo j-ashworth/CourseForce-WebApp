@@ -39,7 +39,7 @@
 	 <br><br>
 	Department: <br>
 	<input type="checkbox" value="any" name = "Department" checked>Any<br>
-	<input type="checkbox" value="ASP" name = "Department">ASP<br>
+	<input type="checkbox" value="APS" name = "Department">ASP<br>
 	<input type="checkbox" value="MIE" name = "Department">MIE<br>
 	<input type="checkbox" value="AST" name = "Department">AST<br>
 	<input type="checkbox" value="CSC" name = "Department">SOC<br>
