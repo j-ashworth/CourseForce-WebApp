@@ -35,8 +35,8 @@
     </div>
               
 <div class="form-group has-danger">
-  <label class="form-control-label" for="inputDanger1">Invalid Email</label>
-  <input type="text" value="Invalid email" name="e" class="form-control is-invalid" id="inputInvalid">
+  <label class="form-control-label" for="inputDanger1">Email</label>
+  <input type="text" placeholder="example@mail.utoronto.ca" name="e" class="form-control is-invalid" id="inputInvalid">
   <div class="invalid-feedback">Sorry, that email doesn't meet our credentials. Make sure to use your @mail.utoronto.ca email</div>
 </div>
           <div class="form-group">
