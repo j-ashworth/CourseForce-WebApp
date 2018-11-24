@@ -19,6 +19,7 @@
 
 </head>
 <body>
+<%@ include file="navbar_new.jsp"%>
         <h1> Login </h1>
         <p> Please enter your username and password</p>
         <form action="LoginController">

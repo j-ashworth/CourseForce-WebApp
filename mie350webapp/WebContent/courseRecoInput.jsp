@@ -13,6 +13,7 @@
 </head>
 <body>
 
+<%@ include file="navbar_new.jsp"%>
 
 <h1> Login </h1>
 <form method="POST" action='CourseRecoController' name="frmAddUser">

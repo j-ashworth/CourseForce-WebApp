@@ -36,7 +36,7 @@
 
 				Enter a course code, course name or keyword <Br />
 				<Br />
-				<center>
+				
 					<form method="POST" action='SearchController' name="frmAddUser">
 						Keyword: <input type="text" name="keyword"
 							value="<c:out value="${course.searchword}" />">
@@ -86,11 +86,12 @@
 	<input type="checkbox" value="highest" name = "Cours Hours Per Week">6<br>
 							<input type="submit" class="btn btn-info" value="Submit" /> <br>
 					</form>
-				</center>
+			
 
 			</div>
 		</div>
 	</div>
+	<%@ include file="footer.jsp"%>
 </body>
 </html>
 

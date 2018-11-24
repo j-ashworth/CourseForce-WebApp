@@ -5,6 +5,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="en">
+<body>
+<%@ include file="navbar_new.jsp"%>
+
 				<center>
 					<table border=1 class="sortable">
 						<thead>

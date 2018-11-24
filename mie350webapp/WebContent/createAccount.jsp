@@ -6,6 +6,7 @@
 
 <html lang="en">
 <head>
+<%@ include file="navbar_new.jsp"%>
 <title>  Create Account   </title>
 </head>
 <body>
