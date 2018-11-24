@@ -63,7 +63,7 @@ public class LoginController extends HttpServlet {
 				 * Otherwise, redirect the user to the invalid login page and
 				 * ask them to log in again with the proper credentials.
 				 */
-				response.sendRedirect("invalid_login.jsp");
+				response.sendRedirect("invalidLogin.jsp");
 			}
 		}
 

@@ -38,7 +38,7 @@
 <div class="form-group has-danger">
   <label class="form-control-label" for="inputDanger1">Email</label>
   <input type="text" placeholder="example@mail.utoronto.ca" name="e" class="form-control is-invalid" id="inputInvalid" required>
-  <div class="invalid-feedback">Sorry, that email is not a registered University of Toronto email. Please ensure to use a valid @mail.utoronto.ca address.</div>
+  <div class="invalid-feedback">Sorry, that email already belongs to another CourseForce user. Please log in.</div>
 </div>
           <div class="form-group">
       <label for="exampleInputUsername">Username: </label>

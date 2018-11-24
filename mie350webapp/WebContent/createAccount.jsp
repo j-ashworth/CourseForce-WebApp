@@ -18,33 +18,35 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <head>
-<%@ include file="navbar_new.jsp"%>
 <title>  Create Account   </title>
+
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+<%@ include file="navbar_not_loggedin.jsp"%>
 </head>
-<body>
+<body><center>
         <h1> Create Account </h1>
         <p> Please enter the following information to create your account</p>
         <form method="GET" action="CreateAccountController">
                   <div class="form-group">
       <label for="exampleInputFName">First Name:</label>
-      <input type="firstName" class="form-control" id="exampleInputFName" placeholder="Alex" name="fn">
+      <input type="firstName" class="form-control" id="exampleInputFName" placeholder="Alex" name="fn" required>
     </div>
               <div class="form-group">
       <label for="exampleLastName">Last Name: </label>
-      <input type="lastName" class="form-control" id="exampleInputLName" placeholder=Smtih name="ln">
+      <input type="lastName" class="form-control" id="exampleInputLName" placeholder=Smtih name="ln" required>
     </div>
               <div class="form-group">
       <label for="exampleInputEmail">Email: </label>
-      <input type="email" class="form-control" id="exampleInputEmail" placeholder="example@mail.utoronto.ca" name="e">
+      <input type="email" class="form-control" id="exampleInputEmail" placeholder="example@mail.utoronto.ca" name="e" required>
     </div>
           <div class="form-group">
       <label for="exampleInputUsername">Username: </label>
-      <input type="username" class="form-control" id="exampleInputUsername" placeholder="UofTEngGod" name="un">
+      <input type="username" class="form-control" id="exampleInputUsername" placeholder="UofTEngGod" name="un" required>
     </div>
           <div class="form-group">
       <label for="exampleInputPassword1">Password:</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="pw">
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="pw" required>
     </div>
     <input type="submit" value="Submit" class="btn btn-primary"></input>
-        </form>
+        </form></center>
 </body></html>

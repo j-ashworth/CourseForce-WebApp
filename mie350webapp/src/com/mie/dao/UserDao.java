@@ -121,6 +121,7 @@ public class UserDao {
 				user.setLastName(rs.getString("lastName"));
 				user.setUsername(rs.getString("username"));
 				user.setPassword(rs.getString("pswd"));
+				user.setEmail(rs.getString("email"));
 				users.add(user);
 			}
 		}catch(SQLException e) {
@@ -130,15 +131,15 @@ public class UserDao {
 		return users;
 	}
 	
-	public static void main(String[] args) throws Exception{
-		String email = "daniel.bedrossian@mail.utoronto.ca";
-		String domain = email.split("@")[1];
-		if (!domain.equals("mail.utoronto.ca")) {
-			throw new Exception("You must be registered as a University of Toronto student in order to user CourseForce.");
-		}else {
-			System.out.println("Happy");
-		}
-		System.out.println(email.contains("@"));
-	}
+//	public static void main(String[] args) throws Exception{
+//		String email = "daniel.bedrossian@mail.utoronto.ca";
+//		String domain = email.split("@")[1];
+//		if (!domain.equals("mail.utoronto.ca")) {
+//			throw new Exception("You must be registered as a University of Toronto student in order to user CourseForce.");
+//		}else {
+//			System.out.println("Happy");
+//		}
+//		System.out.println(email.contains("@"));
+//	}
 	
 }

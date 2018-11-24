@@ -41,6 +41,7 @@ public class CreateAccountController extends HttpServlet {
 			}
 			
 			String domain = email.split("@")[1];
+
 			
 			if (!domain.equals("mail.utoronto.ca")) {
 				response.sendRedirect("invalidEmail.jsp");
@@ -52,6 +53,10 @@ public class CreateAccountController extends HttpServlet {
 			users = UserDao.getAllUsers();
 
 			for(User u : users) {
+				if (u.getEmail().equals(email)) {
+					response.sendRedirect("invalidDupEmail.jsp");
+					throw new Exception("Email has already been used.");
+				}
 				if (u.getUsername().equals(username)){
 					response.sendRedirect("invalidUsername.jsp");
 					throw new Exception("User has already been created. Please log in.");
@@ -64,8 +69,9 @@ public class CreateAccountController extends HttpServlet {
 				HttpSession session = request.getSession(true);
 				response.sendRedirect("login.jsp");
 				session.setMaxInactiveInterval(900);
-			} else {
-				response.sendRedirect("invalid_login.jsp");
+			} 
+			else {
+				response.sendRedirect("invalidLogin.jsp");
 			}
 		}catch (Throwable theException) {
 			System.out.println(theException);
