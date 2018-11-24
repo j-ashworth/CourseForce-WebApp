@@ -25,16 +25,25 @@
         <h1> Create Account </h1>
         <p> Please enter the following information to create your account</p>
         <form method="GET" action="CreateAccountController">
-          First Name:<br>
-          <input type="text" name="fn"><br>
-          Last Name:<br>
-          <input type="text" name="ln"><br>
-          Email:<br>
-          <input type="text" name="e"><br>
-          Username:<br>
-          <input type="text" name="un"><br>
-          Password:<br>
-          <input type="password" name="pw"/> <input type="submit" class="btn btn-info" value = "Create Account" >
+                  <div class="form-group">
+      <label for="exampleInputFName">First Name:</label>
+      <input type="firstName" class="form-control" id="exampleInputFName" placeholder="Alex" name="fn">
+    </div>
+              <div class="form-group">
+      <label for="exampleLastName">Last Name: </label>
+      <input type="lastName" class="form-control" id="exampleInputLName" placeholder=Smtih name="ln">
+    </div>
+              <div class="form-group">
+      <label for="exampleInputEmail">Email: </label>
+      <input type="email" class="form-control" id="exampleInputEmail" placeholder="example@mail.utoronto.ca" name="e">
+    </div>
+          <div class="form-group">
+      <label for="exampleInputUsername">Username: </label>
+      <input type="username" class="form-control" id="exampleInputUsername" placeholder="UofTEngGod" name="un">
+    </div>
+          <div class="form-group">
+      <label for="exampleInputPassword1">Password:</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="pw">
+    </div>
         </form>
 </body></html>
-
