@@ -1,0 +1,14 @@
+
+
+.container {
+   margin:0 auto; /* this will center the page */
+   width:960px; /*  use your width here */
+}
+
+.card {
+	display:inline-block;
+}
+
+.top-buffer { margin-top:20px; }
+
+.top7 { margin-top:7px; }
