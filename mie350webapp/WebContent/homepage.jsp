@@ -4,7 +4,7 @@
 <!--carousel: course info, course reco, course review course search  -->
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="Main_page.css">
+  <link rel="stylesheet" type="text/css" href="home.css">
   <title>  CourseForce.ca   </title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,63 +21,102 @@
   
 </head>
 <body>
-        <h1> CourseForce </h1>
-        <h2> The ultimate guide to choosing UofT courses </h2>
-        <p> Get access to course descriptions, reviews, recommendations and MORE!</p>
 
-<button class="signup" type="button"> Create Account </button>
-<a href="search.jsp">
-  <button class="login" type="button"> Login </button>
-</a>
-<a href="reviewInput.jsp"> 
-  <button class="review" type="button"> Review </button> 
-</a>
-<p> Learn about our team: </p>
-<table>
-  <tbody><tr>
-    <th>Name</th>
-    <th>Role</th>
-    <th>Cool fact</th>
-  </tr>
-  <tr>
-    <td>Ata Artan</td>
-    <td>Front end developer</td>
-    <td>I am tall!</td>
-  </tr>
-  <tr>
-    <td>Ita Zaporozhets</td>
-    <td>Back end developer</td>
-    <td>I like to play sports!</td>
-  </tr>
-  <tr>
-    <td>Julian Ashworth</td>
-    <td>Back end developer</td>
-    <td>I hate movies!</td>
-  </tr>
-  <tr>
-    <td>Malak Mostafa</td>
-    <td>Front end developer</td>
-    <td>I love to dance!</td>
-  </tr>
-  <tr>
-    <td>Daniel Bedrosian</td>
-    <td>Back end developer</td>
-    <td>I have a beautiful beard</td>
-  </tr>
-  <tr>
-    <td>Jack Berkshire</td>
-    <td>Frond end developer</td>
-    <td>I am also tall!</td>
-  </tr>
-  <tr>
-    <td>Matteo Ciserani</td>
-    <td>Front end developer</td>
-    <td>Fashion is my passion</td>
-  </tr>
-</tbody></table>
-<a href="https://www.q.utoronto.ca">Go to QUERCUS!</a>
-<a href="https://www.google.com">Get any question answered!</a>
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/International_Students.jpg" alt="The team">
+<%@ include file="navbar_new.jsp"%>
+
+<div class="jumbotron">
+  <h1 class="display-3">Looking for a course?</h1>
+  <p class="lead"> CourseForce is the ultimate guide to choosing UofT courses. Get access to course descriptions, reviews, recommendations and MORE!</p>
+  <p class="lead">
+    <a href="search.jsp" class="btn btn-primary btn-lg" href="#" role="button">Search Courses</a>
+  </p>
+</div>
+
+
+<div class="container">
+  	<h2>Meet the team!</h2>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  				<div class="card-header">Ata Artan</div>
+  				<div class="card-body">
+    			<h4 class="card-title">Project Manager</h4>
+    			<p class="card-text">Raptors fanatic, architecture enthusiast. </p>
+  				</div>
+			</div>
+        </div>
+        <div class="col-sm-4">
+             <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  				<div class="card-header">Julian Ashworth</div>
+  				<div class="card-body">
+    			<h4 class="card-title">Full Stack Developer</h4>
+    			<p class="card-text">Outdoor enthusiast, dog lover, social justice warrior.</p>
+  				</div>
+			</div>
+        </div>
+         <div class="col-sm-4">
+             <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  				<div class="card-header">Daniel Bedrossian</div>
+  				<div class="card-body">
+    			<h4 class="card-title">Full Stack Developer</h4>
+    			<p class="card-text">Photo enthusiast, treble maker, trilingual.</p>
+  				</div>
+			</div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-sm-4">
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  				<div class="card-header">Jack Berkshire</div>
+  				<div class="card-body">
+    			<h4 class="card-title">Project Manager</h4>
+    			<p class="card-text">Loser.</p>
+  				</div>
+			</div>
+        </div>
+        <div class="col-sm-4">
+             <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  				<div class="card-header">Matteo Ciserani </div>
+  				<div class="card-body">
+    			<h4 class="card-title">Project Manager</h4>
+    			<p class="card-text">From italy, loves soccer, forza inter.</p>
+  				</div>
+			</div>
+        </div>
+         <div class="col-sm-4">
+             <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  				<div class="card-header">Malak Mostafa</div>
+  				<div class="card-body">
+    			<h4 class="card-title">Project Manager</h4>
+    			<p class="card-text">Aspiring lawyer, loves dancing.</p>
+  				</div>
+			</div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-sm-4">
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  				<div class="card-header">Ita Zaporozhets</div>
+  				<div class="card-body">
+    			<h4 class="card-title">Project Manager</h4>
+    			<p class="card-text"> Cat person, loves painting.</p>
+  				</div>
+			</div>
+        </div>
+     </div>
+</div>
+
+
+
 
 </body>
 </html>

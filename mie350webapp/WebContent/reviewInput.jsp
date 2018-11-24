@@ -9,26 +9,10 @@
 <html lang="en">
 <head>
 <%@ include file="navbar_new.jsp"%>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>  Course Review  </title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet"
-	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="reviewInput.css">
 </head>
 <body>
-
-<%@ include file="navbar_loggedin.jsp"%>
 
 <%
 	session = request.getSession();
@@ -47,11 +31,18 @@
 	CourseCode <br>
 	<input type="text" name="courseCode"><br>
 	Overall Course Rating <br>
-	<input type="radio" name="overallCourseRating" value = "1"> 1 <br>
-	<input type="radio" name="overallCourseRating" value = "2"> 2 <br>
-	<input type="radio" name="overallCourseRating" value = "3"> 3 <br>
-	<input type="radio" name="overallCourseRating" value = "4"> 4<br>
-	<input type="radio" name="overallCourseRating" value = "5"> 5 <br>
+	<div class="rate">
+	<input type="radio" id="star5" name="overallCourseRating" value = "1">
+	<label for="star5" title="text">5 stars</label>
+	<input type="radio" id="star4" name="overallCourseRating" value = "2">
+	<label for="star5" title="text">4 stars</label>
+	<input type="radio" id="star3" name="overallCourseRating" value = "3">
+	<label for="star5" title="text">3 stars</label>
+	<input type="radio" id="star2" name="overallCourseRating" value = "4">
+	<label for="star5" title="text">2 stars</label>
+	<input type="radio" id="star1" name="overallCourseRating" value = "5">
+	<label for="star5" title="text">1 stars</label>
+	</div>
 	Course Difficulty <br>
 	<input type="radio" name="courseDifficulty" value = "1"> 1 <br>
 	<input type="radio" name="courseDifficulty" value = "2"> 2<br>

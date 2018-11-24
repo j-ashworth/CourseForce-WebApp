@@ -21,16 +21,17 @@
 <%@ include file="navbar_new.jsp"%>
 
 				<center>
-					<table border=1 class="sortable">
+				<!--took our the class="sortable" -->
+					<table border=1 class="table table-hover">
 						<thead>
 							<tr>
-								<th>Course Code</th>
-								<th>Score</th>
+      								<th scope="col">Course Code</th>
+      								<th scope="col">Score</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach items="${recommendations}" var="course">
-								<tr>
+								<tr class="table-light">
 									<td align="center"><c:out
 											value="${course.key}" /></td>
 									<td align="center"><c:out 

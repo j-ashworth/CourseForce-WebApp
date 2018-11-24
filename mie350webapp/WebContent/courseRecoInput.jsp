@@ -25,16 +25,48 @@
 
 <%@ include file="navbar_new.jsp"%>
 
-<h1> Login </h1>
+<h1> Find a Course For You! </h1>
 <form method="POST" action='CourseRecoController' name="frmAddUser">
 	Q1. What type of elective do you need?:<br>
-	<input type="checkbox" name="elective" value = "cs"> Complementary Studies (CS) <br>
-	<input type="checkbox" name="elective" value = "hss"> Humanities and Social Science (HSS) <br>
-	<input type="checkbox" name="elective" value = "ns"> Natural Science (NS) <br>
+	<div class="form-check">
+        <label class="form-check-label">
+          <input class="form-check-input" name="elective" value="cs" type="checkbox" value="">
+          Complementary Studies (CS)
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input class="form-check-input" name="elective" value="hss" type="checkbox" value="" >
+          Humanities and Social Science (HSS)
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input class="form-check-input" name="elective" value="NS" type="checkbox" value="">
+          Natural Science (NS)
+        </label>
+      </div>
 	Q2. Would you prefer to take a class with engineering students or students in other faculties?:<br>
-	<input type="radio" name="classmate preference" value = "Engineering"> Engineering<br>
-	<input type="radio" name="classmate preference" value = "Non Engineering"> Non Engineering<br>
-	<input type="radio" name="classmate preference" value = "No Preference"> No Preference<br>
+	 <fieldset class="form-group">
+	<div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="class preference" id="optionsRadios1" value="Engineering">
+          Engineering
+        </label>
+        </div>
+        <div class="form-check">
+        <label class="form-check-label">
+          <input type="radio" class="form-check-input" name="class preference" id="optionsRadios2" value="Non Engineering">
+          Non Engineering
+        </label>
+        </div>
+        <div class="form-check">
+      <label class="form-check-label">
+          <input type="radio" class="form-check-input"  name="class preference" id="optionsRadios3" value="No Preference">
+          No Preference
+        </label>
+        </div>
+         </fieldset>
 	Q3. How much written work would you like in your course?:<br>
 	<input type="radio" name="written preference" value = "none"> I want as little writing as possible<br>
 	<input type="radio" name="written preference" value = "some"> Neutral, don't want a ton but wouldn't mind if some was involved<br>
