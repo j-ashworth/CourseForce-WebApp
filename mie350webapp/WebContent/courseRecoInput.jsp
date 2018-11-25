@@ -21,62 +21,80 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>  Course Recommendation   </title>
 </head>
-<body>
+<center><body>
 
 <%@ include file="navbar_new.jsp"%>
 
 <h1> Find a Course For You! </h1>
 <form method="POST" action='CourseRecoController' name="frmAddUser">
 	Q1. What type of elective do you need?:<br>
-	<div class="form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" name="elective" value="cs" type="checkbox" value="">
-          Complementary Studies (CS)
-        </label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" name="elective" value="hss" type="checkbox" value="" >
-          Humanities and Social Science (HSS)
-        </label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input class="form-check-input" name="elective" value="NS" type="checkbox" value="">
-          Natural Science (NS)
-        </label>
+	<div class="form-group">
+    <div class="custom-control custom-radio">
+      <input type="radio" id="customRadio1" name="elective" class="custom-control-input" value="cs">
+      <label class="custom-control-label" for="customRadio1">Complementary Studies (CS)</label>
+    </div>
+      <div class="custom-control custom-radio">
+      <input type="radio" id="customRadio2" name="elective" class="custom-control-input" value="hss">
+      <label class="custom-control-label" for="customRadio2">Humanities and Social Science (HSS)</label>
+    </div>
+          <div class="custom-control custom-radio">
+      <input type="radio" id="customRadio3" name="elective" class="custom-control-input" value="NS">
+      <label class="custom-control-label" for="customRadio3">  Natural Science (NS)</label>
+    </div>
       </div>
 	Q2. Would you prefer to take a class with engineering students or students in other faculties?:<br>
-	 <fieldset class="form-group">
-	<div class="form-check">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="class preference" id="optionsRadios1" value="Engineering">
-          Engineering
-        </label>
-        </div>
-        <div class="form-check">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="class preference" id="optionsRadios2" value="Non Engineering">
-          Non Engineering
-        </label>
-        </div>
-        <div class="form-check">
-      <label class="form-check-label">
-          <input type="radio" class="form-check-input"  name="class preference" id="optionsRadios3" value="No Preference">
-          No Preference
-        </label>
-        </div>
-         </fieldset>
+		<div class="form-group">
+    <div class="custom-control custom-radio">
+      <input type="radio" id="customRadio1a" name="class preference" class="custom-control-input" value="Engineering">
+      <label class="custom-control-label" for="customRadio1a">Engineering</label>
+    </div>
+      <div class="custom-control custom-radio">
+      <input type="radio" id="customRadio2a" name="class preference" class="custom-control-input" value="Non Engineering">
+      <label class="custom-control-label" for="customRadio2a">Non Engineering</label>
+    </div>
+          <div class="custom-control custom-radio">
+      <input type="radio" id="customRadio3a" name="class preference" class="custom-control-input" value="No Preference">
+      <label class="custom-control-label" for="customRadio3a">  No Preference</label>
+    </div>
+      </div>
 	Q3. How much written work would you like in your course?:<br>
-	<input type="radio" name="written preference" value = "none"> I want as little writing as possible<br>
-	<input type="radio" name="written preference" value = "some"> Neutral, don't want a ton but wouldn't mind if some was involved<br>
-	<input type="radio" name="written preference" value = "alot"> I want a course with writing<br>
+	<div class="form-group">
+    <div class="custom-control custom-radio">
+      <input type="radio" id="customRadio1b" name="written preference" class="custom-control-input" value="none">
+      <label class="custom-control-label" for="customRadio1b">I want as little writing as possible</label>
+    </div>
+      <div class="custom-control custom-radio">
+      <input type="radio" id="customRadio2b" name="written preference" class="custom-control-input" value="some">
+      <label class="custom-control-label" for="customRadio2b">Neutral, don't want a ton but wouldn't mind if some was involved</label>
+    </div>
+          <div class="custom-control custom-radio">
+      <input type="radio" id="customRadio3b" name="written preference" class="custom-control-input" value="alot">
+      <label class="custom-control-label" for="customRadio3b">I want a course with writing</label>
+    </div>
+      </div>
 	Q4. How many hours/week are you willing to put into your course? (in class + out of class):<br>
-	<input type="radio" name="hours" value = "lowest"> 0-3<br>
-	<input type="radio" name="hours" value = "low"> 3-6<br>
-	<input type="radio" name="hours" value = "middle"> 6-9<br>
-	<input type="radio" name="hours" value = "high"> 9-12<br>
-	<input type="radio" name="hours" value = "highest"> 12-15<br>
-	<input type="submit" value = "Submit" >
+	<div class="form-group">
+    <div class="custom-control custom-radio">
+      <input type="radio" id="customRadio1c" name="lowest" class="custom-control-input" value="none">
+      <label class="custom-control-label" for="customRadio1c">0-3</label>
+    </div>
+      <div class="custom-control custom-radio">
+      <input type="radio" id="customRadio2c" name="low" class="custom-control-input" value="some">
+      <label class="custom-control-label" for="customRadio2c">3-6</label>
+    </div>
+          <div class="custom-control custom-radio">
+      <input type="radio" id="customRadio3c" name="written preference" class="custom-control-input" value="middle">
+      <label class="custom-control-label" for="customRadio3c">6-9</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input type="radio" id="customRadio3d" name="written preference" class="custom-control-input" value="high">
+      <label class="custom-control-label" for="customRadio3d">9-12</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input type="radio" id="customRadio3e" name="written preference" class="custom-control-input" value="highest">
+      <label class="custom-control-label" for="customRadio3e">12-15</label>
+    </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-</body></html>
+</body></center></html>
