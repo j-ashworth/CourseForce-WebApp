@@ -20,7 +20,7 @@
 <%@ include file="navbar_not_loggedin.jsp"%>
 </head>
 <body>
-<center>
+<center style="padding: 15px;">
         <h1> Login </h1>
         <p> Please enter your username and password</p>
         <form action="LoginController">
@@ -34,5 +34,7 @@
     </div>
     <input type="submit" value="Login" class="btn btn-primary"></input>
         </form></center>
+        <%@ include file="footer.jsp"%>
+        
 </body></html>
 
