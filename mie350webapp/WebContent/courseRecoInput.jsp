@@ -27,7 +27,7 @@
 
 <h1> Find a Course For You! </h1>
 <form method="POST" action='CourseRecoController' name="frmAddUser">
-	Q1. What type of elective do you need?:<br>
+	Q1. What type of elective do you need?<br>
 	<div class="form-group">
     <div class="custom-control custom-radio">
       <input type="radio" id="customRadio1" name="elective" class="custom-control-input" value="cs">
@@ -42,7 +42,7 @@
       <label class="custom-control-label" for="customRadio3">  Natural Science (NS)</label>
     </div>
       </div>
-	Q2. Would you prefer to take a class with engineering students or students in other faculties?:<br>
+	Q2. Would you prefer to take a class with engineering students or students in other faculties?<br>
 		<div class="form-group">
     <div class="custom-control custom-radio">
       <input type="radio" id="customRadio1a" name="class preference" class="custom-control-input" value="Engineering">
@@ -57,7 +57,7 @@
       <label class="custom-control-label" for="customRadio3a">  No Preference</label>
     </div>
       </div>
-	Q3. How much written work would you like in your course?:<br>
+	Q3. How much written work would you like in your course?<br>
 	<div class="form-group">
     <div class="custom-control custom-radio">
       <input type="radio" id="customRadio1b" name="written preference" class="custom-control-input" value="none">
@@ -72,7 +72,7 @@
       <label class="custom-control-label" for="customRadio3b">I want a course with writing</label>
     </div>
       </div>
-	Q4. How many hours/week are you willing to put into your course? (in class + out of class):<br>
+	Q4. How many hours/week are you willing to put into your course? (in class + out of class)<br>
 	<div class="form-group">
     <div class="custom-control custom-radio">
       <input type="radio" id="customRadio1c" name="lowest" class="custom-control-input" value="none">

@@ -38,7 +38,7 @@
 %>
 
 
-<center><h1> Tell Us What You Thought  </h1>
+<center style="padding: 15px;"><h1> Tell Us What You Thought  </h1>
 <form method="POST" action=ReviewController name="review">
 <div class="form-group">
   <label class="col-form-label col-form-label-lg" for="inputLarge">Course Code</label>
@@ -162,4 +162,5 @@
 
 	<button type="submit" class="btn btn-primary">Submit</button>
 </form></center>
+<%@ include file="footer.jsp"%>
 </body></html>
