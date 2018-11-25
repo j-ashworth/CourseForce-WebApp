@@ -5,13 +5,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="en">
-
 <head>
-<title>Course Information and Reviews</title>
+<title>MIE350 Sample Web App - Search Students</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
@@ -21,28 +20,19 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 </head>
 <body>
+<%@ include file="navbar_new.jsp"%>
 <h1> Course Information and Reviews </h1>
 	<div class="container-fluid text-center">
-		<div class="row content">
-			<div class="col-sm-2 sidenav">
-				<!-- You can put left sidebar links here if you want to. -->
-			</div>
-			<div class="col-sm-8 text-left">
-				Please enter a valid course code<Br />
-				<Br />
-				<center>
-				
-					<form method="POST" action='CoursePageController' name="frmAddUser">
-						Course Code: 
-						<input type="text" name="courseCode">
-						<input type="submit" class="btn btn-info" value="Submit" />
-					</form>
-				</center>
-
-			</div>
-		</div>
+		<center>
+			<form method="POST" action='CoursePageController' name="frmAddUser">
+				Valid Course Code: 
+				<input type="text" name="courseCode" placeholder="APS444" required>
+				<input type="submit" value="Submit" class="btn btn-primary btn-sm"></input>
+			</form>
+		</center>
 	</div>
 </body>
 </html>
