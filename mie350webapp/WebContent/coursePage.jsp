@@ -29,8 +29,10 @@
 		<center>
 			<form method="POST" action='CoursePageController' name="frmAddUser">
 				Valid Course Code: 
-				<input type="text" name="courseCode" placeholder="APS444" required>
-				<input type="submit" value="Submit" class="btn btn-primary btn-sm"></input>
+				<div class="inline fields">
+				<input type="text" name="courseCode" placeholder="APS444" required style="display: inline:;">
+				<button type="Submit" class="btn btn-primary"> Submit</button>
+				</div>
 			</form>
 		</center>
 	</div>

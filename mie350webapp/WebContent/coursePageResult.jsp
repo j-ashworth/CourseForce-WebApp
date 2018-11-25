@@ -19,7 +19,6 @@
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
 <link rel="stylesheet" type="text/css" href="css/mystyle.css">
 </head>
 
@@ -40,20 +39,20 @@ Practical Hours: <c:out value="${course.getPraHours()}"/></p>
 <p>Description: <c:out value="${course.getDescription()}"/></p>
 
 					<center>
-					<table border=1 class="sortable">
+					<table class="table table-hover">
 						<thead>
 							<tr>
-								<th>Overall Course Rating</th>
-								<th>Course Difficulty</th>
-								<th>Textbook Usefulness</th>
-								<th>Writing Workload</th>
-								<th>Academic Session</th>
-								<th>Written Review</th>
+								<th scope="col"> Overall Course Rating</th>
+								<th scope="col">Course Difficulty</th>
+								<th scope="col">Textbook Usefulness</th>
+								<th scope="col">Writing Workload</th>
+								<th scope="col">Academic Session</th>
+								<th scope="col">Written Review</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach items="${reviews}" var="review">
-								<tr>
+								<tr class="table-light">
 									<td align="center"><c:out
 											value="${review.getOverallCourseRating()}" /></td>
 									<td align="center"><c:out
