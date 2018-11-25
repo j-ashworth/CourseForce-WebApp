@@ -15,6 +15,9 @@
       <li class="nav-item">
         <a class="nav-link" href="courseRecoInput.jsp">Course Recommendation</a>
       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="reviewInput.jsp">Course Review</a>
+      </li>
     </ul>
   </div>
 </nav>

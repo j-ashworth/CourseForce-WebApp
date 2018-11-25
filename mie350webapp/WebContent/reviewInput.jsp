@@ -9,8 +9,6 @@
 <html lang="en">
 <head>
 <%@ include file="navbar_new.jsp"%>
-<meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="reviewInput.css">
 </head>
 <body>
 
