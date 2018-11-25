@@ -1,13 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR" import="com.mie.model.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html lang="en">
+<head>
+<title>MIE350 Sample Web App - Search Students</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
@@ -17,20 +20,24 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+</head>
+
 
 <%Course course = (Course) request.getAttribute("course");%>
 
-<h1>Course Page for <font color=red><c:out value="${course.getName()}"/></font></h1>
 <body>
-<p>Course Code: <c:out value ="${course.getCourseCode()}"/></p>
+<%@ include file="navbar_new.jsp"%>
+<h1>Course Page for <font class="text-primary"><c:out value="${course.getName()}"/></font><font class="text-muted"> (<c:out value ="${course.getCourseCode().toUpperCase()}"/>)</font></h1>
+
+<p>Course Level: <c:out value="${course.getCourseLevel()}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Breadth Requirement(s): <c:out value="${course.getBreadthReq()}"/></p>
+<p>Department: <c:out value="${course.getDept()}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Faculty: <c:out value="${course.getFaculty()}"/></p>
+<p>Lecture Hours: <c:out value="${course.getLecHours()}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Tutorial Hours: <c:out value="${course.getTutHours()}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Practical Hours: <c:out value="${course.getPraHours()}"/></p>
 <p>Description: <c:out value="${course.getDescription()}"/></p>
-<p>Course Level: <c:out value="${course.getCourseLevel()}"/></p>
-<p>Department: <c:out value="${course.getDept()}"/></p>
-<p>Faculty: <c:out value="${course.getFaculty()}"/></p>
-<p>Breadth Requirement(s): <c:out value="${course.getBreadthReq()}"/></p>
-<p>Lecture Hours: <c:out value="${course.getLecHours()}"/></p>
-<p>Tutorial Hours: <c:out value="${course.getTutHours()}"/></p>
-<p>Practical Hours: <c:out value="${course.getPraHours()}"/></p>
 
 					<center>
 					<table border=1 class="sortable">
