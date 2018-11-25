@@ -58,6 +58,7 @@ public class ReviewController extends HttpServlet{
 		
 		if (wr.length() > 255) {
 			validReviewLength = false;
+			response.sendRedirect("tooLongReview.jsp");
 		}
 		
 		else {
@@ -94,11 +95,7 @@ public class ReviewController extends HttpServlet{
 		//if they put a review for a course that doesn't exist let them try again
 		if (validReview && notNull && validReviewLength) {
 			rDao.addReview(cc, username, ocr, tbu, cd, ww, as, wr);
-			response.sendRedirect("reviewInput.jsp");
-		}
-		//send back to somewhere - using the homepage rn
-		else {
-			response.sendRedirect("homepage.jsp");
+			response.sendRedirect("sucessfulReview.jsp");
 		}
 		
 		/**

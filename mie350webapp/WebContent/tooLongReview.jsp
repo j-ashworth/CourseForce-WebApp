@@ -39,6 +39,10 @@
 
 
 <center><h1> Tell Us What You Thought  </h1>
+<div class="alert alert-dismissible alert-danger">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Oops! </strong> <a href="#" class="alert-link">The written review you submiteed was too long,</a> shorten it up and try submitting again.
+</div>
 <form method="POST" action=ReviewController name="review">
 <div class="form-group">
   <label class="col-form-label col-form-label-lg" for="inputLarge">Course Code</label>
