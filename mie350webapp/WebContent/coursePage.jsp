@@ -30,8 +30,11 @@
 			<form method="POST" action='CoursePageController' name="frmAddUser">
 				Valid Course Code: 
 				<div class="inline fields">
-				<input type="text" name="courseCode" placeholder="APS444" required style="display: inline:;">
-				<button type="Submit" class="btn btn-primary"> Submit</button>
+				<div class="form-group">
+  <label class="col-form-label col-form-label-lg" for="inputLarge"></label>
+  <input class="form-control form-control-lg" type="text" placeholder="APS444" id="inputLage" name="courseCode" required>
+</div>
+				<button type="Submit" class="btn btn-primary btn-lg"> Submit</button>
 				</div>
 			</form>
 		</center>
