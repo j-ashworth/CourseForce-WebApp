@@ -28,17 +28,6 @@
 </head>
 <body><div style="padding:15px;">
 
-<%
-	session = request.getSession();
-	System.out.println(session);
-	if (session.getAttribute("username") == null) {
-		response.sendRedirect("login.jsp");
-	}
-	
-	User user = (User) session.getAttribute("currentSessionUser");
-	String username = (String) session.getAttribute("username");
-%>
-
 
 <center><h1>Tell Us What You Thought</h1>
 <div class="alert alert-dismissible alert-danger">

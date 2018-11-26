@@ -40,7 +40,7 @@
 <center>
 <div class="jumbotron">
   <h1 class="display-3">Thanks for the Review!</h1>
-  <p class="lead">We appreciate the feedback as it helps us provide better recommendation for students like you.</p>
+  <p class="lead">We appreciate the feedback as it helps us provide better recommendations for students like you.</p>
   <hr class="my-4">
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="reviewInput.jsp" role="button">Submit Another?</a>

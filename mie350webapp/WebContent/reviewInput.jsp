@@ -28,11 +28,6 @@
 <body><div style="padding:15px;">
 
 <%
-	session = request.getSession();
-	System.out.println(session);
-	if (session.getAttribute("username") == null) {
-		response.sendRedirect("login.jsp");
-	}
 	
 	User user = (User) session.getAttribute("currentSessionUser");
 	String username = (String) session.getAttribute("username");
@@ -43,7 +38,7 @@
 <form method="POST" action=ReviewController name="review">
 <div class="form-group">
   <label class="col-form-label col-form-label-lg" for="inputLarge">Course Code</label>
-  <input class="form-control form-control-lg" name="courseCode" type="text" placeholder="SOC100" id="inputLarge">
+  <input class="form-control form-control-lg" name="courseCode" type="text" placeholder="ex: SOC100" id="inputLarge">
 </div>
 	Overall Course Rating (1 very poor - 5 very good)<br>
   <div class="form-group">

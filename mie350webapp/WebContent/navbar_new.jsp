@@ -1,3 +1,11 @@
+<%@ page session="true" 
+	import="com.mie.model.*"%>
+<%
+	
+	User user = (User) session.getAttribute("currentSessionUser");
+	String username = (String) session.getAttribute("username");
+%>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand" href="homepage.jsp">CourseForce</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,6 +25,9 @@
       </li>
        <li class="nav-item">
         <a class="nav-link" href="reviewInput.jsp">Course Review</a>
+      </li>
+        <li class="nav-item">
+        <a class = "nav-link"> ${sessionScope.username}</a>
       </li>
     </ul>
   </div>
