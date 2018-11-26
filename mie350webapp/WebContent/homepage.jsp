@@ -25,21 +25,56 @@
 <%@ include file="navbar_new.jsp"%>
 
 <div class="jumbotron">
-  <h1 class="display-3">Looking for a course?</h1>
-  <p class="lead"> CourseForce is the ultimate guide to choosing UofT courses. Get access to course descriptions, reviews, recommendations and MORE!</p>
+<div class="container push-spaces">
+  <h1 class="display-3">Looking for a course?<br></h1>
+  <p class="lead"> CourseForce is the ultimate guide to choosing UofT courses. <br>Get access to course descriptions, reviews, recommendations and MORE!</p>
+  <br>
   <p class="lead">
     <a href="searchTest.jsp" class="btn btn-primary btn-lg" href="#" role="button">Search Courses</a>
   </p>
+  </div>
 </div>
 
 <div class="container">
 	<div class="row">
- 		<div class="col-md-12">  
- 		<h2>Welcome to <b>CourseForce</b></h2>
- 		<br>
- 		<p>This web page is developed for an undergraduate course, MIE350 - Design and Analysis of Information Systems. The application is only available to University of Toronto students and only features University of Toronto courses. The purpose of the application is to provide centralized information regarding courses for University of Toronto Engineering students to aid in their course enrolment decisions. The main functionality of the web application is the following: (1) Read official course descriptions, (2) Access reviews written by other peers, (3) Access overall course ratings from peers, (4) View course textbook(s), (5) View total hours of class/tutorial/labs and (6) View course information (Department, breadth requirement classification, faculty, hours per week).  
- 		</p>
- 		<br><br>
+ 		<div class="col-md-4"> 
+ 		 
+	 	</div>
+ 		<div class="col-md-8"> 
+ 			<h2>Welcome to <b>CourseForce</b></h2>
+	 		<br>
+	 		<p>This web page is developed for an undergraduate course, MIE350 - Design and Analysis of Information Systems. The application is only available to University of Toronto students and only features University of Toronto courses. The purpose of the application is to provide centralized information regarding courses for University of Toronto Engineering students to aid in their course enrollment decisions. 
+	 		<br><br>
+	 		The main functionality of the web application is the following: <br>
+	 		(1) Read official course descriptions <br>
+	 		(2) Access reviews written by other peers <br>
+	 		(3) Access overall course ratings from peers 
+	 		(4) View course textbook(s) <br> 
+	 		(5) View total hours of class/tutorial/labs<br> 
+	 		(6) View course information (Department, breadth requirement classification, faculty, hours per week)  
+	 		</p>
+	 		<br><br>
+ 		</div>	
+  	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+ 		<div class="col-md-8">  
+ 		<h2>What is CourseForce?</h2>
+	 		<br>
+	 		CourseForce allows student to: <br>
+	 		(1) Read official course descriptions <br>
+	 		(2) Access reviews written by other peers <br>
+	 		(3) Access overall course ratings from peers 
+	 		(4) View course textbook(s) <br> 
+	 		(5) View total hours of class/tutorial/labs<br> 
+	 		(6) View course information (Department, breadth requirement classification, faculty, hours per week)  
+	 		</p>
+	 		<br><br>
+	 	</div>
+ 		<div class="col-md-4"> 
+ 			
  		</div>	
   	</div>
 </div>
