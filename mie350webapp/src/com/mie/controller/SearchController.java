@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
 import java.lang.Math;
@@ -29,7 +30,7 @@ public class SearchController extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private static String SEARCH_USER = "/searchResult.jsp";
+	private static String SEARCH_USER = "/searchTest.jsp";
 	private CourseDao dao;
 	private ReviewDao rDao;
 
@@ -56,31 +57,30 @@ public class SearchController extends HttpServlet {
 		String[] facultyTemp = request.getParameterValues("Faculty");
 		ArrayList<String> faculty = new ArrayList<String>(Arrays.asList(facultyTemp));
 
+
 		String[] courseLevelTemp = request.getParameterValues("Course Level");
 		ArrayList<String> courseLevel = new ArrayList<String>(Arrays.asList(courseLevelTemp));
 
 		String[] ratingTemp = request.getParameterValues("Rating");
 		ArrayList<String> rating = new ArrayList<String>(Arrays.asList(ratingTemp));
 
-		String[] hoursTemp = request.getParameterValues("Cours Hours Per Week");
-		ArrayList<String> hours = new ArrayList<String>(Arrays.asList(hoursTemp));
+		String hours = request.getParameter("Cours Hours Per Week");
 
+
+		
 		
 		ArrayList<Course> result = new ArrayList<Course>();
+
+
 		
-		System.out.println("TTTTTTTEEEEEEEESSSSSSSTTTTTTTT: " + faculty);
-
-		//user has entered search query
+			
 		if(keyword != ""){
-			result.addAll(filter(dao.getCourseByKeyWord(keyword), breadthReq, faculty, 
-					courseLevel, rating, hours));
+			result.addAll(filter(dao.getCourseByKeyWord(keyword), breadthReq, faculty, courseLevel, rating, hours));
 		}
-		//user hasn't entered a search query
 		else{
-			result.addAll(filter(dao.getAllCourses(), breadthReq, faculty, 
-					courseLevel, rating, hours));
+			result.addAll(filter(dao.getAllCourses(), breadthReq, faculty, courseLevel, rating, hours));
 		}
-
+		
 		RequestDispatcher view = request.getRequestDispatcher(SEARCH_USER);
 		request.setAttribute("keyword", keyword);
 		request.setAttribute("courses", result);
@@ -90,70 +90,67 @@ public class SearchController extends HttpServlet {
 		 */ 
 
 		view.forward(request, response);
+
 	}
 	
 	public ArrayList<Course> filter(ArrayList<Course> result, ArrayList<String> breadthReq, ArrayList<String> faculty,
-			ArrayList<String> courseLevel, ArrayList<String> rating, ArrayList<String> hours){
+			ArrayList<String> courseLevel, ArrayList<String> rating, String hours){
 		
 		ListIterator<Course> iter1 = result.listIterator();
 		
 		if(!breadthReq.contains("any")){
-			for(String s : breadthReq){
-				List<Course> temp = dao.getCourseByType(s.toLowerCase(), result);
-				while(iter1.hasNext()){ 
-					if(!temp.contains(iter1.next())) 
-						result.remove(iter1.next());
+			while(iter1.hasNext()){ 
+				Course currCourse = (Course) iter1.next();
+				String[] temp = currCourse.getBreadthReq().trim().toLowerCase().split(" ");
+				ArrayList<String> types = new ArrayList<String>(Arrays.asList(temp));
+				for(String s : types){
 				}
+				if(Collections.disjoint(types, breadthReq)) 
+					iter1.remove();
 			}
 		}
 		
 		ListIterator<Course> iter2 = result.listIterator();
 		
 		if(!faculty.contains("any")){
-			for(String s : faculty){
-				List<Course> temp = dao.getCourseByFaculty(s, result);
-				while(iter2.hasNext()){ 
-					if(!temp.contains(iter2.next())) 
-						result.remove(iter2.next());
-				}
+			while(iter2.hasNext()){ 
+				Course currCourse = (Course) iter2.next();
+				if(!faculty.contains(dao.getCourseFaculty(currCourse))) 
+					iter2.remove();
 			}
 		}
 		
 		ListIterator<Course> iter4 = result.listIterator();		
-		
+
 		if(!courseLevel.contains("any")){
-			for(String s : courseLevel){
-				List<Course> temp = dao.getCourseByLevel(s.toLowerCase(), result);
-				while(iter4.hasNext()){ 
-					if(!temp.contains(iter4.next())) 
-						result.remove(iter4.next());
-				}
+			while(iter4.hasNext()){ 
+				Course currCourse = (Course) iter4.next();
+				if(!courseLevel.contains(Integer.toString(currCourse.getCourseLevel())))	
+					iter4.remove();
 			}
 		}
-		
-		ListIterator<Course> iter5 = result.listIterator();
 
+		ListIterator<Course> iter5 = result.listIterator();
 		
 		if(!rating.contains("any")){
-			for(String s : rating){
-				while(iter5.hasNext()){
-					Double temp = rDao.getOverallRatingAvg(iter5.next().getCourseCode());
-					if((int)Math.round(temp) != Integer.parseInt(s)) 
-						iter5.remove();
-				}
+			while(iter5.hasNext()){
+				Double temp = rDao.getOverallRatingAvg(iter5.next().getCourseCode());
+				if(!rating.contains((int)Math.round(temp))) 
+					iter5.remove();
 			}
+			
 		}
 
 		ListIterator<Course> iter6 = result.listIterator();
 
-		if(!hours.contains("any")){
-			for(String s : hours){
-				while(iter6.hasNext()){ 
-					Double totalHours = dao.getClassHours(iter6.next());
-					if((int)Math.round(totalHours) != Integer.parseInt(s)) 
-						result.remove(iter6.next());
-				}
+		if(!hours.equals("any")){
+			while(iter6.hasNext()){ 
+				Course currCourse = (Course) iter6.next();
+				Double totalHours = dao.getClassHours(currCourse);
+				if((int)Math.round(totalHours) > Integer.parseInt(hours)) 
+					iter6.remove();
 			}
+			
 		}
 
 		return result;

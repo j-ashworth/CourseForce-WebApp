@@ -6,6 +6,7 @@
 
 <html lang="en">
 <head>
+
 <title>MIE350 Sample Web App - Search Students</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +28,7 @@
 <%@ include file="navbar_new.jsp"%>
 
 	<div class="container-fluid text-center">
-		<div class="row content">
+		<div class="row">
 			
 			<div class="col-sm-8 text-left">
 				<h1>Search A Course</h1>
@@ -39,12 +40,12 @@
 							Keyword: <input type="text" name="keyword"
 							value="<c:out value="${course.searchword}" />">
 							<br>
-							<div class="col-sm-2 sidenav">
-
+							<div class="col-sm-6 sidenav">
 							Filter by: <br>
 							Breadth Requirement: <br>
-								<input type="checkbox" value="any" name = "Breadth Requirement" checked>Any<br>
-								<input type="checkbox" value="cs" name = "Breadth Requirement" >CS<br>
+							
+								<input class="form-check-input" value="any" name = "Breadth Requirement" checked>Any<br>
+								<input class="form-check-input" value="cs" name = "Breadth Requirement" >CS<br>
 								<input type="checkbox" value="hss" name = "Breadth Requirement">HSS<br>
 								<input type="checkbox" value="ns" name = "Breadth Requirement">MIE<br>
 								 <br>

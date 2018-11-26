@@ -28,7 +28,7 @@
   <h1 class="display-3">Looking for a course?</h1>
   <p class="lead"> CourseForce is the ultimate guide to choosing UofT courses. Get access to course descriptions, reviews, recommendations and MORE!</p>
   <p class="lead">
-    <a href="search.jsp" class="btn btn-primary btn-lg" href="#" role="button">Search Courses</a>
+    <a href="searchTest.jsp" class="btn btn-primary btn-lg" href="#" role="button">Search Courses</a>
   </p>
 </div>
 
@@ -75,7 +75,7 @@
             <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
   				<div class="card-header">Jack Berkshire</div>
   				<div class="card-body">
-    			<h4 class="card-title">Project Manager</h4>
+    			<h4 class="card-title">Full Stack Developer</h4>
     			<p class="card-text">Loser.</p>
   				</div>
 			</div>

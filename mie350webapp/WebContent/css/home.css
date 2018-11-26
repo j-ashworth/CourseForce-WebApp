@@ -5,6 +5,8 @@
    width:960px; /*  use your width here */
 }
 
+
+
 .card {
 	display:inline-block;
 }
@@ -12,3 +14,5 @@
 .top-buffer { margin-top:20px; }
 
 .top7 { margin-top:7px; }
+
+.top-buffer { margin-top:20px; }

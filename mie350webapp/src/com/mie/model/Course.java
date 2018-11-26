@@ -59,7 +59,7 @@ public class Course {
 	}
 	
 	public void setCourseCode(String cc) {
-		courseCode = cc;
+		this.courseCode = cc;
 	}
 	
 	public void setName(String name) {
@@ -71,7 +71,7 @@ public class Course {
 	}
 	
 	public void setDescription(String d) {
-		description = d;
+		this.description = d;
 	}
 	
 	public void setHss(int hss) {
@@ -87,36 +87,33 @@ public class Course {
 	}
 	
 	public void setCourseLevel(int cl) {
-		courseLevel = cl;
+		this.courseLevel = cl;
 	}
 	
 	public void setLecHours(int lh) {
-		lecHours = lh;
+		this.lecHours = lh;
 	}
 	
 	public void setPraHours(int ph) {
-		praHours = ph;
+		this.praHours = ph;
 	}
 	
 	public void setTutHours(int th) {
-		tutHours = th;
+		this.tutHours = th;
 	}
 	
 	public String getBreadthReq() {
-		String br = "";
-		if (hss == 1) {
-			br = br + "HSS ";
+		StringBuilder br = new StringBuilder();
+		if (this.hss == 1) {
+			br.append("HSS ");
 		}
-		else if (cs == 1) {
-			br = br + "CS ";
+		if (this.cs == 1) {
+			br.append("CS ");
 		}
-		else if (ns == 1) {
-			br = br + "NS ";
+		if (this.ns == 1) {
+			br.append("NS ");
 		}
-		else {
-			br = "N/A";
-		}
-		return br;
+		return br.toString();
 	}
 	
 	public String getFaculty() {
@@ -134,5 +131,10 @@ public class Course {
 				", Course Level: " + courseLevel + ", Lecture Hours: " + lecHours + ", Practical Hours: " +
 				praHours + ", Tutorial Hours: " + tutHours + "]";
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		   return (this == obj);
+		}
 	
 }
