@@ -22,3 +22,16 @@
 {
     height: 500px;
 }
+
+.jumbotron {
+  background-image: url(img/hero.jpg);
+  background-size: cover;
+  min-height: 300px;
+}
+
+
+
+.grey-bg {
+            background-color: #D9D9DB;
+
+        }

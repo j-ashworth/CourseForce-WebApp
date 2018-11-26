@@ -24,23 +24,21 @@
 
 <%@ include file="navbar_new.jsp"%>
 
-<div class="jumbotron">
-<div class="container push-spaces">
-  <h1 class="display-3">Looking for a course?<br></h1>
+<div class="jumbotron"  style="background-image: url(img/hero.jpg); background-size: 100% 100%;">
+
+  <h1 class="display-2"><br>Looking for a course?<br></h1><br>
   <p class="lead"> CourseForce is the ultimate guide to choosing UofT courses. <br>Get access to course descriptions, reviews, recommendations and MORE!</p>
-  <br>
+  <br> <br>
   <p class="lead">
     <a href="searchTest.jsp" class="btn btn-primary btn-lg" href="#" role="button">Search Courses</a>
   </p>
-  </div>
+  <h1><br><br></h1>
+
 </div>
 
 <div class="container">
 	<div class="row">
- 		<div class="col-md-4"> 
- 		 
-	 	</div>
- 		<div class="col-md-8"> 
+ 		<div class="col-md-12"> 
  			<h2>Welcome to <b>CourseForce</b></h2>
 	 		<br>
 	 		<p>This web page is developed for an undergraduate course, MIE350 - Design and Analysis of Information Systems. The application is only available to University of Toronto students and only features University of Toronto courses. The purpose of the application is to provide centralized information regarding courses for University of Toronto Engineering students to aid in their course enrollment decisions. 
@@ -58,9 +56,9 @@
   	</div>
 </div>
 
-<div class="container">
+<div class=" container container-fluid grey-bg" background-color: >
 	<div class="row">
- 		<div class="col-md-8">  
+ 		<div class="col-md-12">  
  		<h2>What is CourseForce?</h2>
 	 		<br>
 	 		CourseForce allows student to: <br>
@@ -73,9 +71,7 @@
 	 		</p>
 	 		<br><br>
 	 	</div>
- 		<div class="col-md-4"> 
- 			
- 		</div>	
+
   	</div>
 </div>
 
