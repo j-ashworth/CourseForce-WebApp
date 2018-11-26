@@ -17,16 +17,20 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <head>
+<title>Course Recommendation</title>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>  Course Recommendation   </title>
-</head>
-<center><body>
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 
 <%@ include file="navbar_new.jsp"%>
 
+</head>
+<center><body><div style="padding:15px;">
+
+
 <h1> Find a Course For You! </h1>
-<form method="POST" action='CourseRecoController' name="frmAddUser">
+<form method="POST" action='CourseRecoController' name="frmAddUser" style="width:70%;">
 	Q1. What type of elective do you need?<br>
 	<div class="form-group">
     <div class="custom-control custom-radio">
@@ -96,5 +100,7 @@
     </div>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-</body></center></html>
+</form></div></center>
+
+	<%@ include file="footer.jsp"%>
+</body></html>

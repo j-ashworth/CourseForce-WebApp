@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html><head>
-<title>  Login   </title>
+<title>Login</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -19,26 +19,28 @@
 <link rel="stylesheet" type="text/css" href="css/mystyle.css">
 <%@ include file="navbar_not_loggedin.jsp"%>
 </head>
-<body>
+<body><div style="padding:15px;">
 <center>
         <h1> Login </h1>
         <p> Please enter your username and password</p>
         <form action="LoginController">
     <div class="form-group has-danger">
       <label class="form-control-label" for="inputDanger1">Username: </label>
-      <input type="username" class="form-control is-invalid" id="inputInvalid" name="un" placeholder="user12345" required>
+      <input type="username" class="form-control is-invalid" id="inputInvalid" name="un" placeholder="CourseReviewGod" required>
         <div class="invalid-feedback">Sorry, that's an invalid username. Please create an account or try again.</div>
     </div>
     
     
     <div class="form-group">
       <label for="exampleInputPassword1">Password: </label>
-      <input type="password" class="form-control" id="exampleInputPassword1" name="pw" placeholder="use safe passwords!" required>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="pw" placeholder="Password" required>
     </div>
 
 
     
     <input type="submit" value="Login" class="btn btn-primary"></input>
-        </form></center>
+        </form></center></div>
+        
+	<%@ include file="footer.jsp"%>
 </body></html>
 

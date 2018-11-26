@@ -25,7 +25,7 @@
 </head>
 <body>
 
-	<%@ include file="navbar.jsp"%>
+	<%@ include file="navbar_new.jsp"%>
 
 
 

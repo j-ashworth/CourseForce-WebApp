@@ -6,7 +6,7 @@
 
 <html lang="en">
 <head>
-<title>MIE350 Sample Web App - Search Students</title>
+<title>Course Page Search</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -24,6 +24,7 @@
 </head>
 <body>
 <%@ include file="navbar_new.jsp"%>
+<div style="padding:15px;">
 <h1> Course Information and Reviews </h1>
 	<div class="container-fluid text-center">
 		<center>
@@ -37,6 +38,7 @@
 				<input type="submit" value="Submit" class="btn btn-primary btn-sm"></input>
 			</form>
 		</center>
-	</div>
+	</div></div>
+	<%@ include file="footer.jsp"%>
 </body>
 </html>

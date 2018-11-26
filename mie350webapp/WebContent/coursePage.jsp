@@ -6,7 +6,7 @@
 
 <html lang="en">
 <head>
-<title>MIE350 Sample Web App - Search Students</title>
+<title>Course Page Search</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -21,9 +21,11 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+<%@ include file="navbar_new.jsp"%>
+
 </head>
 <body>
-<%@ include file="navbar_new.jsp"%>
+<div style="padding:15px;">
 <h1> Course Information and Reviews </h1>
 	<div class="container-fluid text-center">
 		<center>
@@ -32,12 +34,15 @@
 				<div class="inline fields">
 				<div class="form-group">
   <label class="col-form-label col-form-label-lg" for="inputLarge"></label>
-  <input class="form-control form-control-lg" type="text" placeholder="APS444" id="inputLage" name="courseCode" required>
+  <input class="form-control form-control-lg" type="text" placeholder="Ex: APS444" id="inputLage" name="courseCode" required>
 </div>
 				<button type="Submit" class="btn btn-primary btn-lg"> Submit</button>
 				</div>
 			</form>
 		</center>
-	</div>
+	</div></div>
+	
+	<%@ include file="footer.jsp"%>
+
 </body>
 </html>

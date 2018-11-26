@@ -18,12 +18,12 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <head>
-<title>  Create Account   </title>
+
 
 <link rel="stylesheet" type="text/css" href="css/mystyle.css">
 <%@ include file="navbar_not_loggedin.jsp"%>
 </head>
-<body><center>
+<body><div style="padding:15px;"><center>
         <h1> Create Account </h1>
         <p> Please enter the following information to create your account</p>
         <form method="GET" action="CreateAccountController">
@@ -48,5 +48,6 @@
       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="pw" required>
     </div>
     <input type="submit" value="Submit" class="btn btn-primary"></input>
-        </form></center>
+        </form></center></div>
+	<%@ include file="footer.jsp"%>
 </body></html>

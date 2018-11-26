@@ -21,10 +21,12 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <head>
+<title>Review Submission</title>
+
 <link rel="stylesheet" type="text/css" href="css/reviewStyle.css">
 <%@ include file="navbar_new.jsp"%>
 </head>
-<body>
+<body><div style="padding:15px;">
 
 <%
 	session = request.getSession();
@@ -38,10 +40,10 @@
 %>
 
 
-<center><h1> Tell Us What You Thought  </h1>
+<center><h1>Tell Us What You Thought</h1>
 <div class="alert alert-dismissible alert-danger">
   <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>Oops! </strong> <a href="#" class="alert-link">The written review you submiteed was too long,</a> shorten it up and try submitting again.
+  <strong>Oops! </strong>The written review you submitted was too long. Shorten it up and try submitting again.
 </div>
 <form method="POST" action=ReviewController name="review">
 <div class="form-group">
@@ -158,12 +160,14 @@
     </div>
     </div>
 	    <div class="form-group">
-      <label for="exampleTextarea"> Other Comments </label>
+      <label for="exampleTextarea"> Other Comments  (max: 255 characters)</label>
       <textarea class="form-control" name="writtenReview" id="exampleTextarea" rows="3" 
       style="margin-top: 0px; margin-bottom: 0px; height: 78px;" required placeholder="Voice your opinion, what should a prospective student know about this course?"
       ></textarea>
     </div>
 
 	<button type="submit" class="btn btn-primary">Submit</button>
-</form></center>
+</form></center></div>
+	<%@ include file="footer.jsp"%>
+
 </body></html>

@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 
-<title>MIE350 Sample Web App - Search Students</title>
+<title>Search a Course</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -26,14 +26,14 @@
 <body>
 
 <%@ include file="navbar_new.jsp"%>
-
+<div style="padding:15px;">
 	<div class="container-fluid text-center">
 		<div class="row">
 			
 			<div class="col-sm-8 text-left">
-				<h1>Search A Course</h1>
+				<h1>Search a Course</h1>
 
-				Enter a course code, course name or keyword <Br />
+				Enter a course code, course name or keyword. <Br />
 				<Br />
 				
 					<form method="POST" action='SearchController' name="frmAddUser">
@@ -92,7 +92,9 @@
 
 			</div>
 		</div>
-	</div>
+	</div></div>
+		<%@ include file="footer.jsp"%>
+	
 </body>
 </html>
 

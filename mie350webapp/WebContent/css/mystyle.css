@@ -42,3 +42,43 @@ footer {
 form{
 	width: 33%;
 }
+
+.daniel{
+	padding: 15px;
+}
+
+.container {
+   margin:0 auto; /* this will center the page */
+   width:960px; /*  use your width here */
+}
+
+
+
+.card {
+	display:inline-block;
+	border: none;
+}
+
+.top-buffer { margin-top:20px; }
+
+.top7 { margin-top:7px; }
+
+.top-buffer { margin-top:20px; }
+
+.push-spaces
+{
+    height: 500px;
+}
+
+.jumbotron {
+  background-image: url(img/hero.jpg);
+  background-size: cover;
+  min-height: 300px;
+}
+
+
+
+.grey-bg {
+            background-color: #D9D9DB;
+
+        }

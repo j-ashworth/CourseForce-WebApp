@@ -391,6 +391,7 @@ public class CourseDao {
 				course.setNs(rs.getInt("ns"));
 				course.setPraHours(rs.getInt("praHours"));
 				course.setTutHours(rs.getInt("tutHours"));
+				course.setFaculty(rs.getString("faculty"));
 			}
 		}catch (SQLException e) {
 			e.printStackTrace();

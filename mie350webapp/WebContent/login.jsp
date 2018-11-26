@@ -22,7 +22,7 @@
 <body>
 <center style="padding: 15px;">
         <h1> Login </h1>
-        <p> Please enter your username and password</p>
+        <p> Please enter your username and password.</p>
         <form action="LoginController">
             <div class="form-group">
       <label for="exampleInputPassword1">Username</label>
@@ -30,7 +30,7 @@
     </div>
         <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" name="pw" placeholder="Use a safe password for your own protection!" required>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="pw" placeholder="Password" required>
     </div>
     <input type="submit" value="Login" class="btn btn-primary"></input>
         </form></center>

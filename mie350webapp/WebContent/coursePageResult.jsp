@@ -6,7 +6,7 @@
 
 <html lang="en">
 <head>
-<title>MIE350 Sample Web App - Search Students</title>
+<title>Course Page Result</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -23,23 +23,31 @@
 </head>
 
 
-<%Course course = (Course) request.getAttribute("course");%>
+<%Course course = (Course) request.getAttribute("course");
+String writtenAvg = (String) request.getAttribute("writtenAvg");
+String tbAvg = (String) request.getAttribute("tbAvg");
+String difficultyAvg = (String) request.getAttribute("difficultyAvg");
+String overallAvg = (String) request.getAttribute("overallAvg");%>
 
 <body>
-<%@ include file="navbar_new.jsp"%>
+<%@ include file="navbar_new.jsp"%><div style="padding:15px;">
 <h1>Course Page for <font class="text-primary"><c:out value="${course.getName()}"/></font><font class="text-muted"> (<c:out value ="${course.getCourseCode().toUpperCase()}"/>)</font></h1>
+<p><br>Description: <c:out value="${course.getDescription()}"/></p>
 
-<p>Course Level: <c:out value="${course.getCourseLevel()}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Breadth Requirement(s): <c:out value="${course.getBreadthReq()}"/></p>
-<p>Department: <c:out value="${course.getDept()}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Faculty: <c:out value="${course.getFaculty()}"/></p>
-<p>Lecture Hours: <c:out value="${course.getLecHours()}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p style="float:left;">Course Level: <c:out value="${course.getCourseLevel()}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Breadth Requirement(s): <c:out value="${course.getBreadthReq()}"/>
+<br>Department: <c:out value="${course.getDept()}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Faculty: <c:out value="${course.getFaculty()}"/>
+<br>Lecture Hours: <c:out value="${course.getLecHours()}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Tutorial Hours: <c:out value="${course.getTutHours()}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Practical Hours: <c:out value="${course.getPraHours()}"/></p>
-<p>Description: <c:out value="${course.getDescription()}"/></p>
+<p style="float:right;">Overall Rating Average: <c:out value="${overallAvg}"/>
+<br>Difficulty Average: <c:out value="${difficultyAvg}"/>
+<br>Textbook Usefulness Average: <c:out value="${tbAvg}"/>
+<br>Writing Workload Average: <c:out value="${writtenAvg}"/></p>
 
 					<center>
-					<table style="width:70%;" class="table table-hover">
+					<table style="width:90%;" class="table table-hover">
 						<thead>
 							<tr>
 								<th style="width:10%;" scope="col"> Overall Course Rating</th>
@@ -70,7 +78,8 @@ Practical Hours: <c:out value="${course.getPraHours()}"/></p>
 						</tbody>
 					</table>
 				</center>
-
+</div>
+	<%@ include file="footer.jsp"%>
 </body>
 </html>
 

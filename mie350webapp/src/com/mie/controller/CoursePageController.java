@@ -47,8 +47,12 @@ public class CoursePageController extends HttpServlet {
 		String courseCode = request.getParameter("courseCode");
 		Course course = cDao.getCoursebyCourseCode(courseCode);
 		List<Review> reviews = rDao.getAllReviews(courseCode);
+		String writtenAvg = Float.toString(rDao.getWrritenAvg(courseCode));
+		String tbAvg = Float.toString(rDao.getTBUsefulnessAvg(courseCode));
+		String difficultyAvg = Double.toString(rDao.getDifficultyAvg(courseCode));
+		String overallAvg = Double.toString(rDao.getOverallRatingAvg(courseCode));
 		
-		
+		System.out.println(overallAvg);
 		
 //		System.out.println(course);
 //		System.out.println(reviews.size());
@@ -59,6 +63,10 @@ public class CoursePageController extends HttpServlet {
 			RequestDispatcher view = request.getRequestDispatcher(COURSE_PAGE);
 			request.setAttribute("course", course);
 			request.setAttribute("reviews", reviews);
+			request.setAttribute("writtenAvg", writtenAvg);
+			request.setAttribute("tbAvg", tbAvg);
+			request.setAttribute("difficultyAvg", difficultyAvg);
+			request.setAttribute("overallAvg", overallAvg);
 			view.forward(request, response);
 		}else {
 			response.sendRedirect("invalid_course_code.jsp");

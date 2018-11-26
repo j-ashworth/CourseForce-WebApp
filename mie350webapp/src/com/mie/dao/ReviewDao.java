@@ -13,7 +13,6 @@ import java.util.List;
 
 import com.mie.model.Course;
 import com.mie.model.Review;
-import com.mie.model.Student;
 import com.mie.model.User;
 
 public class ReviewDao {
@@ -113,6 +112,25 @@ public class ReviewDao {
 		return avg;
 	}
 	
+	public float getTBUsefulnessAvg(String courseCode) {
+		float avg = 0; 
+		
+		try {
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("select AVG(tbUsefulness) as avg from Rating where courseCode=?");
+			preparedStatement.setString(1, courseCode);
+			ResultSet rs = preparedStatement.executeQuery();
+			if(rs.next()){
+				avg = rs.getFloat("avg");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+			
+		return avg;
+	}
+	
 	//get average difficulty rating
 	public Double getDifficultyAvg(String courseCode) {
 		Double avg = 0.0; 
@@ -131,7 +149,7 @@ public class ReviewDao {
 			return null;
 		}
 		
-		System.out.print("Difficulty of " + courseCode + " " + avg);
+		//System.out.print("Difficulty of " + courseCode + " " + avg);
 		return avg;
 	}
 	
@@ -153,7 +171,7 @@ public class ReviewDao {
 			return null;
 		}
 		
-		System.out.print("Difficulty of " + courseCode + " " + avg);
+		//System.out.print("Difficulty of " + courseCode + " " + avg);
 		return avg;
 	}
 	

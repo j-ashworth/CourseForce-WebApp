@@ -21,10 +21,11 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <head>
+<title>Submission Successful</title>
 <link rel="stylesheet" type="text/css" href="css/reviewStyle.css">
 <%@ include file="navbar_new.jsp"%>
 </head>
-<body>
+<body><div style="padding:15px;">
 
 <%
 	session = request.getSession();
@@ -43,7 +44,8 @@
   <hr class="my-4">
   <p class="lead">
     <a class="btn btn-primary btn-lg" href="reviewInput.jsp" role="button">Submit Another?</a>
-  </p>
+  </p></div>
   </center>
-</div>
+</div>	<%@ include file="footer.jsp"%>
+
 </body></html>

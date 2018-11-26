@@ -4,8 +4,8 @@
 <!--carousel: course info, course reco, course review course search  -->
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="home.css">
-  <title>  CourseForce.ca   </title>
+  
+  <title>CourseForce Homepage</title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -20,6 +20,8 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   
 </head>
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+
 <body>
 
 <%@ include file="navbar_new.jsp"%>
@@ -32,10 +34,9 @@
   <p class="lead">
     <a href="searchTest.jsp" class="btn btn-primary btn-lg" href="#" role="button">Search Courses</a>
   </p>
-  <h1><br><br></h1>
 
 </div>
-
+<div style="padding:15px;">
 <div class="container">
 	<div class="row">
  		<div class="col-md-12"> 
@@ -46,37 +47,37 @@
 	 		The main functionality of the web application is the following: <br>
 	 		(1) Read official course descriptions <br>
 	 		(2) Access reviews written by other peers <br>
-	 		(3) Access overall course ratings from peers 
+	 		(3) Access overall course ratings from peers <br>
 	 		(4) View course textbook(s) <br> 
 	 		(5) View total hours of class/tutorial/labs<br> 
 	 		(6) View course information (Department, breadth requirement classification, faculty, hours per week)  
 	 		</p>
-	 		<br><br>
+	 		
  		</div>	
   	</div>
 </div>
 
-<div class=" container container-fluid grey-bg" background-color: >
+<div class=" container container-fluid grey-bg">
 	<div class="row">
  		<div class="col-md-12">  
- 		<h2>What is CourseForce?</h2>
-	 		<br>
-	 		CourseForce allows student to: <br>
+ 		<br><h2>What is <b>CourseForce</b>?</h2>
+	 		<br><p>
+	 		<b>CourseForce</b> allows student to: <br>
 	 		(1) Read official course descriptions <br>
 	 		(2) Access reviews written by other peers <br>
-	 		(3) Access overall course ratings from peers 
+	 		(3) Access overall course ratings from peers <br>
 	 		(4) View course textbook(s) <br> 
 	 		(5) View total hours of class/tutorial/labs<br> 
 	 		(6) View course information (Department, breadth requirement classification, faculty, hours per week)  
 	 		</p>
-	 		<br><br>
+	 		
 	 	</div>
 
   	</div>
 </div>
 
 <div class="container">
-  	<h2>Meet the team!</h2>
+  	<br><h2>Meet the team!</h2>
   	<br>
   	<p>The development team consists of seven Industrial Engineering undergraduate students studying at the University of Toronto. The application is built using Java, HTML, JSP, JDBC and Servlets. Disclaimer: this website is not monitored regularly for updates/changes, this website has not affiliation with the University of Toronto, this website does not feature every University of Toronto course.</p>
   	<br>
@@ -156,8 +157,8 @@
     <div class="row mt-4">
         <div class="col-sm-4">
             <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-  				<div class="card-header">Ita Zaporozhets</div>
   				<img class="card-img-top" src="img/ita.jpg">
+				<div class="card-header">Ita Zaporozhets</div>
   				<div class="card-body">
     			<h4 class="card-title">Project Manager</h4>
     			<p class="card-text"> Cat person, loves painting.</p>
@@ -170,9 +171,9 @@
     <div class="row mt-4">
     </div>
     </div>
-
+</div>
 <%@ include file="footer.jsp"%>
 
-
 </body>
+
 </html>

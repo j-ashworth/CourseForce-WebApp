@@ -16,8 +16,12 @@
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<title>Search Results</title>
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 
+<body>
 <%@ include file="navbar_new.jsp"%>
+<div style="padding:15px;">
 <h1>Search A Course - Results</h1>
 				"The following courses match your search keyword"<b><font
 					color=blue><%=request.getAttribute("keyword")%></font></b>":<br> <br>
@@ -25,15 +29,15 @@
 					<table border=1 class="table table-hover">
 						<thead>
 							<tr>
-								<th scope="col">Course Code</th>
-								<th scope="col">Name</th>
-								<th scope="col">Department</th>
-								<th scope="col">Description</th>
-								<th scope="col">Breadth Requirement</th>
-								<th scope="col">Course Level</th>
-								<th scope="col">Lecture Hours</th>
-								<th scope="col">Tutorial Hours</th>
-								<th scope="col">Practical Hours</th>
+								<th style="width:8%;" scope="col">Course Code</th>
+								<th style="width:20%;" scope="col">Name</th>
+								<th style="width:10%;" scope="col">Department</th>
+								<th style="width:25%;" scope="col">Description</th>
+								<th style="width:10%;" scope="col">Breadth Requirement</th>
+								<th style="width:5%;" scope="col">Course Level</th>
+								<th style="width:5%;" scope="col">Lecture Hours</th>
+								<th style="width:5%;" scope="col">Tutorial Hours</th>
+								<th style="width:5%;" scope="col">Practical Hours</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -61,7 +65,8 @@
 							</c:forEach>
 						</tbody>
 					</table>
-				</center>
+				</center></div>
+	<%@ include file="footer.jsp"%>
 
 </body>
 </html>

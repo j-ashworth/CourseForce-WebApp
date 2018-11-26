@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
 <link rel="stylesheet" type="text/css" href="home.css">
-<title>MIE350 Sample Web App - Search Students</title>
+<title>Search A Course</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -27,6 +27,7 @@
 <%@ include file="navbar_new.jsp"%>
 
 <body>
+<div style="padding:15px;">
 
 <div class="container">
   <div class="row">
@@ -41,7 +42,7 @@
 		<div class="form-group row">
 		<div class="col-xs-4">
 		<div class="form-inline">
-			<input class="form-control form-control-lg" type="text" name="keyword" placeholder="Search Courses" id="ex4"
+			<input class="form-control form-control-lg" type="text" name="keyword" placeholder="Ex: physics" id="ex4"
 			value="<c:out value="${course.searchword}" />">
 			<input type="submit" class="btn btn-primary" value="Search" name = "action"/>
 			<br><br><br>
@@ -114,11 +115,11 @@
         <div class="col-sm-9">
         <table class="table table-hover">
 			<thead>
-				<tr>
-					<th scope="col">Course Code</th>
-					<th scope="col">Name</th>
-					<th scope="col">Description</th>
-					<th scope="col">Breadth Requirement</th>
+				<tr align="center">
+					<th style="width:20%;" scope="col">Course Code</th>
+					<th style="width:25%;" scope="col">Name</th>
+					<th style="width:50%;" scope="col">Description</th>
+					<th style="width:15%;" scope="col">Breadth Requirement</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -141,7 +142,8 @@
        </form>
       </div>
     </div>
-  </div>
+  </div>	</div>	<%@ include file="footer.jsp"%>
+  
 </body>
 </html>
 
