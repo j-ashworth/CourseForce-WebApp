@@ -39,15 +39,15 @@ Practical Hours: <c:out value="${course.getPraHours()}"/></p>
 <p>Description: <c:out value="${course.getDescription()}"/></p>
 
 					<center>
-					<table class="table table-hover">
+					<table style="width:70%;" class="table table-hover">
 						<thead>
 							<tr>
-								<th scope="col"> Overall Course Rating</th>
-								<th scope="col">Course Difficulty</th>
-								<th scope="col">Textbook Usefulness</th>
-								<th scope="col">Writing Workload</th>
-								<th scope="col">Academic Session</th>
-								<th scope="col">Written Review</th>
+								<th style="width:10%;" scope="col"> Overall Course Rating</th>
+								<th style="width:10%;" scope="col">Course Difficulty</th>
+								<th style="width:10%;" scope="col">Textbook Usefulness</th>
+								<th style="width:10%;" scope="col">Writing Workload</th>
+								<th style="width:10%;" scope="col">Academic Session</th>
+								<th style="width:40%;" scope="col">Written Review</th>
 							</tr>
 						</thead>
 						<tbody>
