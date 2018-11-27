@@ -27,16 +27,7 @@
 </head>
 <body><div style="padding:15px;">
 
-<%
-	session = request.getSession();
-	System.out.println(session);
-	if (session.getAttribute("username") == null) {
-		response.sendRedirect("login.jsp");
-	}
-	
-	User user = (User) session.getAttribute("currentSessionUser");
-	String username = (String) session.getAttribute("username");
-%>
+
 <center>
 <div class="jumbotron">
   <h1 class="display-3">Thanks for the Review!</h1>

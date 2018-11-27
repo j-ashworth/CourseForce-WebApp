@@ -27,11 +27,7 @@
 </head>
 <body><div style="padding:15px;">
 
-<%
-	
-	User user = (User) session.getAttribute("currentSessionUser");
-	String username = (String) session.getAttribute("username");
-%>
+
 
 
 <center style="padding: 15px;"><h1> Tell Us What You Thought  </h1>
