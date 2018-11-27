@@ -44,10 +44,10 @@
 							Filter by: <br>
 							Breadth Requirement: <br>
 							
-								<input class="form-check-input" value="any" name = "Breadth Requirement" checked>Any<br>
-								<input class="form-check-input" value="cs" name = "Breadth Requirement" >CS<br>
-								<input type="checkbox" value="hss" name = "Breadth Requirement">HSS<br>
-								<input type="checkbox" value="ns" name = "Breadth Requirement">MIE<br>
+								<input class="form-check-input" value="any" name = "Breadth Requirement" required>Any<br>
+								<input class="form-check-input" value="cs" name = "Breadth Requirement" required>CS<br>
+								<input type="checkbox" value="hss" name = "Breadth Requirement" required>HSS<br>
+								<input type="checkbox" value="ns" name = "Breadth Requirement" required>MIE<br>
 								 <br>
 								Faculty: <br>
 								<input type="checkbox" value="any" name = "Faculty" checked>Any<br>

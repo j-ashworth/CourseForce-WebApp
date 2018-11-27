@@ -4,7 +4,7 @@
 <!--carousel: course info, course reco, course review course search  -->
 <html>
 <head>
-  
+   <link rel="stylesheet" type="text/css" href="css/mystyle.css">
   <title>CourseForce Homepage</title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,13 +20,13 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   
 </head>
-    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+   
 
 <body>
 
 <%@ include file="navbar_new.jsp"%>
 
-<div class="jumbotron"  style="background-image: url(img/hero.jpg); background-size: 100% 100%;">
+<div class="jumbotron" style = "background-image: url(img/hero.jpg);background-size: cover; height = 500px;">
 
   <h1 class="display-2"><br>Looking for a course?<br></h1><br>
   <p class="lead"> CourseForce is the ultimate guide to choosing UofT courses. <br>Get access to course descriptions, reviews, recommendations and MORE!</p>
