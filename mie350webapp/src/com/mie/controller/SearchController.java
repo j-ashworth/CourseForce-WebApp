@@ -52,27 +52,32 @@ public class SearchController extends HttpServlet {
 		String keyword = request.getParameter("keyword");
 		
 		String[] breadthReqTemp = request.getParameterValues("Breadth Requirement");
-		ArrayList<String> breadthReq = new ArrayList<String>(Arrays.asList(breadthReqTemp));
+		ArrayList<String> breadthReq = new ArrayList<String>();
+		if(breadthReqTemp != null){
+			breadthReq.addAll((Arrays.asList(breadthReqTemp)));
+		}
 		
 		String[] facultyTemp = request.getParameterValues("Faculty");
-		ArrayList<String> faculty = new ArrayList<String>(Arrays.asList(facultyTemp));
-
+		ArrayList<String> faculty = new ArrayList<String>();
+		if(facultyTemp != null){
+			faculty.addAll((Arrays.asList(facultyTemp)));
+		}
 
 		String[] courseLevelTemp = request.getParameterValues("Course Level");
-		ArrayList<String> courseLevel = new ArrayList<String>(Arrays.asList(courseLevelTemp));
+		ArrayList<String> courseLevel = new ArrayList<String>();
+		if(courseLevelTemp != null){
+			courseLevel.addAll((Arrays.asList(courseLevelTemp)));
+		}
 
 		String[] ratingTemp = request.getParameterValues("Rating");
-		ArrayList<String> rating = new ArrayList<String>(Arrays.asList(ratingTemp));
+		ArrayList<String> rating = new ArrayList<String>();
+		if(ratingTemp != null){
+			rating.addAll((Arrays.asList(courseLevelTemp)));
+		}
 
 		String hours = request.getParameter("Cours Hours Per Week");
-
-
-		
-		
+	
 		ArrayList<Course> result = new ArrayList<Course>();
-
-
-		
 			
 		if(keyword != ""){
 			result.addAll(filter(dao.getCourseByKeyWord(keyword), breadthReq, faculty, courseLevel, rating, hours));
@@ -98,7 +103,7 @@ public class SearchController extends HttpServlet {
 		
 		ListIterator<Course> iter1 = result.listIterator();
 		
-		if(!breadthReq.contains("any")){
+		if(!breadthReq.isEmpty() && !breadthReq.contains("any")){
 			while(iter1.hasNext()){ 
 				Course currCourse = (Course) iter1.next();
 				String[] temp = currCourse.getBreadthReq().trim().toLowerCase().split(" ");
@@ -112,7 +117,7 @@ public class SearchController extends HttpServlet {
 		
 		ListIterator<Course> iter2 = result.listIterator();
 		
-		if(!faculty.contains("any")){
+		if(!faculty.isEmpty() && !faculty.contains("any")){
 			while(iter2.hasNext()){ 
 				Course currCourse = (Course) iter2.next();
 				if(!faculty.contains(dao.getCourseFaculty(currCourse))) 
@@ -122,7 +127,7 @@ public class SearchController extends HttpServlet {
 		
 		ListIterator<Course> iter4 = result.listIterator();		
 
-		if(!courseLevel.contains("any")){
+		if(!courseLevel.isEmpty() && !courseLevel.contains("any")){
 			while(iter4.hasNext()){ 
 				Course currCourse = (Course) iter4.next();
 				if(!courseLevel.contains(Integer.toString(currCourse.getCourseLevel())))	
@@ -132,7 +137,7 @@ public class SearchController extends HttpServlet {
 
 		ListIterator<Course> iter5 = result.listIterator();
 		
-		if(!rating.contains("any")){
+		if(!rating.isEmpty() && !rating.contains("any")){
 			while(iter5.hasNext()){
 				Double temp = rDao.getOverallRatingAvg(iter5.next().getCourseCode());
 				if(!rating.contains((int)Math.round(temp))) 
@@ -143,7 +148,7 @@ public class SearchController extends HttpServlet {
 
 		ListIterator<Course> iter6 = result.listIterator();
 
-		if(!hours.equals("any")){
+		if(hours != null && !hours.equals("any")){
 			while(iter6.hasNext()){ 
 				Course currCourse = (Course) iter6.next();
 				Double totalHours = dao.getClassHours(currCourse);

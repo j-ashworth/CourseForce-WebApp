@@ -27,6 +27,7 @@
 <%@ include file="navbar_new.jsp"%>
 
 <body>
+
 <div style="padding:15px;">
 
 <div class="container">
@@ -56,11 +57,11 @@
         <br>
 	        <h2>Filter by: </h2><br>
 			Breadth Requirement: <br>
+			
 		    <div class="form-group">
 		    <div class="form-check">
-
 			<input class="form-check-input" type="checkbox" value="any" name = "Breadth Requirement" checked>Any<br>
-			<input class="form-check-input" type="checkbox" value="cs" name = "Breadth Requirement" >CS<br>
+			<input class="form-check-input" type="checkbox" value="cs" name = "Breadth Requirement">CS<br>
 			<input class="form-check-input" type="checkbox" value="hss" name = "Breadth Requirement">HSS<br>
 			<input class="form-check-input" type="checkbox" value="ns" name = "Breadth Requirement">NS<br>
 			 </div>
@@ -102,16 +103,19 @@
 			Course Hours per Week: <br>
 			<div class="form-group">
 		    <div class="form-check">
+		    <label class="form-check-label">
 			<input class="form-check-input" type="radio" value="any" name = "Cours Hours Per Week" checked>Any<br>
 			<input class="form-check-input" type="radio" value="5" name = "Cours Hours Per Week">Less than 5<br>
 			<input class="form-check-input" type="radio" value="6" name = "Cours Hours Per Week">Less than 6<br>
 			<input class="form-check-input" type="radio" value="7" name = "Cours Hours Per Week">Less than 7<br>
 			<input class="form-check-input" type="radio" value="8" name = "Cours Hours Per Week">Less than 8<br>
 			<input class="form-check-input" type="radio" value="9" name = "Cours Hours Per Week">Less than 9<br><br>
+			</label>
 			</div>
 			</div>
-			
+		
 		</div>
+		 </form>
         <div class="col-sm-9">
         <table class="table table-hover">
 			<thead>
@@ -139,7 +143,7 @@
 		</table>
         </div>
         </div>
-       </form>
+      
       </div>
     </div>
   </div>	</div>	<%@ include file="footer.jsp"%>
