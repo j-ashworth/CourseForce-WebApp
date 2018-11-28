@@ -79,24 +79,24 @@
 	Q4. How many hours/week are you willing to put into your course? (in class + out of class)<br>
 	<div class="form-group">
     <div class="custom-control custom-radio">
-      <input type="radio" id="customRadio1c" name="lowest" class="custom-control-input" value="none">
+      <input type="radio" id="customRadio1c" name="hours" class="custom-control-input" value="lowest">
       <label class="custom-control-label" for="customRadio1c">0-3</label>
     </div>
       <div class="custom-control custom-radio">
-      <input type="radio" id="customRadio2c" name="low" class="custom-control-input" value="some">
+      <input type="radio" id="customRadio2c" name="hours" class="custom-control-input" value="low">
       <label class="custom-control-label" for="customRadio2c">3-6</label>
     </div>
           <div class="custom-control custom-radio">
-      <input type="radio" id="customRadio3c" name="written preference" class="custom-control-input" value="middle">
+      <input type="radio" id="customRadio3c" name="hours" class="custom-control-input" value="middle">
       <label class="custom-control-label" for="customRadio3c">6-9</label>
     </div>
     <div class="custom-control custom-radio">
-      <input type="radio" id="customRadio3d" name="written preference" class="custom-control-input" value="high">
-      <label class="custom-control-label" for="customRadio3d">9-12</label>
+      <input type="radio" id="customRadio4c" name="hours" class="custom-control-input" value="high">
+      <label class="custom-control-label" for="customRadio4c">9-12</label>
     </div>
     <div class="custom-control custom-radio">
-      <input type="radio" id="customRadio3e" name="written preference" class="custom-control-input" value="highest">
-      <label class="custom-control-label" for="customRadio3e">12-15</label>
+      <input type="radio" id="customRadio5c" name="hours" class="custom-control-input" value="highest">
+      <label class="custom-control-label" for="customRadio5c">12-15</label>
     </div>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
