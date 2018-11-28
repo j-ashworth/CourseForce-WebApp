@@ -48,7 +48,7 @@ Practical Hours: <c:out value="${course.getPraHours()}"/></p>
 
 					<center>
 					<table style="width:90%;" class="table table-hover">
-						<thead>
+						<thead style="align: center;">
 							<tr>
 								<th style="width:10%;" scope="col"> Overall Course Rating</th>
 								<th style="width:10%;" scope="col">Course Difficulty</th>
