@@ -4,16 +4,15 @@
 	
 	User user = (User) session.getAttribute("currentSessionUser");
 	String username = (String) session.getAttribute("username");
+	String firstName = (String) session.getAttribute("firstname");
+	String lastName = (String) session.getAttribute("lastname");
 %>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="homepage.jsp">CourseForce</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand navbar-dark bg-primary">
+  <a class="navbar-brand" href="homepage.jsp"><img class="navbar-brand" style="height:30px;" src="img/CourseForce.png"></a>
 
   <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto" style="float: left;">
       <li class="nav-item">
         <a class="nav-link" href="searchTest.jsp">Course Search</a>
       </li>
@@ -27,8 +26,9 @@
         <a class="nav-link" href="reviewInput.jsp">Course Review</a>
       </li>
         <li class="nav-item">
-        <a class = "nav-link"> ${sessionScope.username}</a>
+        <a class = "nav-link"> </a>
       </li>
     </ul>
+    <div style="float: right;"><font color="orange">Welcome, ${sessionScope.firstname}!</font></div>
   </div>
 </nav>

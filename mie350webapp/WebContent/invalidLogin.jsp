@@ -22,18 +22,19 @@
 <body><div style="padding:15px;">
 <center>
         <h1> Login </h1>
-        <p> Please enter your username and password</p>
+        <p> Please enter your username and password.</p>
         <form action="LoginController">
     <div class="form-group has-danger">
+    
       <label class="form-control-label" for="inputDanger1">Username: </label>
       <input type="username" class="form-control is-invalid" id="inputInvalid" name="un" placeholder="CourseReviewGod" required>
-        <div class="invalid-feedback">Sorry, that's an invalid username. Please create an account or try again.</div>
     </div>
     
     
     <div class="form-group">
       <label for="exampleInputPassword1">Password: </label>
-      <input type="password" class="form-control" id="exampleInputPassword1" name="pw" placeholder="Password" required>
+      <input type="password" class="form-control is-invalid" id="exampleInputPassword1" name="pw" placeholder="Password" required>
+              <div class="invalid-feedback">Sorry, that's an invalid username and password combination. <br>Please try again or create an account.</div>
     </div>
 
 
