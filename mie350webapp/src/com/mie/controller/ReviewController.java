@@ -92,6 +92,10 @@ public class ReviewController extends HttpServlet{
 			}
 		}
 		
+		if (validReview == false) {
+			response.sendRedirect("wrongCourseReview.jsp");
+		}
+		
 		//if they put a review for a course that doesn't exist let them try again
 		if (validReview && notNull && validReviewLength) {
 			rDao.addReview(cc, username, ocr, tbu, cd, ww, as, wr);
