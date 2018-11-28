@@ -126,7 +126,7 @@
   				<div class="card-header">Jack Berkshire</div>
   				<div class="card-body">
     			<h4 class="card-title">Full Stack Developer</h4>
-    			<p class="card-text">Loser.</p>
+    			<p class="card-text">East Coaster, varsity sprinter</p>
   				</div>
 			</div>
         </div>
