@@ -72,7 +72,7 @@ public class SearchController extends HttpServlet {
 		String[] ratingTemp = request.getParameterValues("Rating");
 		ArrayList<String> rating = new ArrayList<String>();
 		if(ratingTemp != null){
-			rating.addAll((Arrays.asList(courseLevelTemp)));
+			rating.addAll((Arrays.asList(ratingTemp)));
 		}
 
 		String hours = request.getParameter("Cours Hours Per Week");
@@ -103,7 +103,7 @@ public class SearchController extends HttpServlet {
 		
 		ListIterator<Course> iter1 = result.listIterator();
 		
-		if(!breadthReq.isEmpty() && !breadthReq.contains("any")){
+		if(!breadthReq.isEmpty()){
 			while(iter1.hasNext()){ 
 				Course currCourse = (Course) iter1.next();
 				String[] temp = currCourse.getBreadthReq().trim().toLowerCase().split(" ");
@@ -117,7 +117,7 @@ public class SearchController extends HttpServlet {
 		
 		ListIterator<Course> iter2 = result.listIterator();
 		
-		if(!faculty.isEmpty() && !faculty.contains("any")){
+		if(!faculty.isEmpty()){
 			while(iter2.hasNext()){ 
 				Course currCourse = (Course) iter2.next();
 				if(!faculty.contains(dao.getCourseFaculty(currCourse))) 
@@ -127,7 +127,7 @@ public class SearchController extends HttpServlet {
 		
 		ListIterator<Course> iter4 = result.listIterator();		
 
-		if(!courseLevel.isEmpty() && !courseLevel.contains("any")){
+		if(!courseLevel.isEmpty()){
 			while(iter4.hasNext()){ 
 				Course currCourse = (Course) iter4.next();
 				if(!courseLevel.contains(Integer.toString(currCourse.getCourseLevel())))	
@@ -137,10 +137,12 @@ public class SearchController extends HttpServlet {
 
 		ListIterator<Course> iter5 = result.listIterator();
 		
-		if(!rating.isEmpty() && !rating.contains("any")){
+		if(!rating.isEmpty()){
 			while(iter5.hasNext()){
-				Double temp = rDao.getOverallRatingAvg(iter5.next().getCourseCode());
-				if(!rating.contains((int)Math.round(temp))) 
+				Course currCourse = (Course) iter5.next();
+				String temp = Integer.toString((int) Math.round(rDao.getOverallRatingAvg(currCourse.getCourseCode())));
+				System.out.println("RATING FOR " + currCourse.getCourseCode() + "IS " + temp);
+				if(!rating.contains(temp)) 
 					iter5.remove();
 			}
 			
@@ -148,7 +150,7 @@ public class SearchController extends HttpServlet {
 
 		ListIterator<Course> iter6 = result.listIterator();
 
-		if(hours != null && !hours.equals("any")){
+		if(hours != null){
 			while(iter6.hasNext()){ 
 				Course currCourse = (Course) iter6.next();
 				Double totalHours = dao.getClassHours(currCourse);

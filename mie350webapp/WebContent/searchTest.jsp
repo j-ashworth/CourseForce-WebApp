@@ -60,7 +60,7 @@
 			
 		    <div class="form-group">
 		    <div class="form-check">
-			<input class="form-check-input" type="checkbox" value="any" name = "Breadth Requirement" checked>Any<br>
+
 			<input class="form-check-input" type="checkbox" value="cs" name = "Breadth Requirement">CS<br>
 			<input class="form-check-input" type="checkbox" value="hss" name = "Breadth Requirement">HSS<br>
 			<input class="form-check-input" type="checkbox" value="ns" name = "Breadth Requirement">NS<br>
@@ -70,7 +70,6 @@
 			Faculty: <br>
 			    <div class="form-group">
 		    <div class="form-check">
-			<input class="form-check-input" type="checkbox" value="any" name = "Faculty" checked>Any<br>
 			<input class="form-check-input" type="checkbox" value="Applied Science and Engineering" name = "Faculty">Engineering<br>
 			<input class="form-check-input" type="checkbox" value="Arts and Science" name = "Faculty">Arts and Science<br>
 			 
@@ -80,7 +79,6 @@
 			Course Level: <br>
 			<div class="form-group">
 		    <div class="form-check">
-			<input class="form-check-input" type="checkbox" value="any" name = "Course Level" checked>Any<br>
 			<input class="form-check-input" type="checkbox" value="100" name = "Course Level">100<br>
 			<input class="form-check-input" type="checkbox" value="200" name = "Course Level">200<br>
 			<input class="form-check-input" type="checkbox" value="300" name = "Course Level">300<br>
@@ -91,7 +89,6 @@
 			Overall Rating: <br>
 			<div class="form-group">
 		    <div class="form-check">
-			<input class="form-check-input" type="checkbox" value="any" name = "Rating" checked>Any<br>
 			<input class="form-check-input" type="checkbox" value="1" name = "Rating">1<br>
 			<input class="form-check-input" type="checkbox" value="2" name = "Rating">2<br>
 			<input class="form-check-input" type="checkbox" value="3" name = "Rating">3<br>
@@ -104,7 +101,6 @@
 			<div class="form-group">
 		    <div class="form-check">
 		    <label class="form-check-label">
-			<input class="form-check-input" type="radio" value="any" name = "Cours Hours Per Week" checked>Any<br>
 			<input class="form-check-input" type="radio" value="5" name = "Cours Hours Per Week">Less than 5<br>
 			<input class="form-check-input" type="radio" value="6" name = "Cours Hours Per Week">Less than 6<br>
 			<input class="form-check-input" type="radio" value="7" name = "Cours Hours Per Week">Less than 7<br>
