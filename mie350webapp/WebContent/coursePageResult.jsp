@@ -47,8 +47,8 @@ Practical Hours: <c:out value="${course.getPraHours()}"/></p>
 <br>Writing Workload Average: <c:out value="${writtenAvg}"/></p>
 
 					<center>
-					<table style="width:90%;" class="table table-hover">
-						<thead style="align: center;">
+					<table style="align: center;" style="width:90%;" class="table table-hover">
+						<thead>
 							<tr>
 								<th style="width:10%;" scope="col"> Overall Course Rating</th>
 								<th style="width:10%;" scope="col">Course Difficulty</th>
