@@ -108,8 +108,6 @@ public class SearchController extends HttpServlet {
 				Course currCourse = (Course) iter1.next();
 				String[] temp = currCourse.getBreadthReq().trim().toLowerCase().split(" ");
 				ArrayList<String> types = new ArrayList<String>(Arrays.asList(temp));
-				for(String s : types){
-				}
 				if(Collections.disjoint(types, breadthReq)) 
 					iter1.remove();
 			}

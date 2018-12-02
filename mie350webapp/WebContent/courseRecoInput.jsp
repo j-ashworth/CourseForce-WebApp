@@ -42,7 +42,7 @@
       <label class="custom-control-label" for="customRadio2">Humanities and Social Science (HSS)</label>
     </div>
           <div class="custom-control custom-radio">
-      <input type="radio" id="customRadio3" name="elective" class="custom-control-input" value="NS">
+      <input type="radio" id="customRadio3" name="elective" class="custom-control-input" value="ns">
       <label class="custom-control-label" for="customRadio3">  Natural Science (NS)</label>
     </div>
       </div>

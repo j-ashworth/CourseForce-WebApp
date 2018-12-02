@@ -32,13 +32,7 @@ public class CourseRecoController extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, java.io.IOException {
 	
-		
-		/*****************TODO*******************/
-		//add javascript to courseRecoInput to enforce atleast 1
-		//check box chec
-		
-		
-		
+
 		//initial list of all courses
 		ArrayList<Course> recoList = new ArrayList<Course>(cDao.getAllCourses());
 		
@@ -47,14 +41,21 @@ public class CourseRecoController extends HttpServlet {
 		
 		//retrieve responses to question 1
 		//add courses to reco matching each selected elective type, not going to add courses that don't match elective type
-		String [] q1 = request.getParameterValues("elective");
-		if(q1 != null && q1.length!=0){
-			for(String s : q1){
-				for(Course c : cDao.getCourseByType(s.toLowerCase(), recoList)){
-					if(!reco.containsKey(c))
-						reco.put(c,1);
-				}
-			}
+		
+		ListIterator<Course> iter1 = recoList.listIterator();
+		String q1 = request.getParameter("elective");
+		
+		while(iter1.hasNext()){ 
+			Course currCourse = (Course) iter1.next();
+			String[] temp = currCourse.getBreadthReq().trim().toLowerCase().split(" ");
+			ArrayList<String> types = new ArrayList<String>(Arrays.asList(temp));
+			if(!types.contains(q1)) 
+				iter1.remove();
+		}
+		
+		for(Course c : recoList){
+			if(!reco.containsKey(c))
+				reco.put(c,1);
 		}
 		
 
